@@ -1,7 +1,14 @@
+# dotfiles
 
 This directory must follow the same structure as `~/`.
 
 ## GNU Stow
+
+Download GNU Stow using a package manager:
+
+```sh
+sudo apt install stow
+```
 
 Create symbolic links for all files in the directory:
 
