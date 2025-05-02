@@ -1,0 +1,31 @@
+clipboard-trim-trailing-spaces = true
+window-padding-color = extend
+background-opacity = 0.95
+scrollback-limit = 10000000
+font-size = 10
+
+keybind = alt+a>space=equalize_splits
+
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:bottom
+keybind = alt+k=goto_split:top
+keybind = alt+l=goto_split:right
+
+keybind = alt+shift+h=new_split:left
+keybind = alt+shift+j=new_split:down
+keybind = alt+shift+k=new_split:up
+keybind = alt+shift+l=new_split:right
+
+keybind = alt+shift+left=resize_split:left,10
+keybind = alt+shift+down=resize_split:down,10
+keybind = alt+shift+up=resize_split:up,10
+keybind = alt+shift+right=resize_split:right,10
+
+keybind = alt+a>x=close_surface
+keybind = alt+,=open_config
+keybind = alt+shift+,=reload_config
+keybind = alt+f=toggle_window_decorations
+
+keybind = page_down=scroll_page_down
+keybind = page_up=scroll_page_up
+
