@@ -1,0 +1,169 @@
+[
+    // Alias ctrl-w commands
+    {
+        "context": "VimControl && !menu",
+        "bindings": {
+            "alt-a d": "editor::GoToDefinitionSplit",
+            "alt-a g d": "editor::GoToDefinitionSplit",
+            "alt-a shift-d": "editor::GoToTypeDefinitionSplit",
+            "alt-a g shift-d": "editor::GoToTypeDefinitionSplit",
+            "alt-a space": "editor::OpenExcerptsSplit",
+            "alt-a g space": "editor::OpenExcerptsSplit"
+        }
+    },
+    // Alias ctrl-x commands
+    {
+        "context": "vim_mode == insert",
+        "bindings": {
+            "alt-a": null,
+            "alt-a o": "editor::ShowCompletions",
+            "alt-a a": "assistant::InlineAssist", // zed specific
+            "alt-a c": "editor::ShowEditPrediction", // zed specific
+            "alt-a l": "editor::ToggleCodeActions", // zed specific
+            "alt-a z": "editor::Cancel"
+        }
+    },
+    // Use neovim's yank behavior: yank to end of line.
+    {
+        "context": "vim_mode == normal && !menu",
+        "bindings": {
+            "shift-y": ["workspace::SendKeystrokes", "y $"]
+        }
+    },
+    // Multicursor in normal, visual, operator, and insert modes if not in a menu
+    {
+        "context": "(VimControl || vim_mode == insert) && !menu",
+        "bindings": {
+            "alt-j": "editor::AddSelectionBelow",
+            "alt-k": "editor::AddSelectionAbove"
+        }
+    },
+    // vim-surround 
+    {
+        "context": "vim_mode == visual",
+        "bindings": {
+            "s": ["vim::PushAddSurrounds", {}]
+        }
+    },
+    // vim-sneak 
+    {
+      "context": "vim_mode == normal", 
+      "bindings": {
+        "s": "vim::PushSneak",
+        "shift-s": "vim::PushSneakBackward"
+      }
+    },
+    // TODO: Use alt-j and alt-k instead of ctrl-d and ctrl-u for scrolling
+    // - This currently doesn't work because hover hints are not in the menu context
+    // {
+    //     "context": "menu",
+    //     "bindings": {
+    //         "alt-j": "vim::ScrollDown",
+    //         "alt-k": "vim::ScrollUp"
+    //     }
+    // },
+    {
+        "context": "Editor",
+        "bindings": {
+            "ctrl-.": "editor::ToggleCodeActions",
+
+            "alt-f": "editor::Format",
+            "alt-h": "workspace::ActivatePaneLeft",
+            "alt-l": "workspace::ActivatePaneRight",
+            "alt-space": "editor::ToggleCodeActions",
+
+            "alt-shift-i": "editor::SplitSelectionIntoLines",
+            "alt-shift-j": "editor::MoveLineDown",
+            "alt-shift-k": "editor::MoveLineUp",
+            "alt-shift-r": "editor::RestartLanguageServer"
+        }
+    },
+    {
+        "context": "Editor && !menu",
+        "bindings": {
+            // vim default: return to normal mode
+            "ctrl-c": "editor::Copy",
+            // vim default: decrement
+            "ctrl-x": "editor::Cut",
+            // vim default: visual block mode
+            "ctrl-v": "editor::Paste",
+            // vim default: page down
+            "ctrl-f": "buffer_search::Deploy",
+            // vim default: increment
+            "ctrl-a": "editor::SelectAll"
+        }
+    },
+    {
+        "bindings": {
+            // Toggle between Terminal and Editor without closing terminal
+            "ctrl-shift-k": "terminal_panel::ToggleFocus",
+            // Open/Close Terminal
+            "ctrl-shift-i": "workspace::ToggleBottomDock",
+
+            "alt-[": "workspace::ToggleLeftDock",
+            "alt-]": "workspace::ToggleRightDock",
+
+            "alt-,": "zed::OpenSettings",
+            "alt-.": "zed::OpenKeymap",
+
+            "alt-shift-,": "zed::OpenDefaultSettings",
+            "alt-shift-.": "zed::OpenDefaultKeymap",
+            "alt-shift-/": "vim::OpenDefaultKeymap",
+
+            // Project file search, command palette
+            "alt-j": "menu::SelectNext",
+            "alt-k": "menu::SelectPrevious"
+        }
+    },
+    // Code Actions, Autocomplete
+    {
+        "context": "Editor && (showing_code_actions || showing_completions)",
+        "bindings": {
+            "alt-j": "editor::ContextMenuNext",
+            "alt-k": "editor::ContextMenuPrevious"
+        }
+    },
+    // Split Panes
+    {
+        "context": "Pane",
+        "bindings": {
+            "alt-shift-h": "pane::SplitLeft",
+            "alt-shift-l": "pane::SplitRight"
+        }
+    },
+    // Firefox Developer Keyboard Shortcuts (kind of) + Pane Navigation from Terminal
+    {
+        "context": "Terminal",
+        "bindings": {
+            // Pane navigation
+            "alt-h": "workspace::ActivatePaneLeft",
+            "alt-j": "workspace::ActivatePaneDown",
+            "alt-k": "workspace::ActivatePaneUp",
+            "alt-l": "workspace::ActivatePaneRight"
+        }
+    },
+    // Pane Navigation from Project Panel
+    {
+        "context": "ProjectPanel",
+        "bindings": {
+            "alt-h": "workspace::ActivatePaneLeft",
+            "alt-j": "workspace::ActivatePaneDown",
+            "alt-k": "workspace::ActivatePaneUp",
+            "alt-l": "workspace::ActivatePaneRight"
+        }
+    },
+    // Custom formatters
+    {
+        "context": "Editor && extension == tf",
+        "bindings": {
+            "alt-f": [
+                "task::Spawn",
+                {
+                    "task_name": "Format OpenTofu File",
+                    "reveal_target": "dock" // doesn't actually pull up the terminal on error
+                    // "reveal_target": "center" // causes screen flicker, but does pull up the terminal
+                }
+            ]
+        }
+    }
+]

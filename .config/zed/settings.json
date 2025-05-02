@@ -1,0 +1,113 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+    // Settings applied after Welcome
+    "show_edit_predictions": true,
+    "features": {
+        "edit_prediction_provider": "copilot"
+    },
+    "icon_theme": "Zed (Default)",
+    "assistant": {
+        "default_model": {
+            "provider": "copilot_chat",
+            "model": "o3-mini"
+        },
+        "version": "2"
+    },
+    "base_keymap": "VSCode",
+    "vim_mode": true,
+    "telemetry": {
+        "diagnostics": true, // Crash reports
+        "metrics": false
+    },
+    "ui_font_size": 12,
+    "buffer_font_size": 12,
+    "theme": {
+        "mode": "system",
+        "light": "One Light",
+        "dark": "Ayu Dark"
+    },
+
+    // Custom Built-in Zed settings
+    "autosave": {
+        "after_delay": {
+            "milliseconds": 1000 // VSCode default
+        }
+    },
+    "buffer_font_family": "DejaVu Sans Mono",
+    "formatter": "prettier",
+    "file_types": {
+        "env": [".env*"], // requires Zed env extension
+        "JSON": [".prettierrc"],
+        "JSONC": [
+            "**/.vscode/**/*.json",
+            "**/packages/tsconfig/*.json",
+            "**/turbo.json",
+            "**/host.json",
+            "**/local.settings.json",
+            "**/tsconfig.json"
+        ],
+        "LOG": ["*.log", "*.log.*"]
+    },
+    "gutter": { "code_actions": false },
+    "preview_tabs": {
+        "enable_preview_from_file_finder": false,
+        "enable_preview_from_code_navigation": true
+    },
+    "project_panel": {
+        "show_diagnostics": "all",
+        "auto_fold_dirs": false,
+        "default_width": 400,
+        "entry_spacing": "standard",
+        "indent_guides": {
+            "show": "always"
+        },
+        "indent_size": 12
+    },
+    "relative_line_numbers": true,
+    "scroll_sensitivity": 3,
+    "search": { "case_sensitive": true, "regex": false, "whole_word": false },
+    "tab_bar": {
+        "show_nav_history_buttons": false,
+        "show_tab_bar_buttons": false
+    },
+    "tab_size": 4,
+    "tabs": {
+        "git_status": true,
+        "show_diagnostics": "all"
+    },
+    "active_pane_modifiers": {
+        "inactive_opacity": 0.75
+    },
+    "terminal": {
+        // Powerline font necessary for oh-my-bash context renderer (git branch, etc.)
+        "font_family": "DejaVu Sans Mono",
+        "font_size": 12
+    },
+    "toolbar": {
+        "quick_actions": false,
+        "selections_menu": false,
+        "breadcrumbs": false
+    },
+    "git": {
+        "inline_blame": { "show_commit_summary": true }
+    },
+    "ui_font_family": "DejaVu Sans Mono",
+    "use_autoclose": false,
+    "use_smartcase_search": true,
+    "vim": {
+        "use_multiline_find": true,
+        "use_smartcase_find": true,
+        "toggle_relative_line_numbers": true,
+        "highlight_on_yank_duration": 100,
+        "use_system_clipboard": "always"
+    },
+    "collaboration_panel": { "dock": "right" },
+    "soft_wrap": "none"
+}

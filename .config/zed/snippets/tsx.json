@@ -1,0 +1,33 @@
+{
+    "Storybook story": {
+        "prefix": "story",
+        "body": [
+            "import { Meta, StoryObj } from \"@storybook/react\";",
+            "",
+            "import { ${1:Component} } from \"./${1:Component}\";",
+            "",
+            "const meta: Meta<typeof ${1:Component}> = {",
+            "    title: \"Components/${1:Component}\",",
+            "    component: ${1:Component},",
+            "    parameters: {",
+            "        layout: \"fullscreen\",",
+            "    },",
+            "};",
+            "export default meta;",
+            "",
+            "type Story = StoryObj<typeof ${1:Component}>;",
+            "",
+            "export const Primary: Story = {",
+            "    args: {$0},",
+            "    parameters: {",
+            "        docs: {",
+            "            description: {",
+            "                story: \"Primary layout and rendering of the ${1:Component} component.\",",
+            "            },",
+            "        },",
+            "    },",
+            "};"
+        ],
+        "description": "Creates a Storybook story for the ${1:Component} component."
+    }
+}
