@@ -2,6 +2,15 @@
 
 This directory must follow the same structure as `~/`.
 
+## Required packages
+
+## git
+
+```sh
+sudo apt install git
+```
+
+
 ## GNU Stow
 
 Download GNU Stow using a package manager:

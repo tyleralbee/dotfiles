@@ -1,0 +1,40 @@
+# local/private config
+[include]
+        path = ~/.gitconfig.local
+[alias]
+	amend = commit --amend -C HEAD
+	br = branch
+	ci = commit
+	co = checkout
+	ds = diff --staged
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg-full = log --name-status --pretty=fuller
+	st = status
+	uncommit = reset HEAD~1
+	unstage = reset HEAD --
+[branch]
+	# sort by recently used branches instead of alphabetical
+	sort = -committerdate
+[commit]
+	verbose = true # show diff in commit editor
+[diff]
+	algorithm = histogram
+[help]
+	autocorrect = immediate # run corrected typos automatically
+[init]
+	defaultBranch = main
+[log]
+	date = iso
+[push]
+	autoSetupRemote = true
+	default = current # use local branch name as remote (when remote isn't setup)
+[rebase]
+	autosquash = true # https://jvns.ca/blog/2024/02/16/popular-git-config-options/#rebase-autosquash-true
+	missingCommitsCheck = error # don't allow deleting commits during a rebase
+[fetch]
+	# https://jvns.ca/blog/2024/02/16/popular-git-config-options/#fsckobjects-avoid-data-corruption
+	fsckobjects = true
+[receive]
+	fsckObjects = true
+[transfer]
+	fsckobjects = true
