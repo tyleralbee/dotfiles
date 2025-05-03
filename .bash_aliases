@@ -10,6 +10,7 @@ alias c='clear'
 alias l='ls'
 alias pn='pnpm'
 alias src='source ~/.bashrc'
+alias ts='sudo -E timeshift-gtk'
 
 # ======== functions ========
 # Alert after long running commands ('sleep 10; alert')
