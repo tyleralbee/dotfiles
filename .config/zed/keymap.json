@@ -38,20 +38,20 @@
             "alt-k": "editor::AddSelectionAbove"
         }
     },
-    // vim-surround 
+    // vim-surround
     {
         "context": "vim_mode == visual",
         "bindings": {
             "s": ["vim::PushAddSurrounds", {}]
         }
     },
-    // vim-sneak 
+    // vim-sneak
     {
-      "context": "vim_mode == normal", 
-      "bindings": {
-        "s": "vim::PushSneak",
-        "shift-s": "vim::PushSneakBackward"
-      }
+        "context": "vim_mode == normal",
+        "bindings": {
+            "s": "vim::PushSneak",
+            "shift-s": "vim::PushSneakBackward"
+        }
     },
     // TODO: Use alt-j and alt-k instead of ctrl-d and ctrl-u for scrolling
     // - This currently doesn't work because hover hints are not in the menu context
@@ -164,6 +164,13 @@
                     // "reveal_target": "center" // causes screen flicker, but does pull up the terminal
                 }
             ]
+        }
+    },
+    // Remove collaborator panel keybind
+    {
+        "context": "!Terminal",
+        "bindings": {
+            "ctrl-shift-c": "editor::Copy"
         }
     }
 ]
