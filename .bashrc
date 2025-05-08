@@ -58,7 +58,6 @@ esac
 
 
 # aliases
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -90,6 +89,10 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+if [ -f ~/completion-for-pnpm.bash ]; then
+    . ~/completion-for-pnpm.bash
+fi
 
 # azure-functions-core-tools-4
 export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT="1"
