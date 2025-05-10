@@ -3,6 +3,7 @@ window-padding-color = extend
 background-opacity = 0.95
 scrollback-limit = 10000000
 font-size = 10
+font-family = JetBrainsMono Nerd Font
 
 keybind = alt+a>space=equalize_splits
 
