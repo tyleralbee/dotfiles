@@ -13,11 +13,9 @@ alias pn='pnpm'
 alias src='source ~/.bashrc'
 alias ts='sudo -E timeshift-gtk'
 alias dotfiles='tmux new-session -A -s dotfiles -c ~/dotfiles'
+alias copy='wl-copy <' # Copy file to clipboard ('copy example.txt')
 
 # ======== functions ========
 # Alert after long running commands ('sleep 10; alert')
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Copy file to clipboard ('copy example.txt')
-function copy() { xclip -sel c < "$@"; }
 
