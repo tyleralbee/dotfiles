@@ -1,2 +1,4 @@
 .gitconfig.local
 .local/bin/*
+.config/chatgpt.com/*
+!.config/chatgpt.com/README.md
