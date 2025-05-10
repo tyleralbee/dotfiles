@@ -1,49 +1,21 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
-    // Settings applied after Welcome
-    "show_edit_predictions": true,
-    "features": {
-        "edit_prediction_provider": "copilot"
-    },
-    "icon_theme": "Zed (Default)",
+    "active_pane_modifiers": { "inactive_opacity": 0.75 },
     "agent": {
-        "default_model": {
-            "provider": "copilot_chat",
-            "model": "o3-mini"
-        },
+        "default_model": { "provider": "copilot_chat", "model": "o3-mini" },
         "version": "2"
     },
+    "autosave": { "after_delay": { "milliseconds": 1000 } },
     "base_keymap": "VSCode",
-    "vim_mode": true,
-    "telemetry": {
-        "diagnostics": true, // Crash reports
-        "metrics": false
-    },
-    "ui_font_size": 12,
+    "buffer_font_family": "JetBrainsMono Nerd Font",
     "buffer_font_size": 12,
-    "theme": {
-        "mode": "system",
-        "light": "One Light",
-        "dark": "Ayu Dark"
+    "edit_predictions": {
+        "mode": "eager",
+        "copilot": { "proxy": null, "proxy_no_verify": null },
+        "enabled_in_text_threads": false
     },
-
-    // Custom Built-in Zed settings
-    "autosave": {
-        "after_delay": {
-            "milliseconds": 1000 // VSCode default
-        }
-    },
-    "buffer_font_family": "DejaVu Sans Mono",
-    "formatter": "prettier",
+    "features": { "edit_prediction_provider": "copilot" },
     "file_types": {
-        "env": [".env*"], // requires Zed env extension
+        "env": [".env*"],
         "JSON": [".prettierrc"],
         "JSONC": [
             "**/.vscode/**/*.json",
@@ -56,6 +28,9 @@
         "LOG": ["*.log", "*.log.*"]
     },
     "gutter": { "code_actions": false },
+    "formatter": "prettier",
+    "git": { "inline_blame": { "show_commit_summary": true } },
+    "icon_theme": "Zed (Default)",
     "preview_tabs": {
         "enable_preview_from_file_finder": false,
         "enable_preview_from_code_navigation": true
@@ -65,40 +40,34 @@
         "auto_fold_dirs": false,
         "default_width": 400,
         "entry_spacing": "standard",
-        "indent_guides": {
-            "show": "always"
-        },
+        "indent_guides": { "show": "always" },
         "indent_size": 12
     },
     "relative_line_numbers": true,
     "scroll_sensitivity": 3,
     "search": { "case_sensitive": true, "regex": false, "whole_word": false },
+    "show_edit_predictions": true,
+    "soft_wrap": "none",
     "tab_bar": {
         "show_nav_history_buttons": false,
         "show_tab_bar_buttons": false
     },
     "tab_size": 4,
-    "tabs": {
-        "git_status": true,
-        "show_diagnostics": "all"
-    },
-    "active_pane_modifiers": {
-        "inactive_opacity": 0.75
-    },
+    "tabs": { "git_status": true, "show_diagnostics": "all" },
+    "telemetry": { "diagnostics": true, "metrics": false },
     "terminal": {
-        // Powerline font necessary for oh-my-bash context renderer (git branch, etc.)
-        "font_family": "DejaVu Sans Mono",
+        "button": false,
+        "font_family": "JetBrainsMono Nerd Font",
         "font_size": 12
     },
+    "theme": { "mode": "system", "light": "One Light", "dark": "Ayu Dark" },
     "toolbar": {
         "quick_actions": false,
         "selections_menu": false,
         "breadcrumbs": false
     },
-    "git": {
-        "inline_blame": { "show_commit_summary": true }
-    },
-    "ui_font_family": "DejaVu Sans Mono",
+    "ui_font_family": "JetBrainsMono Nerd Font",
+    "ui_font_size": 12,
     "use_autoclose": false,
     "use_smartcase_search": true,
     "vim": {
@@ -108,6 +77,7 @@
         "highlight_on_yank_duration": 100,
         "use_system_clipboard": "always"
     },
-    "collaboration_panel": { "dock": "right" },
-    "soft_wrap": "none"
+    "collaboration_panel": { "button": false },
+    "git_panel": { "dock": "right" },
+    "vim_mode": true
 }
