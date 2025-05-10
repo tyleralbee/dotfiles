@@ -1,4 +1,68 @@
 [
+    {
+        "bindings": {
+            // Open/Close Terminal
+            "ctrl-shift-i": "workspace::ToggleBottomDock",
+
+            "alt-[": "workspace::ToggleLeftDock",
+            "alt-]": "workspace::ToggleRightDock",
+
+            "alt-,": "zed::OpenSettings",
+            "alt-.": "zed::OpenKeymap",
+
+            "alt-<": "zed::OpenDefaultSettings",
+            "alt->": "zed::OpenDefaultKeymap",
+            "alt-shift-/": "vim::OpenDefaultKeymap",
+
+            // Project file search, command palette
+            "alt-j": "menu::SelectNext",
+            "alt-k": "menu::SelectPrevious"
+        }
+    },
+    {
+        "context": "Workspace",
+        "bindings": {
+            // Prefix key
+            "alt-a": null,
+            "alt-a x": "pane::CloseActiveItem",
+
+            "alt-shift-a": "agent::ToggleFocus",
+            "alt-shift-g": "git_panel::ToggleFocus",
+            "alt-shift-p": "project_panel::ToggleFocus",
+
+            // Pane navigation
+            "alt-h": "workspace::ActivatePaneLeft",
+            "alt-j": "workspace::ActivatePaneDown",
+            "alt-k": "workspace::ActivatePaneUp",
+            "alt-l": "workspace::ActivatePaneRight"
+        }
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "ctrl-.": "editor::ToggleCodeActions",
+            "ctrl-j": "editor::AddSelectionBelow",
+            "ctrl-k": "editor::AddSelectionAbove",
+
+            "ctrl-shift-j": "editor::MoveLineDown",
+            "ctrl-shift-k": "editor::MoveLineUp",
+
+            "alt-f": "editor::Format",
+            "alt-space": "editor::ToggleCodeActions",
+
+            "alt-shift-i": "editor::SplitSelectionIntoLines",
+            "alt-shift-r": "editor::RestartLanguageServer",
+            "alt-shift-h": "pane::SplitLeft",
+            "alt-shift-l": "pane::SplitRight"
+        }
+    },
+    // Remove collaborator panel keybind
+    {
+        "context": "!Terminal",
+        "bindings": {
+            "ctrl-shift-c": "editor::Copy"
+        }
+    },
     // Alias ctrl-w commands
     {
         "context": "VimControl && !menu",
@@ -15,7 +79,6 @@
     {
         "context": "vim_mode == insert",
         "bindings": {
-            "alt-a": null,
             "alt-a o": "editor::ShowCompletions",
             "alt-a a": "assistant::InlineAssist", // zed specific
             "alt-a c": "editor::ShowEditPrediction", // zed specific
@@ -33,10 +96,7 @@
     // Multicursor in normal, visual, operator, and insert modes if not in a menu
     {
         "context": "(VimControl || vim_mode == insert) && !menu",
-        "bindings": {
-            "alt-j": "editor::AddSelectionBelow",
-            "alt-k": "editor::AddSelectionAbove"
-        }
+        "bindings": {}
     },
     // vim-surround
     {
@@ -53,31 +113,6 @@
             "shift-s": "vim::PushSneakBackward"
         }
     },
-    // TODO: Use alt-j and alt-k instead of ctrl-d and ctrl-u for scrolling
-    // - This currently doesn't work because hover hints are not in the menu context
-    // {
-    //     "context": "menu",
-    //     "bindings": {
-    //         "alt-j": "vim::ScrollDown",
-    //         "alt-k": "vim::ScrollUp"
-    //     }
-    // },
-    {
-        "context": "Editor",
-        "bindings": {
-            "ctrl-.": "editor::ToggleCodeActions",
-
-            "alt-f": "editor::Format",
-            "alt-h": "workspace::ActivatePaneLeft",
-            "alt-l": "workspace::ActivatePaneRight",
-            "alt-space": "editor::ToggleCodeActions",
-
-            "alt-shift-i": "editor::SplitSelectionIntoLines",
-            "alt-shift-j": "editor::MoveLineDown",
-            "alt-shift-k": "editor::MoveLineUp",
-            "alt-shift-r": "editor::RestartLanguageServer"
-        }
-    },
     {
         "context": "Editor && !menu",
         "bindings": {
@@ -88,68 +123,16 @@
             // vim default: visual block mode
             "ctrl-v": "editor::Paste",
             // vim default: page down
-            "ctrl-f": "buffer_search::Deploy",
-            // vim default: increment
-            "ctrl-a": "editor::SelectAll"
+            "ctrl-f": "buffer_search::Deploy"
         }
     },
-    {
-        "bindings": {
-            // Toggle between Terminal and Editor without closing terminal
-            "ctrl-shift-k": "terminal_panel::ToggleFocus",
-            // Open/Close Terminal
-            "ctrl-shift-i": "workspace::ToggleBottomDock",
 
-            "alt-[": "workspace::ToggleLeftDock",
-            "alt-]": "workspace::ToggleRightDock",
-
-            "alt-,": "zed::OpenSettings",
-            "alt-.": "zed::OpenKeymap",
-
-            "alt-shift-,": "zed::OpenDefaultSettings",
-            "alt-shift-.": "zed::OpenDefaultKeymap",
-            "alt-shift-/": "vim::OpenDefaultKeymap",
-
-            // Project file search, command palette
-            "alt-j": "menu::SelectNext",
-            "alt-k": "menu::SelectPrevious"
-        }
-    },
     // Code Actions, Autocomplete
     {
         "context": "Editor && (showing_code_actions || showing_completions)",
         "bindings": {
             "alt-j": "editor::ContextMenuNext",
             "alt-k": "editor::ContextMenuPrevious"
-        }
-    },
-    // Split Panes
-    {
-        "context": "Pane",
-        "bindings": {
-            "alt-shift-h": "pane::SplitLeft",
-            "alt-shift-l": "pane::SplitRight"
-        }
-    },
-    // Firefox Developer Keyboard Shortcuts (kind of) + Pane Navigation from Terminal
-    {
-        "context": "Terminal",
-        "bindings": {
-            // Pane navigation
-            "alt-h": "workspace::ActivatePaneLeft",
-            "alt-j": "workspace::ActivatePaneDown",
-            "alt-k": "workspace::ActivatePaneUp",
-            "alt-l": "workspace::ActivatePaneRight"
-        }
-    },
-    // Pane Navigation from Project Panel
-    {
-        "context": "ProjectPanel",
-        "bindings": {
-            "alt-h": "workspace::ActivatePaneLeft",
-            "alt-j": "workspace::ActivatePaneDown",
-            "alt-k": "workspace::ActivatePaneUp",
-            "alt-l": "workspace::ActivatePaneRight"
         }
     },
     // Custom formatters
@@ -165,12 +148,14 @@
                 }
             ]
         }
-    },
-    // Remove collaborator panel keybind
-    {
-        "context": "!Terminal",
-        "bindings": {
-            "ctrl-shift-c": "editor::Copy"
-        }
     }
+    // TODO: Use alt-j and alt-k instead of ctrl-d and ctrl-u for scrolling
+    // - This currently doesn't work because hover hints are not in the menu context
+    // {
+    //     "context": "menu",
+    //     "bindings": {
+    //         "alt-j": "vim::ScrollDown",
+    //         "alt-k": "vim::ScrollUp"
+    //     }
+    // },
 ]
