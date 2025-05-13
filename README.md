@@ -67,4 +67,4 @@ echo 'source ~/completion-for-pnpm.bash' >> ~/.bashrc
 ## Resources
 
 - [Stow has forever changed the way I manage my dotfiles](https://www.youtube.com/watch?v=y6XCebnB9gs)
-
+- [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm?tab=readme-ov-file#tmux-plugin-manager)
