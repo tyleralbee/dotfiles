@@ -105,3 +105,6 @@ complete -C /usr/bin/tofu tofu
 
 # nvim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# bash-completion
+export BASH_COMPLETION_USER_DIR="$HOME/.local/share/bash-completion"
