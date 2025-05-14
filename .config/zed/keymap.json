@@ -138,7 +138,7 @@
     },
     // Custom formatters
     {
-        "context": "Editor && extension == tf",
+        "context": "Editor && (extension == tf || extension == tfvars)",
         "bindings": {
             "alt-f": [
                 "task::Spawn",

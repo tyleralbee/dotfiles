@@ -3,5 +3,20 @@
         "prefix": "codeblock",
         "body": ["```$1", "$0", "```"],
         "description": "Code block"
+    },
+    "toc": {
+        "prefix": "toc",
+        "body": [
+            "<details>",
+            "",
+            "<summary>Table of Contents</summary>",
+            "",
+            "<!-- toc -->",
+            "",
+            "<!-- tocstop -->",
+            "",
+            "</details>"
+        ],
+        "description": "Table of Contents"
     }
 }
