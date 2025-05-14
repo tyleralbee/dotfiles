@@ -103,3 +103,5 @@ complete -C /usr/bin/tofu tofu
 # rustup
 . "$HOME/.cargo/env"
 
+# nvim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
