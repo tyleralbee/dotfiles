@@ -14,6 +14,7 @@ alias src='source ~/.bashrc'
 alias ts='sudo -E timeshift-gtk'
 alias dotfiles='tmux new-session -A -s dotfiles -c ~/dotfiles'
 alias copy='wl-copy <' # Copy file to clipboard ('copy example.txt')
+alias vim='nvim'
 
 # ======== functions ========
 # Alert after long running commands ('sleep 10; alert')
