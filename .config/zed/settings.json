@@ -29,15 +29,18 @@
         ],
         "LOG": ["*.log", "*.log.*"]
     },
-    "git_panel": { "dock": "right", "default_width": 640 },
-    "gutter": { "code_actions": false },
     "formatter": "prettier",
     "languages": {
+        "Markdown": {
+            "soft_wrap": "editor_width"
+        },
         "Shell Script": {
             "formatter": "prettier"
         }
     },
     "git": { "inline_blame": { "show_commit_summary": true } },
+    "git_panel": { "dock": "right", "default_width": 640 },
+    "gutter": { "code_actions": false },
     "icon_theme": "Zed (Default)",
     "notification_panel": {
         "button": false
