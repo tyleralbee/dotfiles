@@ -1,0 +1,7 @@
+# linux
+*~
+
+# direnv stuff
+.direnv
+.envrc
+

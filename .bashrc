@@ -84,7 +84,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pnpm
-export PNPM_HOME="/home/tyler/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -108,3 +108,6 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # bash-completion
 export BASH_COMPLETION_USER_DIR="$HOME/.local/share/bash-completion"
+
+# https://direnv.net/docs/hook.html#bash
+eval "$(direnv hook bash)"

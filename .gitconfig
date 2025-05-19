@@ -1,6 +1,8 @@
 # local/private config
 [include]
-        path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
+[core]
+  excludesfile = ~/.gitignore_global
 [alias]
 	amend = commit --amend -C HEAD
 	br = branch
