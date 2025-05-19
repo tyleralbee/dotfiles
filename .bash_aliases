@@ -25,3 +25,8 @@ alias hypr='tmux new-session -A -s hypr -c $HOME/.config/hypr'
 alias hyprbinds='$EDITOR $HOME/.config/hypr/UserConfigs/UserKeybinds.conf'
 alias hyprsettings='$EDITOR $HOME/.config/hypr/UserConfigs/UserSettings.conf'
 
+# ======== obsidian =========
+alias obsidian-personal='tmux new-session -A -s obsidian-personal -c $OBSIDIAN_VAULT_PERSONAL'
+alias obsidian-work='tmux new-session -A -s obsidian-work -c $OBSIDIAN_VAULT_WORK'
+alias obsidian='obsidian-personal'
+
