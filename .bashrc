@@ -90,10 +90,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-if [ -f ~/completion-for-pnpm.bash ]; then
-    . ~/completion-for-pnpm.bash
-fi
-
 # azure-functions-core-tools-4
 export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT="1"
 
