@@ -20,13 +20,13 @@ return {
       {
         name = "personal",
         path = function()
-          return assert(vim.fs.dirname(vim.env.OBSIDIAN_VAULT_PERSONAL))
+          return assert(vim.env.OBSIDIAN_VAULT_PERSONAL)
         end,
       },
       {
         name = "work",
         path = function()
-          return assert(vim.fs.dirname(vim.env.OBSIDIAN_VAULT_WORK))
+          return assert(vim.env.OBSIDIAN_VAULT_WORK)
         end,
       },
     },
