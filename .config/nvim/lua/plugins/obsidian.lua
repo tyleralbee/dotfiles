@@ -19,11 +19,15 @@ return {
     workspaces = {
       {
         name = "personal",
-        path = "~/orgs/tyleralbee/tyleralbee-remote-obsidian-vault",
+        path = function()
+          return assert(vim.fs.dirname(vim.env.OBSIDIAN_VAULT_PERSONAL))
+        end,
       },
       {
         name = "work",
-        path = "~/orgs/cabinllc/cabinllc-shared-remote-obsidian-vault",
+        path = function()
+          return assert(vim.fs.dirname(vim.env.OBSIDIAN_VAULT_WORK))
+        end,
       },
     },
   },
