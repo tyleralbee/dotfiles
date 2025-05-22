@@ -10,6 +10,7 @@
     "buffer_font_family": "JetBrainsMono Nerd Font",
     "buffer_font_size": 12,
     "collaboration_panel": { "button": false },
+    "diagnostics": { "button": false },
     "edit_predictions": {
         "mode": "eager",
         "copilot": { "proxy": null, "proxy_no_verify": null },
@@ -59,7 +60,12 @@
     },
     "relative_line_numbers": true,
     "scroll_sensitivity": 3,
-    "search": { "case_sensitive": true, "regex": false, "whole_word": false },
+    "search": {
+        "button": false,
+        "case_sensitive": true,
+        "regex": false,
+        "whole_word": false
+    },
     "show_edit_predictions": true,
     "soft_wrap": "none",
     "tab_bar": {
@@ -75,6 +81,7 @@
         "font_size": 12
     },
     "theme": { "mode": "system", "light": "One Light", "dark": "Ayu Dark" },
+    "title_bar": { "show_branch_icon": true, "show_project_items": false },
     "toolbar": {
         "quick_actions": false,
         "selections_menu": false,
