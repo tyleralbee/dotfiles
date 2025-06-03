@@ -1,7 +1,7 @@
 {
     "active_pane_modifiers": { "inactive_opacity": 0.75 },
     "agent": {
-        "default_model": { "provider": "copilot_chat", "model": "o3-mini" },
+        "default_model": { "provider": "anthropic", "model": "claude-3-7-sonnet-latest" },
         "version": "2",
         "default_width": 640
     },
@@ -30,13 +30,9 @@
         ],
         "LOG": ["*.log", "*.log.*"]
     },
-    "formatter": "prettier",
     "languages": {
         "Markdown": {
             "soft_wrap": "editor_width"
-        },
-        "Shell Script": {
-            "formatter": "prettier"
         }
     },
     "git": { "inline_blame": { "show_commit_summary": true } },
