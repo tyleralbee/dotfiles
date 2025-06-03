@@ -3,7 +3,7 @@
 clipboard-trim-trailing-spaces = true
 font-family = JetBrainsMono Nerd Font
 font-size = 10
-scrollback-limit = 10000000
+scrollback-limit = 1000000
 
 # Keybindings
 
