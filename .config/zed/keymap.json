@@ -103,6 +103,7 @@
     {
         "context": "vim_mode == visual",
         "bindings": {
+            "alt-s": "editor::SortLinesCaseInsensitive",
             "s": ["vim::PushAddSurrounds", {}]
         }
     },
@@ -149,14 +150,17 @@
                 }
             ]
         }
+    },
+    {
+        "context": "Editor && extension==md",
+        "bindings": {
+            "ctrl-~": ["workspace::SendKeystrokes", "escape i ` ` ` b a s h enter ` ` ` escape O"]
+        }
+    },
+    {
+        "context": "Editor && extension==md && vim_mode==visual",
+        "bindings": {
+            "ctrl-~": ["workspace::SendKeystrokes", "s ` a ` ` b a s h space escape d f ` o escape p f ` i enter ` ` escape b i backspace escape B i backspace escape V <"]
+        }
     }
-    // TODO: Use alt-j and alt-k instead of ctrl-d and ctrl-u for scrolling
-    // - This currently doesn't work because hover hints are not in the menu context
-    // {
-    //     "context": "menu",
-    //     "bindings": {
-    //         "alt-j": "vim::ScrollDown",
-    //         "alt-k": "vim::ScrollUp"
-    //     }
-    // },
 ]

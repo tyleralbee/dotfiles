@@ -1,7 +1,10 @@
 {
     "active_pane_modifiers": { "inactive_opacity": 0.75 },
     "agent": {
-        "default_model": { "provider": "anthropic", "model": "claude-3-7-sonnet-latest" },
+        "default_model": {
+            "provider": "anthropic",
+            "model": "claude-3-7-sonnet-latest"
+        },
         "version": "2",
         "default_width": 640
     },
@@ -10,6 +13,7 @@
     "buffer_font_family": "JetBrainsMono Nerd Font",
     "buffer_font_size": 12,
     "collaboration_panel": { "button": false },
+    "current_line_highlight": "gutter",
     "diagnostics": { "button": false },
     "edit_predictions": {
         "mode": "eager",
@@ -55,6 +59,15 @@
         "indent_size": 12
     },
     "relative_line_numbers": true,
+    "scrollbar": {
+        "axes": {
+            "horizontal": false
+        },
+        "cursors": false,
+        "diagnostics": "warning",
+        "git_diff": true,
+        "search_results": true
+    },
     "scroll_sensitivity": 3,
     "search": {
         "button": false,
@@ -77,21 +90,25 @@
         "font_size": 12
     },
     "theme": { "mode": "system", "light": "One Light", "dark": "Ayu Dark" },
-    "title_bar": { "show_branch_icon": true, "show_project_items": false },
+    "title_bar": {
+        "show_branch_icon": true,
+        "show_project_items": false,
+        "show_user_picture": false
+    },
     "toolbar": {
+        "breadcrumbs": false,
         "quick_actions": false,
-        "selections_menu": false,
-        "breadcrumbs": false
+        "selections_menu": false
     },
     "ui_font_family": "JetBrainsMono Nerd Font",
     "ui_font_size": 12,
     "use_autoclose": false,
     "use_smartcase_search": true,
     "vim": {
+        "highlight_on_yank_duration": 100,
+        "toggle_relative_line_numbers": true,
         "use_multiline_find": true,
         "use_smartcase_find": true,
-        "toggle_relative_line_numbers": true,
-        "highlight_on_yank_duration": 100,
         "use_system_clipboard": "always"
     },
     "vim_mode": true
