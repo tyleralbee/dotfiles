@@ -72,7 +72,7 @@ if ! shopt -oq posix; then
 fi
 
 # defaults
-export VISUAL='nvim'
+export VISUAL='zed'
 export EDITOR="$VISUAL"
 
 # Required for Zed (IDE) to be run from the command line
