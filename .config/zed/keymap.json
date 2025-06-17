@@ -128,7 +128,6 @@
             "ctrl-f": "buffer_search::Deploy"
         }
     },
-
     // Code Actions, Autocomplete
     {
         "context": "Editor && (showing_code_actions || showing_completions)",
@@ -151,16 +150,89 @@
             ]
         }
     },
+    // Mirror `.obsidian/keymap.json` for Markdown
     {
         "context": "Editor && extension==md",
         "bindings": {
-            "ctrl-~": ["workspace::SendKeystrokes", "escape i ` ` ` b a s h enter ` ` ` escape O"]
+            // "ctrl-0": "editor:remove-heading"
+            "ctrl-0": [
+                "workspace::SendKeystrokes",
+                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / / enter escape ` m"
+            ],
+            // "ctrl-1": "editor:set-heading-1"
+            "ctrl-1": [
+                "workspace::SendKeystrokes",
+                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / # space / enter escape ` m"
+            ],
+            // "ctrl-2": "editor:set-heading-2"
+            "ctrl-2": [
+                "workspace::SendKeystrokes",
+                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / # # space / enter escape ` m"
+            ],
+            // "ctrl-3": "editor:set-heading-3"
+            "ctrl-3": [
+                "workspace::SendKeystrokes",
+                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / # # # space / enter escape ` m"
+            ],
+            // "ctrl-4": "editor:set-heading-4"
+            "ctrl-4": [
+                "workspace::SendKeystrokes",
+                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / # # # # space / enter escape ` m"
+            ],
+            // "ctrl-5": "editor:set-heading-5"
+            "ctrl-5": [
+                "workspace::SendKeystrokes",
+                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / # # # # # space / enter escape ` m"
+            ],
+            // "ctrl-6": "editor:set-heading-6"
+            "ctrl-6": [
+                "workspace::SendKeystrokes",
+                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / # # # # # # space / enter escape ` m"
+            ],
+            // "Insert code block" (needs improvement)
+            "ctrl-~": [
+                "workspace::SendKeystrokes",
+                "escape i ` ` ` b a s h enter ` ` ` escape O"
+            ],
+            "ctrl-v": "editor::Paste"
+            
+            // TODO: Implement the rest of the keybindings
+            // 
+            // "alt-/": "templater-obsidian:templates/template-info.md",
+            // "alt-b": "editor:toggle-bullet-list",
+            // "alt-c": "templater-obsidian:templates/template-task.md",
+            // "alt-d": "insert-current-date",
+            // "alt-enter": "templater-obsidian:jump-to-next-cursor-location",
+            // "alt-g": "link-with-alias:create-link-with-alias",
+            // "alt-i": "editor:toggle-italics",
+            // "alt-m": "editor:toggle-inline-math",
+            // "alt-n": "editor:toggle-numbered-list",
+            // "alt-o": "link-with-alias:toggle-link-display-text",
+            // "alt-s": "editor:toggle-source",
+            // "alt-shift-d": "templater-obsidian:insert-templates/date.md",
+            // "alt-shift-e": "open-with-default-app:show",
+            // "alt-shift-m": "file-explorer:move-file",
+            // "alt-shift-t": "templater-obsidian:templates/template-time.md",
+            // "alt-shift-z": "editor:fold-all",
+            // "alt-t": "insert-current-time",
+            // "alt-w": "table-editor-obsidian:evaluate-formulas",
+            // "alt-x": "templater-obsidian:templates/template-index.md",
+            // "alt-y": "editor:toggle-highlight",
+            // "alt-z": "editor:toggle-fold",
+            // "ctrl-'": "mrj-jump-to-link:activate-jump-to-link",
+            // "ctrl-`": "editor:toggle-code",
+            // "ctrl-b": "editor:toggle-bold",
+            // "ctrl-g": "editor:insert-link",
+            // "ctrl-shift-c": "obsidian-tasks-plugin:toggle-done"
         }
     },
     {
         "context": "Editor && extension==md && vim_mode==visual",
         "bindings": {
-            "ctrl-~": ["workspace::SendKeystrokes", "s ` a ` ` b a s h space escape d f ` o escape p f ` i enter ` ` escape b i backspace escape B i backspace escape V <"]
+            "ctrl-~": [
+                "workspace::SendKeystrokes",
+                "s ` a ` ` b a s h space escape d f ` o escape p f ` i enter ` ` escape b i backspace escape B i backspace escape V <"
+            ]
         }
     }
 ]
