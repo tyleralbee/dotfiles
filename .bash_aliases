@@ -8,12 +8,13 @@ alias zed='zed --wait'
 
 # ======== shorthand ========
 alias c='clear'
+alias copy='wl-copy <' # Copy file to clipboard ('copy example.txt')
+alias dotfiles='tmux new-session -A -s dotfiles -c ~/dotfiles'
 alias l='ls'
 alias pn='pnpm'
 alias src='source ~/.bashrc'
+alias tm='tmux'
 alias ts='sudo -E timeshift-gtk'
-alias dotfiles='tmux new-session -A -s dotfiles -c ~/dotfiles'
-alias copy='wl-copy <' # Copy file to clipboard ('copy example.txt')
 alias vim='nvim'
 
 # ======== functions ========
