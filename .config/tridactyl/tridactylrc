@@ -12,11 +12,11 @@ set smoothscroll true
 bind / fillcmdline find
 bind ? fillcmdline find -?
 bind N composite js tri.findReverse ? 1 : -1 | findnext
-bind X undo tab_strict
+bind T undo
 bind d scrollpage 0.5
 bind n composite js tri.findReverse ? -1 : 1 | findnext
 bind u scrollpage -0.5
-bind x tabclose-select
+bind x tabclose
 
 " Only hint search results on Google
 " https://github.com/tridactyl/tridactyl/blob/master/doc/newsletters/tips-and-tricks/1-hint-css-selectors.md
