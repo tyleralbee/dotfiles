@@ -1,6 +1,19 @@
+// Choose bindings based on CONTEXT:
+//
+// | Modifier | CONTEXT                  | Implication                                                                                       |
+// | -------- | ------------------------ | ------------------------------------------------------------------------------------------------- |
+// | `SUPER`  | `SYSTEM` (e.g. Arch)     | The keyboard shortcut will work regardless of which program is in focus.                          |
+// | `ALT`    | `PROCESS` (e.g. Chrome)  | The keyboard shortcut depends on the program in focus to execute some action.                     |
+// | `CTRL`   | `THREAD` (e.g. bing.com) | A component of the currently focused program will handle the action.                              |
+// | `SHIFT`  |                          | Related, but less common and/or more impactful than the action taken had `SHIFT` not been pressed |
+//
 [
     {
         "bindings": {
+            // Remove default keybindings
+            "ctrl-shift-c": null, // collaborator panel
+            
+
             // Open/Close Terminal
             "ctrl-shift-i": "workspace::ToggleBottomDock",
 
@@ -29,32 +42,34 @@
 
             "alt-shift-a": "agent::ToggleFocus",
             "alt-shift-g": "git_panel::ToggleFocus",
-            "alt-shift-p": "project_panel::ToggleFocus",
 
             // Pane navigation
             "alt-h": "workspace::ActivatePaneLeft",
-            "alt-j": "workspace::ActivatePaneDown",
-            "alt-k": "workspace::ActivatePaneUp",
-            "alt-l": "workspace::ActivatePaneRight"
+            // "alt-j": "workspace::ActivatePaneDown",
+            // "alt-k": "workspace::ActivatePaneUp",
+            "alt-l": "workspace::ActivatePaneRight",
+
+            // Moving application defaults off of ctrl onto alt
+            "alt-p": "file_finder::Toggle",
+            "alt-shift-p": "command_palette::Toggle"
         }
     },
     {
         "context": "Editor",
         "bindings": {
-            "ctrl-.": "editor::ToggleCodeActions",
-            "ctrl-j": "editor::AddSelectionBelow",
-            "ctrl-k": "editor::AddSelectionAbove",
-
-            "ctrl-shift-j": "editor::MoveLineDown",
-            "ctrl-shift-k": "editor::MoveLineUp",
-
-            "alt-f": "editor::Format",
             "alt-space": "editor::ToggleCodeActions",
+            "alt-f": "editor::Format",
+            "alt-j": "editor::AddSelectionBelow",
+            "alt-k": "editor::AddSelectionAbove",
 
-            "alt-shift-i": "editor::SplitSelectionIntoLines",
-            "alt-shift-r": "editor::RestartLanguageServer",
             "alt-shift-h": "pane::SplitLeft",
-            "alt-shift-l": "pane::SplitRight"
+            "alt-shift-i": "editor::SplitSelectionIntoLines",
+            "alt-shift-j": "editor::MoveLineDown",
+            "alt-shift-k": "editor::MoveLineUp",
+            "alt-shift-l": "pane::SplitRight",
+            "alt-shift-r": "editor::RestartLanguageServer",
+            "alt-shift-s": "editor::SortLinesCaseInsensitive",
+            "alt-shift-v": "markdown::OpenPreviewToTheSide"
         }
     },
     // Remove collaborator panel keybind
@@ -103,7 +118,6 @@
     {
         "context": "vim_mode == visual",
         "bindings": {
-            "alt-s": "editor::SortLinesCaseInsensitive",
             "s": ["vim::PushAddSurrounds", {}]
         }
     },
@@ -152,7 +166,7 @@
     },
     // Mirror `.obsidian/keymap.json` for Markdown
     {
-        "context": "Editor && extension==md",
+        "context": "Editor && (extension==md || extension==markdown || extension==mdx)",
         "bindings": {
             // "ctrl-0": "editor:remove-heading"
             "ctrl-0": [
@@ -195,9 +209,9 @@
                 "escape i ` ` ` b a s h enter ` ` ` escape O"
             ],
             "ctrl-v": "editor::Paste"
-            
+
             // TODO: Implement the rest of the keybindings
-            // 
+            //
             // "alt-/": "templater-obsidian:templates/template-info.md",
             // "alt-b": "editor:toggle-bullet-list",
             // "alt-c": "templater-obsidian:templates/template-task.md",

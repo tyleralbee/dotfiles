@@ -69,7 +69,7 @@
         "git_diff": true,
         "search_results": true
     },
-    "scroll_sensitivity": 3,
+    "scroll_sensitivity": 1,
     "search": {
         "button": false,
         "case_sensitive": true,
