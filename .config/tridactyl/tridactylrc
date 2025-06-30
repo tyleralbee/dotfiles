@@ -1,8 +1,28 @@
-" Only hint search results on Google and DDG
+" vim: filetype=vim
+
+" This wipes all existing settings. Settings removed from this config will
+" return to default
+sanitize tridactyllocal tridactylsync
+
+" TODO: Swap to Firefox Home once supported
+set newtab about:blank
+set smoothscroll true
+
+" Vimium settings
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind N composite js tri.findReverse ? 1 : -1 | findnext
+bind X undo tab_strict
+bind d scrollpage 0.5
+bind n composite js tri.findReverse ? -1 : 1 | findnext
+bind u scrollpage -0.5
+bind x tabclose-select
+
+" Only hint search results on Google
 " https://github.com/tridactyl/tridactyl/blob/master/doc/newsletters/tips-and-tricks/1-hint-css-selectors.md
-bindurl www.google.com f hint -Jc .rc > div > a
-bindurl www.google.com F hint -Jbc .rc > div > a
+bindurl www.google.com f hint -Jc #search a
+bindurl www.google.com F hint -Jbc #search a
 
-bindurl ^https://duckduckgo.com f hint -Jc [class=result__a]
-bindurl ^https://duckduckgo.com F hint -Jbc [class=result__a]
-
+" Don't run Tridactyl on some web sites because it doesn't work well, or
+" because the web site has its own keybindings.
+autocmd DocStart mail.google.com mode ignore
