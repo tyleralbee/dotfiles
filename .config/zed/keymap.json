@@ -12,7 +12,6 @@
         "bindings": {
             // Remove default keybindings
             "ctrl-shift-c": null, // collaborator panel
-            
 
             // Open/Close Terminal
             "ctrl-shift-i": "workspace::ToggleBottomDock",
@@ -88,7 +87,25 @@
             "alt-a shift-d": "editor::GoToTypeDefinitionSplit",
             "alt-a g shift-d": "editor::GoToTypeDefinitionSplit",
             "alt-a space": "editor::OpenExcerptsSplit",
-            "alt-a g space": "editor::OpenExcerptsSplit"
+            "alt-a g space": "editor::OpenExcerptsSplit",
+
+            // Replacing deprecated "use-multiline-find" setting
+            "f": [
+                "vim::PushFindForward",
+                { "before": false, "multiline": true }
+            ],
+            "t": [
+                "vim::PushFindForward",
+                { "before": true, "multiline": true }
+            ],
+            "shift-f": [
+                "vim::PushFindBackward",
+                { "after": false, "multiline": true }
+            ],
+            "shift-t": [
+                "vim::PushFindBackward",
+                { "after": true, "multiline": true }
+            ]
         }
     },
     // Alias ctrl-x commands

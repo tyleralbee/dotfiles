@@ -108,7 +108,6 @@
     "vim": {
         "highlight_on_yank_duration": 100,
         "toggle_relative_line_numbers": true,
-        "use_multiline_find": true,
         "use_smartcase_find": true,
         "use_system_clipboard": "always"
     },
