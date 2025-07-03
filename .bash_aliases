@@ -12,14 +12,13 @@ alias c='clear'
 alias l='ls'
 alias pn='pnpm'
 alias tm='tmux'
-alias vim='nvim'
 
-alias dotfiles='tmux new -A -s dotfiles -c ~/dotfiles'
+alias dotfiles='tmux new -A -s dotfiles -c $HOME/dotfiles'
 alias hypr='$EDITOR $HOME/.config/hypr/hyprland.conf'
 alias obsidian-personal='tmux new -A -s obsidian-personal -c $OBSIDIAN_VAULT_PERSONAL'
 alias obsidian-work='tmux new -A -s obsidian-work -c $OBSIDIAN_VAULT_WORK'
 alias obsidian='obsidian-personal'
-alias src='source ~/.bashrc'
+alias src='source $HOME/.bashrc'
 alias ts='sudo -E timeshift-gtk'
 
 # ======== functions ========
@@ -29,6 +28,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # usage: `copy example.txt`
 alias copy='wl-copy <'
 
-# bash completion for aliases
-# https://unix.stackexchange.com/a/332522
-. ~/.complete_alias
+# ======== completions ========
+complete -F _complete_alias "${!BASH_ALIASES[@]}"
+

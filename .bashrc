@@ -56,11 +56,18 @@ xterm*|rxvt*)
     ;;
 esac
 
+# complete-alias (tab completion for aliases)
+# https://unix.stackexchange.com/a/332522
+# .bash_aliases uses this via `complete -F _complete_alias "${!BASH_ALIASES[@]}"`
+if [ -f $HOME/.complete_alias ]; then
+    . $HOME/.complete_alias
+fi
 
 # aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f $HOME/.bash_aliases ]; then
+    . $HOME/.bash_aliases
 fi
+
 
 # completions
 if ! shopt -oq posix; then
@@ -107,3 +114,4 @@ export BASH_COMPLETION_USER_DIR="$HOME/.local/share/bash-completion"
 
 # https://direnv.net/docs/hook.html#bash
 eval "$(direnv hook bash)"
+
