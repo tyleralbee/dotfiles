@@ -10,9 +10,11 @@ set smoothscroll true
 
 " Vimium settings
 bind / fillcmdline find
-bind ? fillcmdline find -?
+bind ? help
 bind N composite js tri.findReverse ? 1 : -1 | findnext
 bind T undo
+bind V findselect
+bind ZZ tabclose
 bind d scrollpage 0.5
 bind n composite js tri.findReverse ? -1 : 1 | findnext
 bind u scrollpage -0.5
