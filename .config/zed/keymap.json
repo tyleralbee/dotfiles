@@ -105,6 +105,12 @@
             "shift-t": [
                 "vim::PushFindBackward",
                 { "after": true, "multiline": true }
+            ],
+
+            // Oil
+            "-": [
+                "task::Spawn",
+                { "task_name": "Oil", "reveal_target": "center" }
             ]
         }
     },
