@@ -4,7 +4,6 @@ alias diff='zed --diff'         # use Zed instead of GNU diff
 alias grep='grep --color=auto'  # color
 alias ls='ls -aCF --color=auto' # hidden files, columns, suffixes, color
 alias mv='mv -iv'               # confirm overwrite, verbose
-alias rg="rg --hidden --glob '!.git'" # ripgrep will search hidden files, but ignore .git
 alias wget='wget -c'            # resume download
 
 # ======== shorthand ========

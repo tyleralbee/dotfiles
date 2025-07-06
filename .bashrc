@@ -112,6 +112,10 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # bash-completion
 export BASH_COMPLETION_USER_DIR="$HOME/.local/share/bash-completion"
 
+# ripgrep (`rg`)
+# .rgignore MUST BE `~/.rgignore`, storing config in home for consistency
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
 # https://direnv.net/docs/hook.html#bash
 eval "$(direnv hook bash)"
 
