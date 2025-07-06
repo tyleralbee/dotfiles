@@ -1,19 +1,4 @@
 {
-    "context_servers": {
-        "Neon": {
-            "source": "custom",
-            "enabled": true,
-            "command": {
-                "path": "npx",
-                "args": [
-                    "-y",
-                    "mcp-remote",
-                    "https://mcp.neon.tech/mcp"
-                ],
-                "env": {}
-            }
-        }
-    },
     "active_pane_modifiers": { "inactive_opacity": 0.75 },
     "agent": {
         "default_model": {
@@ -28,6 +13,17 @@
     "buffer_font_family": "JetBrainsMono Nerd Font",
     "buffer_font_size": 12,
     "collaboration_panel": { "button": false },
+    "context_servers": {
+        "Neon": {
+            "source": "custom",
+            "enabled": true,
+            "command": {
+                "path": "npx",
+                "args": ["-y", "mcp-remote", "https://mcp.neon.tech/mcp"],
+                "env": {}
+            }
+        }
+    },
     "current_line_highlight": "gutter",
     "diagnostics": { "button": false },
     "edit_predictions": {
@@ -111,7 +107,7 @@
         "show_project_items": false,
         "show_user_picture": false
     },
-    
+
     "toolbar": {
         "breadcrumbs": false,
         "quick_actions": false,
