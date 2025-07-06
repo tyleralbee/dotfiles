@@ -1,0 +1,23 @@
+# Cap super long lines, show preview
+--max-columns=150
+--max-columns-preview
+
+# Search hidden files
+--hidden
+
+# Ignore irrelevant directories
+--glob=!.azure/*
+--glob=!.azurite/*
+--glob=!.cache/*
+--glob=!.git/*
+--glob=!.next/*
+--glob=!.terraform/*
+--glob=!.turbo/*
+--glob=!.vercel/*
+--glob=!build/*
+--glob=!node_modules/*
+--glob=!out/*
+
+# Care about capitalization only if Capitalization is used in search
+--smart-case
+
