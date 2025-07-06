@@ -21,3 +21,6 @@
 # Care about capitalization only if Capitalization is used in search
 --smart-case
 
+# Include symlinks
+-L
+
