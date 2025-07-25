@@ -29,5 +29,26 @@
             "};"
         ],
         "description": "Creates a Storybook story for the ${1:Component} component."
+    },
+    "React component": {
+        "prefix": "component",
+        "body": [
+            "import styles from \"./${1:Component}.module.css\";",
+            "",
+            "import * as React from \"react\";",
+            "",
+            "type ${1:Component}Props = {",
+            "    ${2:propName}?: ${3:propType};",
+            "};",
+            "",
+            "export function ${1:Component}({ ${2:propName} }: ${1:Component}Props) {",
+            "    return (",
+            "        <div className={styles.container}>",
+            "            $0",
+            "        </div>",
+            "    );",
+            "}"
+        ],
+        "description": "Creates a React component with a CSS module."
     }
 }
