@@ -5,6 +5,7 @@ alias grep='grep --color=auto'  # color
 alias ls='ls -aCF --color=auto' # hidden files, columns, suffixes, color
 alias mv='mv -iv'               # confirm overwrite, verbose
 alias wget='wget -c'            # resume download
+alias azurite='azurite --inMemoryPersistence --disableTelemetry'
 
 # ======== shorthand ========
 alias c='clear'
