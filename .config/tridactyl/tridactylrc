@@ -1,14 +1,16 @@
 " vim: filetype=vim
 
-" This wipes all existing settings. Settings removed from this config will
-" return to default
+" Wipe custom settings; return to defaults.
+" Without this, removing (executed) lines in the config has no effect.
 sanitize tridactyllocal tridactylsync
 
-" TODO: Swap to Firefox Home once supported
+" https://github.com/tridactyl/tridactyl/blob/344fc9fa/src/lib/config.ts
 set newtab about:blank
 set smoothscroll true
+set tabclosepinned false
+set tabopenpos last
 
-" Vimium settings
+" Binds from Vimium
 bind / fillcmdline find
 bind ? help
 bind N composite js tri.findReverse ? 1 : -1 | findnext
