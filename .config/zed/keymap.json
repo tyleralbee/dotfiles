@@ -56,7 +56,9 @@
     {
         "context": "Editor",
         "bindings": {
-            "alt-space": "editor::ToggleCodeActions",
+            "alt-space": "editor::ShowCompletions",
+            "alt-shift-space": "editor::ToggleCodeActions",
+
             "alt-f": "editor::Format",
             "alt-j": "editor::AddSelectionBelow",
             "alt-k": "editor::AddSelectionAbove",
@@ -106,12 +108,23 @@
                 "vim::PushFindBackward",
                 { "after": true, "multiline": true }
             ],
-
             // Oil
             "-": [
                 "task::Spawn",
                 { "task_name": "Oil", "reveal_target": "center" }
             ]
+        }
+    },
+    // Use space as leader, enable subword navigation
+    {
+        "context": "VimControl && !menu && vim_mode != operator",
+        "bindings": {
+            "space": null,
+
+            "w": "vim::NextSubwordStart",
+            "b": "vim::PreviousSubwordStart",
+            "e": "vim::NextSubwordEnd",
+            "g e": "vim::PreviousSubwordEnd"
         }
     },
     // Alias ctrl-x commands
@@ -132,21 +145,16 @@
             "shift-y": ["workspace::SendKeystrokes", "y $"]
         }
     },
-    // Multicursor in normal, visual, operator, and insert modes if not in a menu
-    {
-        "context": "(VimControl || vim_mode == insert) && !menu",
-        "bindings": {}
-    },
     // vim-surround
     {
         "context": "vim_mode == visual",
         "bindings": {
-            "s": ["vim::PushAddSurrounds", {}]
+            "space s": "vim::PushAddSurrounds"
         }
     },
     // vim-sneak
     {
-        "context": "vim_mode == normal",
+        "context": "vim_mode == normal || vim_mode == visual",
         "bindings": {
             "s": "vim::PushSneak",
             "shift-s": "vim::PushSneakBackward"
