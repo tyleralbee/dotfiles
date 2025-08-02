@@ -18,6 +18,7 @@ alias dotfiles='tmux new -A -s dotfiles -c $HOME/dotfiles'
 alias obsidian-personal='tmux new -A -s obsidian-personal -c $OBSIDIAN_VAULT_PERSONAL'
 alias obsidian-work='tmux new -A -s obsidian-work -c $OBSIDIAN_VAULT_WORK'
 alias obsidian='obsidian-personal'
+alias randstr="tr -dc 'A-Za-z0-9!?%=' < /dev/urandom | head -c 10 | wl-copy"
 alias src='source $HOME/.bashrc'
 alias ts='sudo -E timeshift-gtk'
 
