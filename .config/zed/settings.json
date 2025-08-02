@@ -34,7 +34,6 @@
         ],
         "LOG": ["*.log", "*.log.*"]
     },
-    "gutter": { "min_line_number_digits": 0, "line_numbers": false },
     "languages": {
         "JSONC": {
             "formatter": {
@@ -55,6 +54,7 @@
     },
     "git": { "inline_blame": { "show_commit_summary": true } },
     "git_panel": { "dock": "right", "default_width": 640 },
+    "gutter": { "min_line_number_digits": 0 },
     "icon_theme": "Zed (Default)",
     "notification_panel": {
         "button": false
