@@ -9,10 +9,14 @@ map <Space> \
 " Use system clipboard
 set clipboard=unnamed
 
-" Have j and k navigate visual lines rather than logical ones
-" Differs from 'j' or 'k' when lines wrap, and when used with an operator, because they're not linewise.
-nmap j gj
-nmap k gk
+" Navigate visual lines rather than logical ones
+" Differs when lines wrap, and when used with an operator, because they're not linewise.
+nnoremap j gj
+nnoremap k gk
+
+" Don't pollute the register (HACK since we can't map to `"_x` or `"_C`)
+nnoremap C "_c$
+nnoremap x "_dl
 
 " Browser Vim motions (Tridactyl, Vimium, etc.)
 " =============================================
@@ -29,6 +33,9 @@ nmap gT :tabprev<CR>
 
 " IDE Vim motions (Neovim plugins, Zed custom Vim motions, etc.)
 " ==============================================================
+
+" Y to yank to end of line
+nnoremap Y y$
 
 " ctrl-o and ctrl-i for back/forward navigation
 exmap back obcommand app:go-back
