@@ -1,32 +1,50 @@
-" Inspired by settings in: https://github.com/esm7/obsidian-vimrc-support
+" This vimrc intends to emulate my IDE's Vim motions in Obsidian.
+" Currently: https://github.com/tyleralbee/dotfiles/blob/main/.config/zed/keymap.json
 
 " Make <space> the leader key by mapping it to \ (default leader key)
+" Usage of `\` throughout this file indicates to press <Space> (and not `\`).
 unmap <Space>
 map <Space> \
 
 " Use system clipboard
 set clipboard=unnamed
 
-" Go back and forward with Ctrl+O and Ctrl+I
-" (make sure to remove default Obsidian shortcuts for these to work)
+" Have j and k navigate visual lines rather than logical ones
+" Differs from 'j' or 'k' when lines wrap, and when used with an operator, because they're not linewise.
+nmap j gj
+nmap k gk
+
+" Browser Vim motions (Tridactyl, Vimium, etc.)
+" =============================================
+
+" <space>-f for link selection
+exmap jumpToLink obcommand mrj-jump-to-link:activate-jump-to-link
+nmap \f :jumpToLink<CR>
+
+" gt/gT for next/previous tab
+exmap tabnext obcommand workspace:next-tab
+nmap gt :tabnext<CR>
+exmap tabprev obcommand workspace:previous-tab
+nmap gT :tabprev<CR>
+
+" IDE Vim motions (Neovim plugins, Zed custom Vim motions, etc.)
+" ==============================================================
+
+" ctrl-o and ctrl-i for back/forward navigation
 exmap back obcommand app:go-back
 nmap <C-o> :back<CR>
 exmap forward obcommand app:go-forward
 nmap <C-i> :forward<CR>
 
-" Have j and k navigate visual lines rather than logical ones
-nmap j gj
-nmap k gk
+" gf to open link under cursor
+exmap openLink obcommand editor:follow-link
+nmap gf :openLink<CR>
 
-" Enable :q to close
+" ZZ to close the current file
 exmap q obcommand workspace:close
 nmap ZZ :q<CR>
 
-" jump to link
-exmap jumpToLink obcommand mrj-jump-to-link:activate-jump-to-link
-nmap \f :jumpToLink<CR>
-
-" vim-surround mappings
+" <space>-s for vim-surround
 exmap surround_wiki surround [[ ]]
 exmap surround_quote surround " "
 exmap surround_apostrophe surround ' '
@@ -35,34 +53,29 @@ exmap surround_parenthesis surround ( )
 exmap surround_bracket surround [ ]
 exmap surround_brace surround { }
 exmap surround_chevron surround < >
+vmap [[ :surround_wiki<CR>
+vmap \s" :surround_quote<CR>
+vmap \s' :surround_apostrophe<CR>
+vmap \s` :surround_grave<CR>
+vmap \s( :surround_parenthesis<CR>
+vmap \s) :surround_parenthesis<CR>
+vmap \sb :surround_bracket<CR>
+vmap \s[ :surround_bracket<CR>
+vmap \s] :surround_bracket<CR>
+vmap \s{ :surround_brace<CR>
+vmap \s} :surround_brace<CR>
+vmap \s< :surround_chevron<CR>
+vmap \s> :surround_chevron<CR>
 
-" NOTE: must use 'map' and not 'nmap'
-map [[ :surround_wiki<CR>
-nunmap s
-vunmap s
-map s" :surround_quote<CR>
-map s' :surround_apostrophe<CR>
-map s` :surround_grave<CR>
-map s( :surround_parenthesis<CR>
-map s) :surround_parenthesis<CR>
-map sb :surround_bracket<CR>
-map s[ :surround_bracket<CR>
-map s] :surround_bracket<CR>
-map s{ :surround_brace<CR>
-map s} :surround_brace<CR>
-map s< :surround_chevron<CR>
-map s> :surround_chevron<CR>
+" Broken commands that I'd like to fix some day
+" =============================================
 
-" select all occurrences of word under cursor
-exmap selectAllOccurrences obcommand obsidian-editor-shortcuts:selectAllOccurrences
-nmap ga :selectAllOccurrences<CR>
-vmap ga :selectAllOccurrences<CR>
+" BUG: obsidian-editor-shortcuts:selectAllOccurrences places a cursor at the start of the document
+" exmap selectall obcommand obsidian-editor-shortcuts:selectAllOccurrences
+" nmap ga :selectall<CR>
+" vmap ga :selectall<CR>
 
-" select next occurrence of word under cursor -- DOESN'T WORK WITH :selectWordOrNextOccurrence -- NEED TO USE OBSIDIAN COMMAND PALETTE
-" exmap selectWordOrNextOccurrence obcommand obsidian-editor-shortcuts:selectWordOrNextOccurrence
-" nmap gl :selectWordOrNextOccurrence<CR>
-" vmap gl :selectWordOrNextOccurrence<CR>
-
-" follow link under cursor
-exmap openLink obcommand editor:follow-link
-nmap gf :openLink<CR>
+" BUG: obsidian-editor-shortcuts:selectWordOrNextOccurrence doesn't work outside of the command palette
+" exmap selectnext obcommand obsidian-editor-shortcuts:selectWordOrNextOccurrence
+" nmap gl :selectnext<CR>
+" vmap gl :selectnext<CR>
