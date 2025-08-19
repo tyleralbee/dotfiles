@@ -9,14 +9,14 @@
         "hide": "on_success",
         "shell": "system",
         "show_summary": true,
-        "show_output": true,
+        "show_command": true,
         "tags": []
     },
     {
         "label": "Oil",
         "command": "exec nvim --cmd \"set noswapfile\" -c \"lua require('oil').open_float('$ZED_DIRNAME')\" -c \"autocmd FileType oil nnoremap <buffer><silent> q :qa!<CR>\"",
         "use_new_terminal": true,
-        "target": "center",
+        "reveal_target": "center",
         "hide": "always"
     }
 ]
