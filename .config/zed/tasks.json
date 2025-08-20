@@ -13,6 +13,19 @@
         "tags": []
     },
     {
+        "label": "pg_format (.sql)",
+        "command": "pg_format",
+        "args": ["-i", "$ZED_FILE"],
+        "use_new_terminal": false,
+        "allow_concurrent_runs": false,
+        "reveal": "never",
+        "hide": "on_success",
+        "shell": "system",
+        "show_summary": true,
+        "show_command": true,
+        "tags": ["sql"]
+    },
+    {
         "label": "Oil",
         "command": "exec nvim --cmd \"set noswapfile\" -c \"lua require('oil').open_float('$ZED_DIRNAME')\" -c \"autocmd FileType oil nnoremap <buffer><silent> q :qa!<CR>\"",
         "use_new_terminal": true,

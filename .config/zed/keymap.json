@@ -188,7 +188,20 @@
             "alt-f": [
                 "task::Spawn",
                 {
-                    "task_name": "Format OpenTofu File",
+                    "task_name": "OpenTofu Format (.tf)",
+                    "reveal_target": "dock" // doesn't actually pull up the terminal on error
+                    // "reveal_target": "center" // causes screen flicker, but does pull up the terminal
+                }
+            ]
+        }
+    },
+    {
+        "context": "Editor && (extension == sql || extension == psql)",
+        "bindings": {
+            "alt-f": [
+                "task::Spawn",
+                {
+                    "task_name": "pg_format (.sql)",
                     "reveal_target": "dock" // doesn't actually pull up the terminal on error
                     // "reveal_target": "center" // causes screen flicker, but does pull up the terminal
                 }
