@@ -34,6 +34,10 @@
         ],
         "LOG": ["*.log", "*.log.*"]
     },
+    "git": { "inline_blame": { "show_commit_summary": true } },
+    "git_panel": { "dock": "right", "default_width": 640 },
+    "gutter": { "min_line_number_digits": 0 },
+    "icon_theme": "Zed (Default)",
     "languages": {
         "JSONC": {
             "formatter": {
@@ -48,17 +52,9 @@
                 }
             }
         },
-        "Markdown": {
-            "soft_wrap": "editor_width"
-        }
+        "Markdown": { "soft_wrap": "editor_width" }
     },
-    "git": { "inline_blame": { "show_commit_summary": true } },
-    "git_panel": { "dock": "right", "default_width": 640 },
-    "gutter": { "min_line_number_digits": 0 },
-    "icon_theme": "Zed (Default)",
-    "notification_panel": {
-        "button": false
-    },
+    "notification_panel": { "button": false },
     "preview_tabs": {
         "enable_preview_from_file_finder": false,
         "enable_preview_from_code_navigation": true
@@ -73,15 +69,13 @@
         "show_diagnostics": "all",
         "sticky_scroll": false
     },
+    "scroll_sensitivity": 1,
     "scrollbar": {
-        "axes": {
-            "horizontal": false
-        },
+        "axes": { "horizontal": false },
         "diagnostics": "warning",
         "git_diff": true,
         "search_results": true
     },
-    "scroll_sensitivity": 1,
     "search": {
         "button": false,
         "case_sensitive": true,
