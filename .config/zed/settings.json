@@ -2,8 +2,8 @@
     "active_pane_modifiers": { "inactive_opacity": 0.75 },
     "agent": {
         "default_model": {
-            "provider": "anthropic",
-            "model": "claude-3-7-sonnet-latest"
+            "provider": "copilot_chat",
+            "model": "claude-sonnet-4"
         },
         "default_width": 640
     },
@@ -77,7 +77,6 @@
         "axes": {
             "horizontal": false
         },
-        "cursors": false,
         "diagnostics": "warning",
         "git_diff": true,
         "search_results": true
