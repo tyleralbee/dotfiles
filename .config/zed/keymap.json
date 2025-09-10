@@ -38,6 +38,7 @@
             "alt-a": null,
             "alt-a x": "pane::CloseActiveItem",
             "alt-a ctrl-r": "git::Restore",
+            "alt-a ctrl-y": "editor::CopyFileName",
 
             "alt-shift-a": "agent::ToggleFocus",
             "alt-shift-g": "git_panel::ToggleFocus",
