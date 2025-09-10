@@ -6,9 +6,9 @@ This repository contains my personal dotfiles managed using [GNU Stow](#`stow`).
 
 This repository contains configuration for, or relies on the system having, the packages outlined in this section.
 
-<details>
+### `az`
 
-<summary>`az` - Azure CLI (`.azure/config`)</summary>
+Configuration for the Azure CLI: `.azure/config`
 
 Azure is my cloud provider of choice for client projects. I don't use the Azure CLI to deploy (where possible, I define infrastructure as code using [OpenTofu](https://opentofu.org/docs/)), but I will use `az` for local development and testing. I typically use `az` when I want to interact with my local storage emulator (Azurite).
 
@@ -30,8 +30,6 @@ export AZURE_CONFIG_DIR="/home/user/orgs/orgname/projectname/apps/example/.azure
 ```
 
 I do not have any extensions installed for `az`.
-
-</details>
 
 ### `stow`
 
