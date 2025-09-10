@@ -6,28 +6,32 @@ This repository contains my personal dotfiles managed using [GNU Stow](#`stow`).
 
 This repository contains configuration for, or relies on the system having, the packages outlined in this section.
 
-> [!INFO]- `az` - Azure CLI (`.azure/config`)
->
-> Azure is my cloud provider of choice for client projects. I don't use the Azure CLI to deploy (where possible, I define infrastructure as code using [OpenTofu](https://opentofu.org/docs/)), but I will use `az` for local development and testing. I typically use `az` when I want to interact with my local storage emulator (Azurite).
->
-> Here's output from `history | rg "az "` showing some recent commands I've run:
->
-> ```bash
-> 1139  az storage queue create -n stq-example-free
-> 1140  az storage message put -q stq-example-free --content "$(base64 <<< '{"foo":"bar"}')"
-> ```
->
-> `.azure/config` contains basic configuration for `az`; project-specific configuration and secrets are set with environment variables. I will always navigate to the relevant project directory before running `az` commands and use `direnv` to load project-specific environment variables. Here's an example of some of the environment variables I use for local development when working with Azurite:
->
-> ```bash
-> export AZURITE_ACCOUNTS="stexampledev:1a2b3c4d5e:6f7g8h9i0j"
-> export AZURE_STORAGE_CONNECTION_STRING="AccountName=stexampledev;AccountKey=1a2b3c4d5e;DefaultEndpointsProtocol=http;BlobEndpoint=http://127.0.0.1:10000/stexampledev;QueueEndpoint=http://127.0.0.1:10001/stexampledev;TableEndpoint=http://127.0.0.1:10002/stexampledev;"
-> export AZURE_STORAGE_ACCOUNT="stexampledev"
-> export AZURE_STORAGE_KEY="1a2b3c4d5e"
-> export AZURE_CONFIG_DIR="/home/user/orgs/orgname/projectname/apps/example/.azure"
-> ```
->
-> I do not have any extensions installed for `az`.
+<details>
+
+<summary>`az` - Azure CLI (`.azure/config`)</summary>
+
+Azure is my cloud provider of choice for client projects. I don't use the Azure CLI to deploy (where possible, I define infrastructure as code using [OpenTofu](https://opentofu.org/docs/)), but I will use `az` for local development and testing. I typically use `az` when I want to interact with my local storage emulator (Azurite).
+
+Here's output from `history | rg "az "` showing some recent commands I've run:
+
+```bash
+1139  az storage queue create -n stq-example-free
+1140  az storage message put -q stq-example-free --content "$(base64 <<< '{"foo":"bar"}')"
+```
+
+`.azure/config` contains basic configuration for `az`; project-specific configuration and secrets are set with environment variables. I will always navigate to the relevant project directory before running `az` commands and use `direnv` to load project-specific environment variables. Here's an example of some of the environment variables I use for local development when working with Azurite:
+
+```bash
+export AZURITE_ACCOUNTS="stexampledev:1a2b3c4d5e:6f7g8h9i0j"
+export AZURE_STORAGE_CONNECTION_STRING="AccountName=stexampledev;AccountKey=1a2b3c4d5e;DefaultEndpointsProtocol=http;BlobEndpoint=http://127.0.0.1:10000/stexampledev;QueueEndpoint=http://127.0.0.1:10001/stexampledev;TableEndpoint=http://127.0.0.1:10002/stexampledev;"
+export AZURE_STORAGE_ACCOUNT="stexampledev"
+export AZURE_STORAGE_KEY="1a2b3c4d5e"
+export AZURE_CONFIG_DIR="/home/user/orgs/orgname/projectname/apps/example/.azure"
+```
+
+I do not have any extensions installed for `az`.
+
+</details>
 
 ### `stow`
 
