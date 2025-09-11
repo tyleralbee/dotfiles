@@ -1,30 +1,55 @@
-// Choose bindings based on CONTEXT:
+// Rule of thumb - choose binds based on their CONTEXT:
 //
-// | Modifier | CONTEXT                  | Implication                                                                                       |
-// | -------- | ------------------------ | ------------------------------------------------------------------------------------------------- |
-// | `SUPER`  | `SYSTEM` (e.g. Arch)     | The keyboard shortcut will work regardless of which program is in focus.                          |
-// | `ALT`    | `PROCESS` (e.g. Chrome)  | The keyboard shortcut depends on the program in focus to execute some action.                     |
-// | `CTRL`   | `THREAD` (e.g. bing.com) | A component of the currently focused program will handle the action.                              |
-// | `SHIFT`  |                          | Related, but less common and/or more impactful than the action taken had `SHIFT` not been pressed |
+// | MODIFIER | CONTEXT                 | IMPLICATION                                                | EXAMPLE CONTEXTS   |
+// | -------- | ----------------------- | ---------------------------------------------------------- | ------------------ |
+// | `super`  | SYSTEM  (e.g. Hyprland) | The bind will work regardless of which program is in focus | OS, window manager |
+// | `alt`    | PROCESS (e.g. Zed)      | The program in focus will handle the bind                  | Application        |
+// | `ctrl`   | THREAD  (e.g. Vim)      | A subprocess of the program in focus will handle the bind  | Plugin, website    |
 //
+// - Use `shift` in tandem with `super`, `alt`, or `ctrl` for related binds.
+// - `shift` binds are less common and/or more impactful than those without.
+//
+// Examples:
+//
+// - Use Hyprland to focus an app with `super-a`; open a new instance of the app with `super-shift-a`
+// - Use Zed to open a file with `alt-o`; open the file in a new window with `alt-shift-o`
+// - Use Vim to scroll up with `ctrl-u`; scroll to the top of the file with `ctrl-shift-u`
+//
+// Deviate from this rule of thumb for ubiquitous binds:
+//
+// - `ctrl-c`: Copy
+// - `ctrl-f`: Find
+// - `ctrl-n`: New Window
+// - `ctrl-q`: Quit
+// - `ctrl-t`: New Tab
+// - `ctrl-v`: Paste
+// - `ctrl-w`: Close
+// - `ctrl-x`: Cut
+// - `ctrl-z`: Undo
+//
+// Notable changes resulting from the above include, but are not limited to:
+//
+// - Vim motions (most importantly, `ctrl-w`)
+// - Terminal binds (PROCESS binds should be on `alt` anyways)
+//
+// Non-compliant binds below are marked with 🚩
+// Binds to be removed are marked with 🏁
 [
     {
         "bindings": {
-            // Remove default keybindings
-            "ctrl-shift-c": null, // collaborator panel
+            "alt-a": null, // Zed prefix key
+            "ctrl-shift-c": null, // was: collaborator panel
 
-            // Open/Close Terminal
-            "ctrl-shift-i": "workspace::ToggleBottomDock",
-
-            "alt-[": "workspace::ToggleLeftDock",
-            "alt-]": "workspace::ToggleRightDock",
-
-            "alt-,": "zed::OpenSettings",
-            "alt-.": "zed::OpenKeymap",
-
+            "alt-,": ["task::Spawn", { "task_name": "Open settings" }],
+            "alt-.": ["task::Spawn", { "task_name": "Open keymap" }],
+            "alt-/": ["task::Spawn", { "task_name": "Open tasks" }],
             "alt-<": "zed::OpenDefaultSettings",
             "alt->": "zed::OpenDefaultKeymap",
+            "alt-p": "file_finder::Toggle",
             "alt-shift-/": "vim::OpenDefaultKeymap",
+            "alt-shift-a": "agent::ToggleFocus",
+            "alt-shift-g": "git_panel::ToggleFocus",
+            "alt-shift-p": "command_palette::Toggle",
 
             // Project file search, command palette
             "alt-j": "menu::SelectNext",
@@ -34,24 +59,18 @@
     {
         "context": "Workspace",
         "bindings": {
-            // Prefix key
-            "alt-a": null,
-            "alt-a x": "pane::CloseActiveItem",
             "alt-a ctrl-r": "git::Restore",
             "alt-a ctrl-y": "editor::CopyFileName",
+            "alt-a x": "pane::CloseActiveItem",
 
-            "alt-shift-a": "agent::ToggleFocus",
-            "alt-shift-g": "git_panel::ToggleFocus",
-
-            // Pane navigation
+            // Pane navigation & toggles
+            "alt-[": "workspace::ToggleLeftDock", // 🏁
+            "alt-]": "workspace::ToggleRightDock", // 🏁
             "alt-h": "workspace::ActivatePaneLeft",
-            // "alt-j": "workspace::ActivatePaneDown",
-            // "alt-k": "workspace::ActivatePaneUp",
             "alt-l": "workspace::ActivatePaneRight",
-
-            // Moving application defaults off of ctrl onto alt
-            "alt-p": "file_finder::Toggle",
-            "alt-shift-p": "command_palette::Toggle"
+            "alt-shift-h": "workspace::ToggleLeftDock",
+            "alt-shift-l": "workspace::ToggleRightDock",
+            "ctrl-shift-i": "workspace::ToggleBottomDock" // 🚩 open Firefox devtools
         }
     },
     {
@@ -64,35 +83,17 @@
             "alt-j": "editor::AddSelectionBelow",
             "alt-k": "editor::AddSelectionAbove",
 
-            "alt-shift-h": "pane::SplitLeft",
             "alt-shift-i": "editor::SplitSelectionIntoLines",
             "alt-shift-j": "editor::MoveLineDown",
             "alt-shift-k": "editor::MoveLineUp",
-            "alt-shift-l": "pane::SplitRight",
             "alt-shift-r": "editor::RestartLanguageServer",
-            "alt-shift-s": "editor::SortLinesCaseInsensitive",
-            "alt-shift-v": "markdown::OpenPreviewToTheSide"
-        }
-    },
-    // Remove collaborator panel keybind
-    {
-        "context": "!Terminal",
-        "bindings": {
-            "ctrl-shift-c": "editor::Copy"
+            "alt-shift-s": "editor::SortLinesCaseInsensitive"
         }
     },
     // Alias ctrl-w commands
     {
         "context": "VimControl && !menu",
         "bindings": {
-            "alt-a d": "editor::GoToDefinitionSplit",
-            "alt-a g d": "editor::GoToDefinitionSplit",
-            "alt-a shift-d": "editor::GoToTypeDefinitionSplit",
-            "alt-a g shift-d": "editor::GoToTypeDefinitionSplit",
-            "alt-a space": "editor::OpenExcerptsSplit",
-            "alt-a g space": "editor::OpenExcerptsSplit",
-
-            // Replacing deprecated "use-multiline-find" setting
             "f": [
                 "vim::PushFindForward",
                 { "before": false, "multiline": true }
@@ -112,7 +113,7 @@
             // Oil
             "-": [
                 "task::Spawn",
-                { "task_name": "Oil", "reveal_target": "center" }
+                { "task_name": "oil", "reveal_target": "center" }
             ]
         }
     },
@@ -120,23 +121,12 @@
     {
         "context": "VimControl && !menu && vim_mode != operator",
         "bindings": {
-            "space": null,
+            "space": null, // Vim prefix key
 
             "w": "vim::NextSubwordStart",
             "b": "vim::PreviousSubwordStart",
             "e": "vim::NextSubwordEnd",
             "g e": "vim::PreviousSubwordEnd"
-        }
-    },
-    // Alias ctrl-x commands
-    {
-        "context": "vim_mode == insert",
-        "bindings": {
-            "alt-a o": "editor::ShowCompletions",
-            "alt-a a": "assistant::InlineAssist", // zed specific
-            "alt-a c": "editor::ShowEditPrediction", // zed specific
-            "alt-a l": "editor::ToggleCodeActions", // zed specific
-            "alt-a z": "editor::Cancel"
         }
     },
     // Use neovim's yank behavior: yank to end of line.
@@ -189,7 +179,7 @@
             "alt-f": [
                 "task::Spawn",
                 {
-                    "task_name": "OpenTofu Format (.tf)",
+                    "task_name": "tofu fmt",
                     "reveal_target": "dock" // doesn't actually pull up the terminal on error
                     // "reveal_target": "center" // causes screen flicker, but does pull up the terminal
                 }
@@ -202,7 +192,7 @@
             "alt-f": [
                 "task::Spawn",
                 {
-                    "task_name": "pg_format (.sql)",
+                    "task_name": "pg_format",
                     "reveal_target": "dock" // doesn't actually pull up the terminal on error
                     // "reveal_target": "center" // causes screen flicker, but does pull up the terminal
                 }
@@ -213,6 +203,8 @@
     {
         "context": "Editor && (extension==md || extension==markdown || extension==mdx)",
         "bindings": {
+            "alt-shift-v": "markdown::OpenPreviewToTheSide",
+
             // "ctrl-0": "editor:remove-heading"
             "ctrl-0": [
                 "workspace::SendKeystrokes",
