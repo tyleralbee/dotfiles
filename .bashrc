@@ -88,6 +88,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# deno
+if [ -f $HOME/.deno/env ]; then
+    . $HOME/.deno/env
+    if [ -f $HOME/.local/share/bash-completion/completions/deno.bash ]; then
+        source $HOME/.local/share/bash-completion/completions/deno.bash
+    fi
+fi
+
 # defaults
 export VISUAL='zed'
 export EDITOR="$VISUAL"
