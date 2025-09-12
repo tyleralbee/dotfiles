@@ -74,6 +74,17 @@ vmap \s} :surround_brace<CR>
 vmap \s< :surround_chevron<CR>
 vmap \s> :surround_chevron<CR>
 
+" s for lightspeed.nvim (via Lightspeed from obsidian-jump-to-link)
+" Note: ideally this would function like Zed's implementation of vim-sneak; may replace someday
+unmap s
+exmap lightspeedJump obcommand mrj-jump-to-link:activate-lightspeed-jump
+nmap s :lightspeedJump<CR>
+
+" S for duplicate lightspeed.nvim to keep muscle memory of S when jumping backwards in other editors
+unmap S
+exmap lightspeedJump obcommand mrj-jump-to-link:activate-lightspeed-jump
+nmap S :lightspeedJump<CR>
+
 " Broken commands that I'd like to fix some day
 " =============================================
 
