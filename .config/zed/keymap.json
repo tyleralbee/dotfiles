@@ -78,6 +78,8 @@
         "bindings": {
             "alt-space": "editor::ShowCompletions",
             "alt-shift-space": "editor::ToggleCodeActions",
+            "alt-shift-enter": "repl::Run",
+            "alt-shift-backspace": "repl::ClearOutputs",
 
             "alt-f": "editor::Format",
             "alt-j": "editor::AddSelectionBelow",
