@@ -19,7 +19,6 @@
 //
 // - `ctrl-c`: Copy
 // - `ctrl-f`: Find
-// - `ctrl-n`: New Window
 // - `ctrl-q`: Quit
 // - `ctrl-t`: New Tab
 // - `ctrl-v`: Paste
@@ -34,75 +33,109 @@
 //
 // Non-compliant binds below are marked with 🚩
 // Binds to be removed are marked with 🏁
+// Binds to be implemented are marked with 🚧
 [
     {
         "bindings": {
             "alt-a": null, // Zed prefix key
             "ctrl-shift-c": null, // was: collaborator panel
 
+            // Ensure ubiquitous keybinds aren't overridden by defaults
+            "ctrl-c": null, // copy
+            "ctrl-f": null, // find
+            "ctrl-q": null, // quit
+            "ctrl-t": null, // new tab
+            "ctrl-v": null, // paste
+            "ctrl-x": null, // cut
+            "ctrl-z": null, // undo
+            // "ctrl-w": null, // 🚧 need to rebind this in Vim and Terminal first
+
+            // GUI navigation & view toggles
             "alt-,": ["task::Spawn", { "task_name": "Open settings" }],
             "alt-.": ["task::Spawn", { "task_name": "Open keymap" }],
             "alt-/": ["task::Spawn", { "task_name": "Open tasks" }],
             "alt-<": "zed::OpenDefaultSettings",
             "alt->": "zed::OpenDefaultKeymap",
-            "alt-p": "file_finder::Toggle",
-            "alt-shift-/": "vim::OpenDefaultKeymap",
-            "alt-shift-a": "agent::ToggleFocus",
-            "alt-shift-g": "git_panel::ToggleFocus",
-            "alt-shift-p": "command_palette::Toggle",
-
-            // Project file search, command palette
-            "alt-j": "menu::SelectNext",
-            "alt-k": "menu::SelectPrevious"
-        }
-    },
-    {
-        "context": "Workspace",
-        "bindings": {
-            "alt-a ctrl-r": "git::Restore",
-            "alt-a ctrl-y": "editor::CopyFileName",
-            "alt-a x": "pane::CloseActiveItem",
-
-            // Pane navigation & toggles
             "alt-[": "workspace::ToggleLeftDock", // 🏁
             "alt-]": "workspace::ToggleRightDock", // 🏁
             "alt-h": "workspace::ActivatePaneLeft",
             "alt-l": "workspace::ActivatePaneRight",
+            "alt-p": "file_finder::Toggle",
+            "alt-shift-/": "vim::OpenDefaultKeymap",
+            "alt-shift-a": "agent::ToggleFocus",
+            "alt-shift-g": "git_panel::ToggleFocus",
             "alt-shift-h": "workspace::ToggleLeftDock",
             "alt-shift-l": "workspace::ToggleRightDock",
-            "ctrl-shift-i": "workspace::ToggleBottomDock" // 🚩 open Firefox devtools
+            "alt-shift-p": "command_palette::Toggle",
+            "ctrl-shift-i": "workspace::ToggleBottomDock" // 🚩 should be `alt-shift-j`
         }
     },
     {
         "context": "Editor",
         "bindings": {
-            "alt-space": "editor::ShowCompletions",
-            "alt-shift-space": "editor::ToggleCodeActions",
-            "alt-shift-enter": "repl::Run",
-            "alt-shift-backspace": "repl::ClearOutputs",
-
+            "alt-a ctrl-r": "git::Restore",
+            "alt-a ctrl-y": "editor::CopyFileName",
             "alt-f": "editor::Format",
+            "alt-shift-r": "editor::RestartLanguageServer",
+
+            // Re-assign ubiquitous keybinds their default values
+            "ctrl-c": "editor::Copy", // vim default: return to normal mode
+            "ctrl-f": "buffer_search::Deploy", // vim default: page down
+            "ctrl-v": "editor::Paste", // vim default: visual block mode
+            "ctrl-x": "editor::Cut", // vim default: decrement
+            "ctrl-z": "editor::Undo"
+            // - `ctrl-n`: New Window
+            // - `ctrl-q`: Quit
+            // - `ctrl-t`: New Tab
+            // - `ctrl-w`: Close // 🚧 something is causing ctrl-w to be treated as the beginning of a chord
+        }
+    },
+    // Navigate up/down in menus (command palette, file finder, code actions, completions)
+    {
+        "context": "CommandPalette || FileFinder",
+        "bindings": {
+            "alt-j": "menu::SelectNext",
+            "alt-k": "menu::SelectPrevious",
+            "alt-shift-j": "menu::SelectLast",
+            "alt-shift-k": "menu::SelectFirst"
+        }
+    },
+    {
+        "context": "Editor && (showing_code_actions || showing_completions)",
+        "bindings": {
+            "alt-j": "editor::ContextMenuNext",
+            "alt-k": "editor::ContextMenuPrevious",
+            "alt-shift-j": "editor::ContextMenuLast",
+            "alt-shift-k": "editor::ContextMenuFirst"
+        }
+    },
+
+    // normal, visual, and insert mode
+    {
+        "context": "(VimControl || vim_mode == insert) && !menu",
+        "bindings": {
             "alt-j": "editor::AddSelectionBelow",
             "alt-k": "editor::AddSelectionAbove",
-
             "alt-shift-i": "editor::SplitSelectionIntoLines",
             "alt-shift-j": "editor::MoveLineDown",
             "alt-shift-k": "editor::MoveLineUp",
-            "alt-shift-r": "editor::RestartLanguageServer",
-            "alt-shift-s": "editor::SortLinesCaseInsensitive"
+            "alt-shift-s": "editor::SortLinesCaseInsensitive",
+            "alt-shift-space": "editor::ToggleCodeActions",
+            "alt-space": "editor::ShowCompletions"
         }
     },
-    // Alias ctrl-w commands
+    // normal & visual mode
     {
         "context": "VimControl && !menu",
         "bindings": {
+            // vim-sneak
+            "s": "vim::PushSneak",
+            "shift-s": "vim::PushSneakBackward",
+
+            // multiline find
             "f": [
                 "vim::PushFindForward",
                 { "before": false, "multiline": true }
-            ],
-            "t": [
-                "vim::PushFindForward",
-                { "before": true, "multiline": true }
             ],
             "shift-f": [
                 "vim::PushFindBackward",
@@ -112,69 +145,54 @@
                 "vim::PushFindBackward",
                 { "after": true, "multiline": true }
             ],
-            // Oil
+            "t": ["vim::PushFindForward", { "before": true, "multiline": true }]
+        }
+    },
+    // normal & visual mode when not waiting for another binding to trigger
+    {
+        "context": "VimControl && vim_mode != operator && !menu",
+        "bindings": {
+            // use space as leader
+            "space": null,
+
+            // enable subword navigation
+            "w": "vim::NextSubwordStart",
+            "b": "vim::PreviousSubwordStart",
+            "e": "vim::NextSubwordEnd",
+            "g e": "vim::PreviousSubwordEnd",
+
+            // oil.nvim
             "-": [
                 "task::Spawn",
                 { "task_name": "oil", "reveal_target": "center" }
             ]
         }
     },
-    // Use space as leader, enable subword navigation
-    {
-        "context": "VimControl && !menu && vim_mode != operator",
-        "bindings": {
-            "space": null, // Vim prefix key
-
-            "w": "vim::NextSubwordStart",
-            "b": "vim::PreviousSubwordStart",
-            "e": "vim::NextSubwordEnd",
-            "g e": "vim::PreviousSubwordEnd"
-        }
-    },
-    // Use neovim's yank behavior: yank to end of line.
+    // normal mode only
     {
         "context": "vim_mode == normal && !menu",
         "bindings": {
+            // Use neovim's yank behavior: yank to end of line.
             "shift-y": ["workspace::SendKeystrokes", "y $"]
         }
     },
-    // vim-surround
+    // visual mode only
     {
-        "context": "vim_mode == visual",
+        "context": "vim_mode == visual && !menu",
         "bindings": {
+            // vim-surround
             "space s": "vim::PushAddSurrounds"
         }
     },
-    // vim-sneak
+    // Jupyter Notebooks for TypeScript via Deno
     {
-        "context": "vim_mode == normal || vim_mode == visual",
+        "context": "Editor && jupyter && !ContextEditor",
         "bindings": {
-            "s": "vim::PushSneak",
-            "shift-s": "vim::PushSneakBackward"
+            "alt-shift-backspace": "repl::ClearOutputs",
+            "alt-shift-enter": "repl::Run"
         }
     },
-    {
-        "context": "Editor && !menu",
-        "bindings": {
-            // vim default: return to normal mode
-            "ctrl-c": "editor::Copy",
-            // vim default: decrement
-            "ctrl-x": "editor::Cut",
-            // vim default: visual block mode
-            "ctrl-v": "editor::Paste",
-            // vim default: page down
-            "ctrl-f": "buffer_search::Deploy"
-        }
-    },
-    // Code Actions, Autocomplete
-    {
-        "context": "Editor && (showing_code_actions || showing_completions)",
-        "bindings": {
-            "alt-j": "editor::ContextMenuNext",
-            "alt-k": "editor::ContextMenuPrevious"
-        }
-    },
-    // Custom formatters
+    // Run `tofu fmt` to format Terraform files
     {
         "context": "Editor && (extension == tf || extension == tfvars)",
         "bindings": {
@@ -188,6 +206,7 @@
             ]
         }
     },
+    // Run `pg_format` to format SQL files
     {
         "context": "Editor && (extension == sql || extension == psql)",
         "bindings": {
@@ -201,11 +220,13 @@
             ]
         }
     },
-    // Mirror `.obsidian/keymap.json` for Markdown
+    // Markdown binds
     {
         "context": "Editor && (extension==md || extension==markdown || extension==mdx)",
         "bindings": {
             "alt-shift-v": "markdown::OpenPreviewToTheSide",
+            
+            // Implement Obsidian hotkeys in Zed for Markdown files
 
             // "ctrl-0": "editor:remove-heading"
             "ctrl-0": [
@@ -279,9 +300,11 @@
             // "ctrl-shift-c": "obsidian-tasks-plugin:toggle-done"
         }
     },
+    // Markdown binds when in visual mode
     {
-        "context": "Editor && extension==md && vim_mode==visual",
+        "context": "Editor && (extension==md || extension==markdown || extension==mdx) && vim_mode==visual",
         "bindings": {
+            // Wrap in code block (needs improvement)
             "ctrl-~": [
                 "workspace::SendKeystrokes",
                 "s ` a ` ` b a s h space escape d f ` o escape p f ` i enter ` ` escape b i backspace escape B i backspace escape V <"
