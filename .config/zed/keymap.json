@@ -109,7 +109,6 @@
             "alt-shift-k": "editor::ContextMenuFirst"
         }
     },
-
     // normal, visual, and insert mode
     {
         "context": "(VimControl || vim_mode == insert) && !menu",
@@ -225,7 +224,7 @@
         "context": "Editor && (extension==md || extension==markdown || extension==mdx)",
         "bindings": {
             "alt-shift-v": "markdown::OpenPreviewToTheSide",
-            
+ 
             // Implement Obsidian hotkeys in Zed for Markdown files
 
             // "ctrl-0": "editor:remove-heading"
