@@ -34,3 +34,4 @@ bindurl www.google.com f hint -Jc #search a
 " Don't run Tridactyl on some web sites because it doesn't work well, or
 " because the web site has its own keybindings.
 autocmd DocStart mail.google.com mode ignore
+autocmd DocStart monkeytype.com mode ignore
