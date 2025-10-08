@@ -76,9 +76,13 @@
             "alt-a ctrl-r": "git::Restore",
             "alt-a ctrl-y": "editor::CopyFileName",
             "alt-f": "editor::Format",
-            "alt-shift-r": "editor::RestartLanguageServer",
-
-            // Re-assign ubiquitous keybinds their default values
+            "alt-shift-r": "editor::RestartLanguageServer"
+        }
+    },
+    // Re-assign ubiquitous keybinds
+    {
+        "context": "Editor",
+        "bindings": {
             "ctrl-c": "editor::Copy", // vim default: return to normal mode
             "ctrl-f": "buffer_search::Deploy", // vim default: page down
             "ctrl-v": "editor::Paste", // vim default: visual block mode
@@ -88,6 +92,32 @@
             // - `ctrl-q`: Quit
             // - `ctrl-t`: New Tab
             // - `ctrl-w`: Close // 🚧 something is causing ctrl-w to be treated as the beginning of a chord
+        }
+    },
+    {
+        "context": "Markdown",
+        "bindings": {
+            "ctrl-c": "markdown::Copy"
+        }
+    },
+    {
+        "context": "ProjectPanel",
+        "bindings": {
+            "ctrl-c": "project_panel::Copy",
+            "ctrl-v": "project_panel::Paste",
+            "ctrl-x": "project_panel::Cut"
+        }
+    },
+    {
+        "context": "VariableList",
+        "bindings": {
+            "ctrl-c": "variable_list::CopyVariableValue"
+        }
+    },
+    {
+        "context": "KeymapEditor",
+        "bindings": {
+            "ctrl-c": "keymap_editor::CopyAction"
         }
     },
     // Navigate up/down in menus (command palette, file finder, code actions, completions)
@@ -220,11 +250,12 @@
         }
     },
     // Markdown binds
+
     {
         "context": "Editor && (extension==md || extension==markdown || extension==mdx)",
         "bindings": {
             "alt-shift-v": "markdown::OpenPreviewToTheSide",
- 
+
             // Implement Obsidian hotkeys in Zed for Markdown files
 
             // "ctrl-0": "editor:remove-heading"
