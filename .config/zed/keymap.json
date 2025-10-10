@@ -120,6 +120,14 @@
             "ctrl-c": "keymap_editor::CopyAction"
         }
     },
+    // bind tab to accept even when there's an LSP completion and/or
+    // the cursor isn't at the correct indentation level
+    {
+        "context": "Editor && edit_prediction_conflict",
+        "bindings": {
+            "tab": "editor::AcceptEditPrediction"
+        }
+    },
     // Navigate up/down in menus (command palette, file finder, code actions, completions)
     {
         "context": "CommandPalette || FileFinder",
