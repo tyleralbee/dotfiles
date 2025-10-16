@@ -63,6 +63,10 @@
             "alt-p": "file_finder::Toggle",
             "alt-shift-/": "vim::OpenDefaultKeymap",
             "alt-shift-a": "agent::ToggleFocus",
+            "alt-shift-c": [
+                "agent::NewExternalAgentThread",
+                { "agent": "codex" }
+            ],
             "alt-shift-g": "git_panel::ToggleFocus",
             "alt-shift-h": "workspace::ToggleLeftDock",
             "alt-shift-l": "workspace::ToggleRightDock",
