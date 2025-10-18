@@ -11,7 +11,6 @@
 # - comma-break
 # - no-extra-line (default results in 2 blank lines, not 1)
 # - wrap-limit=80
-# - wrap-after=80
 # - wrap-comment=80
 # - no-space-function=1
 # 
@@ -86,7 +85,7 @@ tabs=0
 wrap-limit=80
 
 # Number of column after which lists must be wrapped.
-wrap-after=80
+wrap-after=0
 
 # with --wrap-limit, apply reformatting to comments.
 wrap-comment=80
