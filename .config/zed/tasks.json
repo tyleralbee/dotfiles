@@ -14,7 +14,7 @@
     {
         "label": "pg_format",
         "command": "pg_format",
-        "args": ["-i", "$ZED_FILE"],
+        "args": ["-i", "$ZED_FILE", "-c", "$HOME/.pg_format"],
         "use_new_terminal": false,
         "allow_concurrent_runs": false,
         "reveal": "never",
