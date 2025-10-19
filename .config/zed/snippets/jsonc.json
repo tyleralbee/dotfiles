@@ -1,0 +1,24 @@
+{
+    // https://zed.dev/docs/snippets
+    "Snippet": {
+        // Triggers the snippet
+        "prefix": "snippet",
+        "description": "A simple snippet example",
+        // numbers define tab stops, with 0 being the final cursor position
+        // Use the same placeholder multiple times for multi-cursor
+        "body": [
+            "{",
+            "    // https://zed.dev/docs/snippets",
+            "    \"$1\": {",
+            "        // Triggers the snippet",
+            "        \"prefix\": \"$1\",",
+            "        \"description\": \"$2\",",
+            "        // $1, $2 or ${1:defaultValue} define tab stops",
+            "        // $0 determines the final cursor position",
+            "        // Use the same placeholder for multi-cursor",
+            "        \"body\": [\"$0\"]",
+            "    }",
+            "}"
+        ]
+    }
+}
