@@ -1,0 +1,25 @@
+{
+    "Shell function docs": {
+        "prefix": "shdoc",
+        "description": "Shell function doc block",
+        "body": [
+            "# ${1:function_name} - ${2:short_description}",
+            "#",
+            "# Usage:",
+            "#   ${1:function_name} [options] [args]",
+            "#",
+            "# Arguments:",
+            "#   ${3:arg_1}    ${4:arg_1_description}",
+            "#",
+            "# Options:",
+            "#   -h       Show help",
+            "#   -f FILE  Input file",
+            "#",
+            "# Returns:",
+            "#   0 on success, non-zero on error",
+            "#",
+            "# Example:",
+            "#   ${1:function_name} -f input.txt"
+        ]
+    }
+}
