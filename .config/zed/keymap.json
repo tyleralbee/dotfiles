@@ -71,7 +71,7 @@
             "alt-shift-h": "workspace::ToggleLeftDock",
             "alt-shift-l": "workspace::ToggleRightDock",
             "alt-shift-p": "command_palette::Toggle",
-            "ctrl-shift-i": "workspace::ToggleBottomDock" // 🚩 should be `alt-shift-j`
+            "ctrl-shift-i": "terminal_panel::Toggle" // 🚩 should be `alt-shift-j`
         }
     },
     {
