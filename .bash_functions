@@ -46,3 +46,39 @@ rename_file_prefixes() {
 
     eval "$restore"
 }
+
+# get_usb_speed - Get a USB device's speed by plugging it in
+#
+# Usage:
+#   get_usb_speed
+#
+# Returns:
+#   0 on success, non-zero on error
+#
+# Example:
+#   get_usb_speed
+get_usb_speed() {
+    local tmp_devices_before tmp_devices_after
+    tmp_devices_before="$(mktemp)" || exit 1
+    tmp_devices_after="$(mktemp)" || exit 1
+    trap 'rm -f "$tmp_devices_before" "$tmp_devices_after"' EXIT
+
+    echo "NOTE: Your USB device should be unplugged before running this function."
+    echo "If your USB device is not yet unplugged, cancel now (CTRL+C) and unplug it."
+    read -n 1 -s -r -p "Press any key to continue"
+    echo
+
+    echo "Getting list of current devices..."
+    find /sys/devices -name speed | sort >"$tmp_devices_before"
+    read -n 1 -s -r -p "Plug in your USB device now. Press any key when ready to continue"
+    echo
+
+    echo "Getting list of devices after plugging in..."
+    find /sys/devices -name speed | sort >"$tmp_devices_after"
+
+    # Compare, supressing common lines and outputting unique lines
+    comm -3 "$tmp_devices_before" "$tmp_devices_after" | while read f; do
+        echo -n "$f" " "
+        cat "$f"
+    done | column -t -s' '
+}
