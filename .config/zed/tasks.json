@@ -12,19 +12,6 @@
         "show_command": true
     },
     {
-        "label": "pg_format",
-        "command": "pg_format",
-        "args": ["-i", "$ZED_FILE", "-c", "$HOME/.pg_format"],
-        "use_new_terminal": false,
-        "allow_concurrent_runs": false,
-        "reveal": "never",
-        "hide": "on_success",
-        "shell": "system",
-        "show_summary": true,
-        "show_command": true,
-        "tags": ["sql"]
-    },
-    {
         "label": "oil",
         "command": "exec nvim --cmd \"set noswapfile\" -c \"lua require('oil').open_float('$ZED_DIRNAME')\" -c \"autocmd FileType oil nnoremap <buffer><silent> q :qa!<CR>\"",
         "use_new_terminal": true,
@@ -34,7 +21,7 @@
     {
         "label": "Open keymap",
         "command": "zed",
-        "args": ["$HOME/dotfiles/.config/zed/keymap.json"],
+        "args": ["$STOW_DIR/.config/zed/keymap.json"],
         "allow_concurrent_runs": true,
         "hide": "on_success",
         "reveal": "never",
@@ -44,7 +31,7 @@
     {
         "label": "Open settings",
         "command": "zed",
-        "args": ["$HOME/dotfiles/.config/zed/settings.json"],
+        "args": ["$STOW_DIR/.config/zed/settings.json"],
         "allow_concurrent_runs": true,
         "hide": "on_success",
         "reveal": "never",
@@ -54,7 +41,7 @@
     {
         "label": "Open tasks",
         "command": "zed",
-        "args": ["$HOME/dotfiles/.config/zed/tasks.json"],
+        "args": ["$STOW_DIR/.config/zed/tasks.json"],
         "allow_concurrent_runs": true,
         "hide": "on_success",
         "reveal": "never",

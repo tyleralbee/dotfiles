@@ -247,22 +247,6 @@
             ]
         }
     },
-    // Run `pg_format` to format SQL files
-    {
-        "context": "Editor && (extension == sql || extension == psql)",
-        "bindings": {
-            "alt-f": [
-                "task::Spawn",
-                {
-                    "task_name": "pg_format",
-                    "reveal_target": "dock" // doesn't actually pull up the terminal on error
-                    // "reveal_target": "center" // causes screen flicker, but does pull up the terminal
-                }
-            ]
-        }
-    },
-    // Markdown binds
-
     {
         "context": "Editor && (extension==md || extension==markdown || extension==mdx)",
         "bindings": {
