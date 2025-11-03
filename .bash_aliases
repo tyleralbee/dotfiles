@@ -8,7 +8,7 @@ alias mv='mv -iv'                                                # confirm overw
 alias wget='wget -c'                                             # resume download
 
 # ======== shorthand ========
-alias dotfiles='tmux new -A -s dotfiles -c $HOME/dotfiles'
+alias dotfiles='tmux new -A -s dotfiles -c $STOW_DIR'
 alias randstr="tr -dc 'A-Za-z0-9!?%=' < /dev/urandom | head -c 10 | wl-copy"
 alias src='source $HOME/.bashrc'
 alias ts='sudo timeshift --create --comments "manual snapshot taken $(date +%F\ at\ %H:%M)"'
