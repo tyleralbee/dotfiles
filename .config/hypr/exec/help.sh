@@ -40,7 +40,7 @@ GDK_BACKEND=$BACKEND yad \
     "<b>super</b>-<b>d</b>" "Focus obsidian, starting the application first if necessary" "OBSIDIAN_PID=\$(pgrep -o obsidian) && hyprctl dispatch focuswindow \"class:obsidian\" || xdg-open \"obsidian://vault/\$OBSIDIAN_VAULT_PERSONAL\"" \
     "<b>super</b>-<b>f</b>" "Focus ghostty, starting the application first if necessary" "GHOSTTY_PID=\$(pgrep ghostty) && hyprctl dispatch focuswindow \"pid:\$GHOSTTY_PID\" || ghostty" \
     "<b>super</b>-<b>z</b>" "Focus yubico, starting the application first if necessary" "YUBICO_PID=\$(pgrep yubico) && hyprctl dispatch focuswindow \"pid:\$YUBICO_PID\" || /opt/yubico-authenticator/authenticator" \
-    "<b>super</b>-<b>x</b>" "Focus spotify, starting the application first if necessary" "SPOTIFY_PID=\$(pgrep -o spotify) && hyprctl dispatch focuswindow \"pid:\$SPOTIFY_PID\" || spotify" \
+    "<b>super</b>-<b>x</b>" "Focus spotify, starting the application first if necessary" "SPOTIFY_PID=\$(pgrep -o spotify) && hyprctl dispatch focuswindow \"pid:\$SPOTIFY_PID\" || spotify-launcher" \
     "<b>super</b>-<b>v</b>" "Focus thunar, starting the application first if necessary" "THUNAR_PID=\$(pgrep thunar) && hyprctl dispatch focuswindow \"pid:\$THUNAR_PID\" || thunar" \
     "<b>super</b>-<b>shift</b>-<b>s</b>" "Google search" "\$exec/search.sh" \
     "<b>super</b>-<b>shift</b>-<b>f</b>" "Open a floating terminal" "[float; move 25% 25%; size 50% 50%; workspace unset] ghostty" \
