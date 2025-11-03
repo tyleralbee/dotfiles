@@ -20,7 +20,7 @@
     },
     {
         "label": "Open keymap",
-        "command": "zed",
+        "command": "zeditor",
         "args": ["$STOW_DIR/.config/zed/keymap.json"],
         "allow_concurrent_runs": true,
         "hide": "on_success",
@@ -30,7 +30,7 @@
     },
     {
         "label": "Open settings",
-        "command": "zed",
+        "command": "zeditor",
         "args": ["$STOW_DIR/.config/zed/settings.json"],
         "allow_concurrent_runs": true,
         "hide": "on_success",
@@ -40,7 +40,7 @@
     },
     {
         "label": "Open tasks",
-        "command": "zed",
+        "command": "zeditor",
         "args": ["$STOW_DIR/.config/zed/tasks.json"],
         "allow_concurrent_runs": true,
         "hide": "on_success",

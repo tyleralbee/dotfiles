@@ -35,7 +35,7 @@ GDK_BACKEND=$BACKEND yad \
     "<b>super</b>-<b>shift</b>-<b>q</b>" "Run bash script KillActiveProcess.sh" "KillActiveProcess.sh" \
     "<b>super</b>-<b>shift</b>-<b>e</b>" "Execute pkill rofi || true && ags -t 'overview'" "pkill rofi || true && ags -t 'overview'" \
     "<b>super</b>-<b>shift</b>-<b>r</b>" "Enter fullscreen" "fullscreen" \
-    "<b>super</b>-<b>a</b>" "Focus zed, starting the application first if necessary" "ZED_PID=\$(pgrep zed) && hyprctl dispatch focuswindow \"pid:\$ZED_PID\" || \$HOME/.local/bin/zed" \
+    "<b>super</b>-<b>a</b>" "Focus zed, starting the application first if necessary" "ZED_PID=\$(pgrep zed) && hyprctl dispatch focuswindow \"pid:\$ZED_PID\" || zeditor" \
     "<b>super</b>-<b>s</b>" "Focus firefox, starting the application first if necessary" "FIREFOX_PID=\$(pgrep firefox) && hyprctl dispatch focuswindow \"pid:\$FIREFOX_PID\" || firefox" \
     "<b>super</b>-<b>d</b>" "Focus obsidian, starting the application first if necessary" "OBSIDIAN_PID=\$(pgrep -o obsidian) && hyprctl dispatch focuswindow \"class:obsidian\" || xdg-open \"obsidian://vault/\$OBSIDIAN_VAULT_PERSONAL\"" \
     "<b>super</b>-<b>f</b>" "Focus ghostty, starting the application first if necessary" "GHOSTTY_PID=\$(pgrep ghostty) && hyprctl dispatch focuswindow \"pid:\$GHOSTTY_PID\" || ghostty" \
