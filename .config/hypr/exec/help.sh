@@ -37,7 +37,7 @@ GDK_BACKEND=$BACKEND yad \
     "<b>super</b>-<b>shift</b>-<b>r</b>" "Enter fullscreen" "fullscreen" \
     "<b>super</b>-<b>a</b>" "Focus zed, starting the application first if necessary" "ZED_PID=\$(pgrep zed) && hyprctl dispatch focuswindow \"pid:\$ZED_PID\" || zeditor" \
     "<b>super</b>-<b>s</b>" "Focus firefox, starting the application first if necessary" "FIREFOX_PID=\$(pgrep firefox) && hyprctl dispatch focuswindow \"pid:\$FIREFOX_PID\" || firefox" \
-    "<b>super</b>-<b>d</b>" "Focus obsidian, starting the application first if necessary" "OBSIDIAN_PID=\$(pgrep -o obsidian) && hyprctl dispatch focuswindow \"class:obsidian\" || xdg-open \"obsidian://vault/\$OBSIDIAN_VAULT_PERSONAL\"" \
+    "<b>super</b>-<b>d</b>" "Focus obsidian, starting the application first if necessary" "OBSIDIAN_PID=\$(pgrep -o electron) && hyprctl dispatch focuswindow \"class:obsidian\" || xdg-open \"obsidian://vault/\$OBSIDIAN_NOTES_DIR\"" \
     "<b>super</b>-<b>f</b>" "Focus ghostty, starting the application first if necessary" "GHOSTTY_PID=\$(pgrep ghostty) && hyprctl dispatch focuswindow \"pid:\$GHOSTTY_PID\" || ghostty" \
     "<b>super</b>-<b>z</b>" "Focus yubico, starting the application first if necessary" "YUBICO_PID=\$(pgrep yubico) && hyprctl dispatch focuswindow \"pid:\$YUBICO_PID\" || /opt/yubico-authenticator/authenticator" \
     "<b>super</b>-<b>x</b>" "Focus spotify, starting the application first if necessary" "SPOTIFY_PID=\$(pgrep -o spotify) && hyprctl dispatch focuswindow \"pid:\$SPOTIFY_PID\" || spotify-launcher" \
