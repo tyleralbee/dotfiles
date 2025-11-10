@@ -1,7 +1,7 @@
 {
     "file_types": {
-        "Git Ignore": [".stow-local-ignore"],            // requires `Git Firefly` extension
-        "Shell Script": [".bash_functions", ".inputrc"], // requires `Basher` extension
-        "TOML": ["**/.azure/config"]                     // requires `TOML` extension
-    } 
+        "Git Ignore": [".stow-local-ignore"], // requires `Git Firefly` extension
+        "Shell Script": [".bash_functions", ".bash_prompt", ".inputrc"], // requires `Basher` extension
+        "TOML": ["**/.azure/config"] // requires `TOML` extension
+    }
 }
