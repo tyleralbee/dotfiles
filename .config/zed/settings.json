@@ -39,6 +39,9 @@
     "gutter": { "min_line_number_digits": 0 },
     "icon_theme": "Zed (Default)",
     "languages": {
+        "LOG": {
+            "show_edit_predictions": false
+        },
         "JSONC": {
             "formatter": {
                 "external": {
