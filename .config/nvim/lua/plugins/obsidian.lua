@@ -18,15 +18,15 @@ return {
   opts = {
     workspaces = {
       {
-        name = "personal",
+        name = "notes",
         path = function()
-          return assert(vim.env.OBSIDIAN_VAULT_PERSONAL)
+          return assert(vim.env.OBSIDIAN_NOTES_DIR)
         end,
       },
       {
         name = "work",
         path = function()
-          return assert(vim.env.OBSIDIAN_VAULT_WORK)
+          return assert(vim.env.OBSIDIAN_WORK_DIR)
         end,
       },
     },
