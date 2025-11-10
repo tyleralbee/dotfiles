@@ -22,7 +22,7 @@
     "features": { "edit_prediction_provider": "copilot" },
     "file_types": {
         "env": [".env*"],
-        "Hyprland Config": ["*.conf", "*.hl"],
+        "Hyprland Config": ["**/hypr/**/*.conf", "*.hl"],
         "JSON": [".prettierrc"],
         "JSONC": [
             "**/.vscode/**/*.json",
