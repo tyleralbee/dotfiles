@@ -1,0 +1,43 @@
+# Generated files
+*.gen.ts
+__generated__
+coverage.json
+generated
+migrations
+pnpm-lock.yaml
+snapshot
+target
+
+# Build artifacts, caches, dependencies, logs, etc.
+*.bak
+*.log
+.azurite
+.cache
+.DS_Store
+.nitro
+.output
+.tanstack
+.turbo
+__azurite_db*__.json
+__blobstorage__
+__queuestorage__
+backup
+build
+coverage
+dist
+dist-ssr
+logs
+node_modules
+npm-debug.log*
+out
+
+# Environment variables, secrets, local settings, etc.
+.azure
+!.azure/config
+.env*
+!.env.example
+*.local
+*.pem
+.pgpass
+.secrets
+secrets

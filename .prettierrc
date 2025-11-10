@@ -1,0 +1,24 @@
+{
+    "$schema": "https://json.schemastore.org/prettierrc",
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "plugins": [
+        "@ianvs/prettier-plugin-sort-imports",
+        "@prettier/plugin-xml",
+        "prettier-plugin-jsdoc",
+        "prettier-plugin-packagejson",
+        "prettier-plugin-sh",
+        "prettier-plugin-sql-cst",
+        "prettier-plugin-tailwindcss",
+        "prettier-plugin-toml"
+    ],
+    "tsdoc": true,
+    "overrides": [
+        {
+            "files": "*.jsonc",
+            "options": {
+                "trailingComma": "none"
+            }
+        }
+    ]
+}
