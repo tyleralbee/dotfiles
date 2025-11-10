@@ -2,7 +2,7 @@
 alias azurite='azurite --inMemoryPersistence --disableTelemetry' # clear storage on exit, no telemetry
 alias cp='cp -iv'                                                # confirm overwrite, verbose
 alias grep='grep --color=auto'                                   # color
-alias less='less -R'                                             # enable colors
+alias less='less -iRF'                                           # case-insensitive, ANSI colors, quit if one screen
 alias ls='ls -aCF --color=auto'                                  # hidden files, columns, suffixes, color
 alias mv='mv -iv'                                                # confirm overwrite, verbose
 alias wget='wget -c'                                             # resume download
