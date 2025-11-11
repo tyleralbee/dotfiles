@@ -60,6 +60,7 @@ export VISUAL=zeditor
 
 ## Application configuration
 export CHEAT_CONFIG_PATH="$XDG_CONFIG_HOME/cheat/conf.yml"
+export CHEAT_USE_FZF=true
 export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
 export GRIM_DEFAULT_DIR="$HOME/Pictures/Screenshots/"
 export NODE_REPL_HISTORY="$XDG_STATE_HOME"/node_repl_history
