@@ -1,6 +1,20 @@
 # Create directory and navigate into it
 mkcd() { mkdir "$@" && cd "$@" || exit; }
 
+# colors - Display all color combinations in terminal
+# Source: https://askubuntu.com/a/279014
+colors() {
+    for x in {0..8}; do
+        for i in {30..37}; do
+            for a in {40..47}; do
+                echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "
+            done
+            echo
+        done
+    done
+    echo ""
+}
+
 # Rename file prefixes in current directory
 # usage: `rename_file_prefixes oldprefix newprefix`
 #
