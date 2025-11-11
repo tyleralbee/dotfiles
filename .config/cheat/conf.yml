@@ -3,12 +3,12 @@
 editor: zeditor
 
 # Should 'cheat' always colorize output?
-colorize: true
+colorize: false
 
 # Which 'chroma' colorscheme should be applied to the output?
 # Options are available here:
 #   https://github.com/alecthomas/chroma/tree/master/styles
-style: monokai
+style: onedark
 
 # Which 'chroma' "formatter" should be applied?
 # One of: "terminal", "terminal256", "terminal16m"
