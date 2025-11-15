@@ -99,7 +99,7 @@
         "font_family": "JetBrainsMono Nerd Font",
         "font_size": 12
     },
-    "theme": { "mode": "dark", "light": "One Light", "dark": "Ayu Dark" },
+    "theme": { "mode": "system", "light": "Ayu Light", "dark": "Ayu Dark" },
     "title_bar": {
         "show_branch_icon": true,
         "show_project_items": false,
