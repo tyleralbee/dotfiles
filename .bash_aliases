@@ -18,6 +18,7 @@ alias dot='dotfiles'
 alias l='ls'
 alias pn='pnpm'
 alias tm='tmux'
+alias zed='zeditor'
 
 # ======== functions ========
 # Display an alert   - usage: `sleep 10; alert`
