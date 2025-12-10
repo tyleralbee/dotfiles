@@ -124,6 +124,13 @@
             "ctrl-c": "keymap_editor::CopyAction"
         }
     },
+    {
+        "context": "AcpThread > Editor",
+        "use_key_equivalents": true,
+        "bindings": {
+            "ctrl-enter": "agent::Chat"
+        }
+    },
     // bind tab to accept even when there's an LSP completion and/or
     // the cursor isn't at the correct indentation level
     {
