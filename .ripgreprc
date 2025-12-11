@@ -1,7 +1,3 @@
-# Cap super long lines, show preview
---max-columns=150
---max-columns-preview
-
 # Search hidden files
 --hidden
 
