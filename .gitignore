@@ -1,7 +1,14 @@
+**/*.log
+**/log{,s}/**
 .gitconfig.local
 .local/bin/*
 node_modules/
 
 # OpenAI Codex
-.codex/sessions/
-.codex/auth.json
+.codex/
+!.codex/AGENTS.md
+!.codex/config.toml
+
+# Azure CLI
+.azure/
+!.azure/config
