@@ -96,3 +96,18 @@ get_usb_speed() {
         cat "$f"
     done | column -t -s' '
 }
+
+# y - Change the current working directory when exiting Yazi
+#
+# Usage:
+#   - Use y instead of yazi to start, press q to quit, see CWD changes.
+#   - Sometimes, you don't want to change, press Q to quit.
+#
+# Source: https://yazi-rs.github.io/docs/quick-start#shell-wrapper
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    command yazi "$@" --cwd-file="$tmp"
+    IFS= read -r -d '' cwd < "$tmp"
+    [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+    rm -f -- "$tmp"
+}
