@@ -31,7 +31,11 @@
         "LOG": ["*.log", "*.log.*"]
     },
     "git": { "inline_blame": { "show_commit_summary": true } },
-    "git_panel": { "dock": "right", "default_width": 640 },
+    "git_panel": {
+        "tree_view": true,
+        "dock": "right",
+        "default_width": 640
+    },
     "gutter": { "min_line_number_digits": 0 },
     "icon_theme": "Zed (Default)",
     "languages": {
