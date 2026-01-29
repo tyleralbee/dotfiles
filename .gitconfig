@@ -7,7 +7,7 @@
 	amend = commit --amend -C HEAD
 	br = branch
 	co = checkout
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log -20 --reverse
 	st = status
 	uncommit = reset HEAD~1
 	unstage = reset HEAD --
@@ -19,7 +19,7 @@
 [init]
 	defaultBranch = main
 [log]
-	date = iso
+	date = human
 [push]
 	autoSetupRemote = true
 	default = current # use local branch name as remote (when remote isn't setup)
@@ -33,3 +33,5 @@
 	fsckObjects = true
 [transfer]
 	fsckobjects = true
+[format]
+	pretty = format:%C(auto,yellow)%h %C(auto,blue)%<(12,trunc)%ad %C(auto,reset)%s
