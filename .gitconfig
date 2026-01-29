@@ -14,10 +14,6 @@
 [branch]
 	# sort by recently used branches instead of alphabetical
 	sort = -committerdate
-[commit]
-	verbose = true # show diff in commit editor
-[diff]
-	algorithm = histogram
 [help]
 	autocorrect = immediate # run corrected typos automatically
 [init]
