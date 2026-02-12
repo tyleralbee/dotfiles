@@ -29,4 +29,3 @@ alias copy='wl-copy <'
 
 # ======== completions ========
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
-

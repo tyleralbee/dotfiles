@@ -23,11 +23,11 @@ shopt -s histappend
 export BASH_COMPLETION_USER_DIR="$XDG_DATA_HOME/bash-completion"
 
 ## Sources
-. ~/.bash_prompt    2>/dev/null || true
-. ~/.complete_alias 2>/dev/null || true
-. ~/.bash_functions 2>/dev/null || true
-. ~/.bash_aliases   2>/dev/null || true
-. ~/.bashrc.local   2>/dev/null || true
+. ~/.bash_prompt 2> /dev/null || true
+. ~/.complete_alias 2> /dev/null || true
+. ~/.bash_functions 2> /dev/null || true
+. ~/.bash_aliases 2> /dev/null || true
+. ~/.bashrc.local 2> /dev/null || true
 
 # https://direnv.net/docs/hook.html#bash
 eval "$(direnv hook bash)"
