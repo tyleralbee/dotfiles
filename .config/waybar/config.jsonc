@@ -1,0 +1,21 @@
+{
+    "height": 24,
+    "modules-left": [],
+    "modules-center": ["clock"],
+    "modules-right": [],
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M}",
+        "on-click": "xdg-open https://calendar.google.com/calendar",
+        "tooltip": true,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#ffffff'>{}</span>",
+                "days": "<span color='#ffffff'>{}</span>",
+                "weekdays": "<span color='red'>{}</span>",
+                "today": "<span color='red'><u>{}</u></span>"
+            }
+        }
+    }
+}
