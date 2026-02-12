@@ -1,37 +1,47 @@
-# local/private config
 [include]
-  path = ~/.gitconfig.local
+    # Local/private configuration (e.g. user.name, user.email)
+    path = ~/.gitconfig.local
 [core]
-  excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
 [alias]
-	amend = commit --amend -C HEAD
-	br = branch
-	co = checkout
-	lg = log -20 --reverse
-	st = status
-	uncommit = reset HEAD~1
-	unstage = reset HEAD --
-[branch]
-	# sort by recently used branches instead of alphabetical
-	sort = -committerdate
+    amend = commit --amend -C HEAD
+    br = branch
+    co = checkout
+    lg = log -20 --reverse
+    st = status
+    uncommit = reset HEAD~1
+    unstage = reset HEAD --
 [help]
-	autocorrect = immediate # run corrected typos automatically
+    # $ git lgo
+    # WARNING: You called a Git command named 'lgo', which does not exist.
+    # Continuing under the assumption that you meant 'log'
+    autocorrect = immediate
 [init]
-	defaultBranch = main
-[log]
-	date = human
+    defaultBranch = main
 [push]
-	autoSetupRemote = true
-	default = current # use local branch name as remote (when remote isn't setup)
+    # Use the local branch name for the remote branch when one isn't set up.
+    autoSetupRemote = true
+    default = current
 [rebase]
-	autosquash = true # https://jvns.ca/blog/2024/02/16/popular-git-config-options/#rebase-autosquash-true
-	missingCommitsCheck = error # don't allow deleting commits during a rebase
-[fetch]
-	# https://jvns.ca/blog/2024/02/16/popular-git-config-options/#fsckobjects-avoid-data-corruption
-	fsckobjects = true
-[receive]
-	fsckObjects = true
-[transfer]
-	fsckobjects = true
+    # https://jvns.ca/blog/2024/02/16/popular-git-config-options/#rebase-autosquash-true
+    autosquash = true
+    # Ensure commits aren't deleted when rebasing.
+    missingCommitsCheck = error
+[branch]
+    # Sort by recently used branches instead of alphabetically.
+    sort = -committerdate
+[log]
+    date = human
 [format]
-	pretty = format:%C(auto,yellow)%h %C(auto,blue)%<(12,trunc)%ad %C(auto,reset)%s
+    # $ git log
+    # 0efd38e Dec 31 2026  Example commit using the format below
+    # 338d673 Wed 22:56    Example showing that commit date is relative and right-padded
+    # ee3fa5c 53 minutes.. Example showing that commit date can be truncated
+    pretty = format:%C(auto,yellow)%h %C(auto,blue)%<(12,trunc)%ad %C(auto,reset)%s
+[fetch]
+    # https://jvns.ca/blog/2024/02/16/popular-git-config-options/#fsckobjects-avoid-data-corruption
+    fsckobjects = true
+[receive]
+    fsckObjects = true
+[transfer]
+    fsckobjects = true
