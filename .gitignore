@@ -6,8 +6,6 @@ node_modules/
 
 # OpenAI Codex
 .codex/
-!.codex/AGENTS.md
-!.codex/config.toml
 
 # Azure CLI
 .azure/
