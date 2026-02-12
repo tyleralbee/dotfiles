@@ -1,43 +1,63 @@
-# Generated files
-*.gen.ts
-__generated__
-coverage.json
-generated
-migrations
-pnpm-lock.yaml
-snapshot
-target
+# Most of the globs in this file aren't relevant to this project.
+# Groups are ordered by likelihood of being kept when starting a new project.
+# When I start a new repository, I remove things starting from the bottom.
+# Groups that you probably want in your ignore file are towards to top.
+# Towards the bottom, you can remove sections for tools you don't use.
+# The lines in each section are ordered by specificity (directories > files).
 
-# Build artifacts, caches, dependencies, logs, etc.
-*.bak
+# Logs
+log{,s}/
 *.log
-.azurite
-.cache
-.DS_Store
-.nitro
-.output
-.tanstack
-.turbo
-__azurite_db*__.json
-__blobstorage__
-__queuestorage__
-backup
-build
-coverage
-dist
-dist-ssr
-logs
-node_modules
-npm-debug.log*
-out
 
-# Environment variables, secrets, local settings, etc.
-.azure
-!.azure/config
+# Auto-generated, backups, caches
+.cache/
+.DS_Store/
+__generated__/
+backup/
+coverage/
+generated/
+migrations/
+snapshot/
+*.bak
+*.gen.ts
+coverage.json
+
+# Environment, secrets, local configuration
+secrets/
 .env*
 !.env.example
 *.local
 *.pem
 .pgpass
 .secrets
-secrets
+
+# Build artifacts, binaries
+.output/
+bin/
+build/
+dist-ssr/
+dist/
+out/
+target/
+
+# Dependencies
+node_modules/
+lazy-lock.json
+package-lock.json
+pnpm-lock.yaml
+
+# az (Azure CLI)
+.azure/
+!.azure/config
+
+# azurite (Azure Storage Emulator)
+.azurite/
+__blobstorage__/
+__queuestorage__/
+__azurite_db*__.json
+
+# TanStack
+.tanstack/
+
+# Turborepo
+.turbo/
