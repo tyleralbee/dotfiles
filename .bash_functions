@@ -83,12 +83,12 @@ get_usb_speed() {
     echo
 
     echo "Getting list of current devices..."
-    find /sys/devices -name speed | sort >"$tmp_devices_before"
+    find /sys/devices -name speed | sort > "$tmp_devices_before"
     read -n 1 -s -r -p "Plug in your USB device now. Press any key when ready to continue"
     echo
 
     echo "Getting list of devices after plugging in..."
-    find /sys/devices -name speed | sort >"$tmp_devices_after"
+    find /sys/devices -name speed | sort > "$tmp_devices_after"
 
     # Compare, supressing common lines and outputting unique lines
     comm -3 "$tmp_devices_before" "$tmp_devices_after" | while read f; do
