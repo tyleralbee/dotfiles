@@ -1,0 +1,7 @@
+sudo fc-list --format='%{family}\n'
+
+sudo fc-list --format='%{family}\n' | grep "DejaVu Sans"
+
+sudo fc-list --format='%{family}:%{style}\n' | grep "Bold"
+
+sudo fc-list --format='%{family}:%{style}\n' | grep "DejaVu Sans" | grep "Bold"
