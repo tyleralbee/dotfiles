@@ -15,25 +15,43 @@
 // - Use Zed to open a file with `alt-o`; open the file in a new window with `alt-shift-o`
 // - Use Vim to scroll up with `ctrl-u`; scroll to the top of the file with `ctrl-shift-u`
 //
-// Deviate from this rule of thumb for ubiquitous binds:
+// Ubiquitous binds that require special consideration:
+// 
+//        Bind             Conflict(s)
+// - `ctrl-c`: Copy    <> vim, terminal
+// - `ctrl-f`: Find    <> vim
+// - `ctrl-q`: Quit    <> vim, terminal
+// - `ctrl-t`: New Tab <> vim
+// - `ctrl-v`: Paste   <> vim, terminal
+// - `ctrl-w`: Close   <> vim, terminal
+// - `ctrl-x`: Cut     <> vim
+// - `ctrl-z`: Undo    <> terminal
 //
-// - `ctrl-c`: Copy
-// - `ctrl-f`: Find
-// - `ctrl-q`: Quit
-// - `ctrl-t`: New Tab
-// - `ctrl-v`: Paste
-// - `ctrl-w`: Close
-// - `ctrl-x`: Cut
-// - `ctrl-z`: Undo
+// Programs that cause conflicts with ubiquitous binds should be reconfigured.
 //
-// Notable changes resulting from the above include, but are not limited to:
+// 1. Vim motions (`:help`)
+// 
+//             Bind                            Suggested
+//   - `ctrl-c`  : interrupt            => (unmap): Use `esc`
+//   - `i_ctrl-f`: scroll forward       => (remap): e.g. `i_ctrl-d`
+//   - `ctrl-q`  : visual block         => (unmap): Use Zed multicursor
+//   - `ctrl-t`  : indent               => (unmap): Use Zed format
+//   - `ctrl-v`  : visual block         => (unmap): Use Zed multicursor
+//   - `ctrl-w`  : delete previous word => (remap): e.g. `i_ctrl-space`
+//   - `ctrl-x`  : decrement            => (unmap): Use Zed command palette
 //
-// - Vim motions (most importantly, `ctrl-w`)
-// - Terminal binds (PROCESS binds should be on `alt` anyways)
+// 2. GNU readline (`cheat readline`)
 //
-// Non-compliant binds below are marked with 🚩
-// Binds to be removed are marked with 🏁
-// Binds to be implemented are marked with 🚧
+//             Bind                            Suggested
+//   - `ctrl-c`: interrupt              => (remap): e.g. `ctrl-esc`
+//   - `ctrl-q`: stop display           => (unmap): e.g. `ctrl-backspace`
+//   - `ctrl-v`: next input verbatim    => (unmap)
+//   - `ctrl-w`: delete previous word   => (remap): e.g. `ctrl-space`
+//   - `ctrl-z`: suspend                => (remap): e.g. `ctrl-shift-esc`
+// 
+// In `bash`, GNU `readline` handles the command prompt changes. This is why
+// Suggested binds use `ctrl-*` - a subprocess handles them, not the terminal.
+
 [
     {
         "bindings": {
