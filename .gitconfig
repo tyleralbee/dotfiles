@@ -3,6 +3,7 @@
     path = ~/.gitconfig.local
 [core]
     excludesfile = ~/.gitignore_global
+    editor = nvim
 [alias]
     amend = commit --amend -C HEAD
     br = branch
