@@ -1,10 +1,10 @@
 // Rule of thumb - choose binds based on their CONTEXT:
 //
-// | MODIFIER | CONTEXT                 | IMPLICATION                                                | EXAMPLE CONTEXTS   |
-// | -------- | ----------------------- | ---------------------------------------------------------- | ------------------ |
-// | `super`  | SYSTEM  (e.g. Hyprland) | The bind will work regardless of which program is in focus | OS, window manager |
-// | `alt`    | PROCESS (e.g. Zed)      | The program in focus will handle the bind                  | Application        |
-// | `ctrl`   | THREAD  (e.g. Vim)      | A subprocess of the program in focus will handle the bind  | Plugin, website    |
+// | MODIFIER         | CONTEXT                 | IMPLICATION                                                | EXAMPLE CONTEXTS   |
+// | ---------------- | ----------------------- | ---------------------------------------------------------- | ------------------ |
+// | `super`(`win`)   | SYSTEM  (e.g. Hyprland) | The bind will work regardless of which program is in focus | OS, window manager |
+// | `alt`  (`opt`)   | PROCESS (e.g. Zed)      | The program in focus will handle the bind                  | Application        |
+// | `ctrl` (`cmd`)   | THREAD  (e.g. Vim)      | A subprocess of the program in focus will handle the bind  | Plugin, website    |
 //
 // - Use `shift` in tandem with `super`, `alt`, or `ctrl` for related binds.
 // - `shift` binds are less common and/or more impactful than those without.
