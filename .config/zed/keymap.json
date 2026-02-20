@@ -16,7 +16,7 @@
 // - Use Vim to scroll up with `ctrl-u`; scroll to the top of the file with `ctrl-shift-u`
 //
 // Ubiquitous binds that require special consideration:
-// 
+//
 //        Bind             Conflict(s)
 // - `ctrl-c`: Copy    <> vim, terminal
 // - `ctrl-f`: Find    <> vim
@@ -30,7 +30,7 @@
 // Programs that cause conflicts with ubiquitous binds should be reconfigured.
 //
 // 1. Vim motions (`:help`)
-// 
+//
 //             Bind                            Suggested
 //   - `ctrl-c`  : interrupt            => (unmap): Use `esc`
 //   - `i_ctrl-f`: scroll forward       => (remap): e.g. `i_ctrl-d`
@@ -48,7 +48,7 @@
 //   - `ctrl-v`: next input verbatim    => (unmap)
 //   - `ctrl-w`: delete previous word   => (remap): e.g. `ctrl-space`
 //   - `ctrl-z`: suspend                => (remap): e.g. `ctrl-shift-esc`
-// 
+//
 // In `bash`, GNU `readline` handles the command prompt changes. This is why
 // Suggested binds use `ctrl-*` - a subprocess handles them, not the terminal.
 
@@ -273,93 +273,11 @@
         }
     },
     {
-        "context": "Editor && (extension==md || extension==markdown || extension==mdx)",
+        "context": "Editor && (extension == md || extension == markdown)",
         "bindings": {
-            "alt-shift-v": "markdown::OpenPreviewToTheSide",
-
-            // Implement Obsidian hotkeys in Zed for Markdown files
-
-            // "ctrl-0": "editor:remove-heading"
-            "ctrl-0": [
-                "workspace::SendKeystrokes",
-                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / / enter escape ` m"
-            ],
-            // "ctrl-1": "editor:set-heading-1"
-            "ctrl-1": [
-                "workspace::SendKeystrokes",
-                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / # space / enter escape ` m"
-            ],
-            // "ctrl-2": "editor:set-heading-2"
-            "ctrl-2": [
-                "workspace::SendKeystrokes",
-                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / # # space / enter escape ` m"
-            ],
-            // "ctrl-3": "editor:set-heading-3"
-            "ctrl-3": [
-                "workspace::SendKeystrokes",
-                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / # # # space / enter escape ` m"
-            ],
-            // "ctrl-4": "editor:set-heading-4"
-            "ctrl-4": [
-                "workspace::SendKeystrokes",
-                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / # # # # space / enter escape ` m"
-            ],
-            // "ctrl-5": "editor:set-heading-5"
-            "ctrl-5": [
-                "workspace::SendKeystrokes",
-                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / # # # # # space / enter escape ` m"
-            ],
-            // "ctrl-6": "editor:set-heading-6"
-            "ctrl-6": [
-                "workspace::SendKeystrokes",
-                "escape m m v : s / \\ ( ^ # * \\ s | ^ \\ s | ^ \\ ) / # # # # # # space / enter escape ` m"
-            ],
-            // "Insert code block" (needs improvement)
-            "ctrl-~": [
-                "workspace::SendKeystrokes",
-                "escape i ` ` ` b a s h enter ` ` ` escape O"
-            ],
-            "ctrl-v": "editor::Paste"
-
-            // TODO: Implement the rest of the keybindings
-            //
-            // "alt-/": "templater-obsidian:templates/template-info.md",
-            // "alt-b": "editor:toggle-bullet-list",
-            // "alt-c": "templater-obsidian:templates/template-task.md",
-            // "alt-d": "insert-current-date",
-            // "alt-enter": "templater-obsidian:jump-to-next-cursor-location",
-            // "alt-g": "link-with-alias:create-link-with-alias",
-            // "alt-i": "editor:toggle-italics",
-            // "alt-m": "editor:toggle-inline-math",
-            // "alt-n": "editor:toggle-numbered-list",
-            // "alt-o": "link-with-alias:toggle-link-display-text",
-            // "alt-s": "editor:toggle-source",
-            // "alt-shift-d": "templater-obsidian:insert-templates/date.md",
-            // "alt-shift-e": "open-with-default-app:show",
-            // "alt-shift-m": "file-explorer:move-file",
-            // "alt-shift-t": "templater-obsidian:templates/template-time.md",
-            // "alt-shift-z": "editor:fold-all",
-            // "alt-t": "insert-current-time",
-            // "alt-w": "table-editor-obsidian:evaluate-formulas",
-            // "alt-x": "templater-obsidian:templates/template-index.md",
-            // "alt-y": "editor:toggle-highlight",
-            // "alt-z": "editor:toggle-fold",
-            // "ctrl-'": "mrj-jump-to-link:activate-jump-to-link",
-            // "ctrl-`": "editor:toggle-code",
-            // "ctrl-b": "editor:toggle-bold",
-            // "ctrl-g": "editor:insert-link",
-            // "ctrl-shift-c": "obsidian-tasks-plugin:toggle-done"
-        }
-    },
-    // Markdown binds when in visual mode
-    {
-        "context": "Editor && (extension==md || extension==markdown || extension==mdx) && vim_mode==visual",
-        "bindings": {
-            // Wrap in code block (needs improvement)
-            "ctrl-~": [
-                "workspace::SendKeystrokes",
-                "s ` a ` ` b a s h space escape d f ` o escape p f ` i enter ` ` escape b i backspace escape B i backspace escape V <"
-            ]
+            "ctrl-shift-v": null,
+            "ctrl-k v": null,
+            "alt-shift-v": "markdown::OpenPreviewToTheSide"
         }
     }
 ]
