@@ -13,6 +13,7 @@ alias randstr="tr -dc 'A-Za-z0-9!?%=' < /dev/urandom | head -c 10 | wl-copy"
 alias src='source $HOME/.bashrc'
 alias ts='sudo timeshift --create --comments "manual snapshot taken $(date +%F\ at\ %H:%M)"'
 
+alias act='gh act'
 alias c='clear'
 alias dot='dotfiles'
 alias l='ls'
