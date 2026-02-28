@@ -38,6 +38,19 @@
         "LOG": { "show_edit_predictions": false },
         "Markdown": { "soft_wrap": "editor_width" }
     },
+    "lsp": {
+        "vtsls": {
+            "settings": {
+                "typescript": {
+                    "updateImportsOnFileMove": { "enabled": "always" }
+                },
+                "javascript": {
+                    "updateImportsOnFileMove": { "enabled": "always" }
+                }
+            },
+            "enable_lsp_tasks": true
+        }
+    },
     "notification_panel": { "button": false },
     "preview_tabs": { "enable_keep_preview_on_code_navigation": true },
     "project_panel": {
