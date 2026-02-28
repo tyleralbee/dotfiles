@@ -238,14 +238,6 @@
             "space s": "vim::PushAddSurrounds"
         }
     },
-    // Jupyter Notebooks for TypeScript via Deno
-    {
-        "context": "Editor && jupyter && !ContextEditor",
-        "bindings": {
-            "alt-shift-backspace": "repl::ClearOutputs",
-            "alt-shift-enter": "repl::Run"
-        }
-    },
     // Run `tofu fmt` to format Terraform files
     {
         "context": "Editor && (extension == tf || extension == tfvars)",
