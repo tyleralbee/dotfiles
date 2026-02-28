@@ -105,15 +105,14 @@
     {
         "context": "Editor",
         "bindings": {
-            "ctrl-c": "editor::Copy", // vim default: return to normal mode
-            "ctrl-f": "buffer_search::Deploy", // vim default: page down
-            "ctrl-v": "editor::Paste", // vim default: visual block mode
-            "ctrl-x": "editor::Cut", // vim default: decrement
-            "ctrl-z": "editor::Undo"
-            // - `ctrl-n`: New Window
-            // - `ctrl-q`: Quit
-            // - `ctrl-t`: New Tab
-            // - `ctrl-w`: Close // 🚧 something is causing ctrl-w to be treated as the beginning of a chord
+            "ctrl-c": "editor::Copy", // was:  interrupt
+            "ctrl-f": "buffer_search::Deploy", // was:  scroll forward
+            "ctrl-q": "zed::Quit", // was:  visual block
+            "ctrl-t": null, // was:  indent
+            "ctrl-v": "editor::Paste", // was:  visual block
+            // "ctrl-w": "pane::CloseActiveItem", // was:  delete previous
+            "ctrl-x": "editor::Cut", // was:  decrement
+            "ctrl-z": "editor::Undo" // was:
         }
     },
     {
