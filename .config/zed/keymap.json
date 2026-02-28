@@ -219,19 +219,7 @@
         "context": "VimControl && vim_mode != operator && !menu",
         "bindings": {
             // use space as leader
-            "space": null,
-
-            // enable subword navigation
-            "w": "vim::NextSubwordStart",
-            "b": "vim::PreviousSubwordStart",
-            "e": "vim::NextSubwordEnd",
-            "g e": "vim::PreviousSubwordEnd",
-
-            // oil.nvim
-            "-": [
-                "task::Spawn",
-                { "task_name": "oil", "reveal_target": "center" }
-            ]
+            "space": null
         }
     },
     // normal mode only
