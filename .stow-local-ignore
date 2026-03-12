@@ -1,6 +1,7 @@
 # Perl regular expressions defining what GNU Stow should NOT create symbolic links for
+# https://www.gnu.org/software/stow/manual/html_node/Types-And-Syntax-Of-Ignore-Lists.html
 
-# ======= default ========
+# ======= built-in default ignore list ========
 
 RCS
 .+,v
@@ -24,16 +25,17 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
-# ======= custom ========
+# ======= custom ignore list ========
 
 \.gitconfig.local.example
-\.zed
-\.stowrc
-\.prettierrc
 \.prettierignore
-package.json
-node_modules
-pnpm-lock.yaml
+\.prettierrc
+\.stowrc
+\.zed
 AGENTS.md
-LLMs.md
 CONTRIBUTING.md
+LLMs.md
+node_modules
+package.json
+pnpm-lock.yaml
+scripts
