@@ -20,6 +20,7 @@ alias l='ls'
 alias pn='pnpm'
 alias tm='tmux'
 alias zed='zeditor'
+alias zed-log='tail -f $XDG_DATA_HOME/zed/logs/Zed.log'
 
 # ======== functions ========
 # Display an alert   - usage: `sleep 10; alert`
