@@ -22,19 +22,6 @@
     "git_panel": { "tree_view": true, "dock": "right" },
     "languages": {
         "env": { "show_edit_predictions": false },
-        "JSONC": {
-            "formatter": {
-                "external": {
-                    "command": "prettier",
-                    "arguments": [
-                        "--stdin-filepath",
-                        "{buffer_path}",
-                        "--tab-width",
-                        "4"
-                    ]
-                }
-            }
-        },
         "LOG": { "show_edit_predictions": false },
         "Markdown": { "soft_wrap": "editor_width" }
     },
