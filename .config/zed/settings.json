@@ -66,7 +66,16 @@
     "terminal": {
         "button": false,
         "font_family": "JetBrainsMono Nerd Font",
-        "font_size": 12
+        "font_size": 12,
+        "shell": {
+            "with_arguments": {
+                "program": "/bin/bash",
+                "args": [
+                    "-c",
+                    "tmux new-session -A -s \"basename \"$(dirname \"$PWD\")\"\""
+                ]
+            }
+        }
     },
     "theme": { "mode": "system", "light": "Ayu Light", "dark": "Ayu Dark" },
     "title_bar": { "show_project_items": false, "show_user_picture": false },
