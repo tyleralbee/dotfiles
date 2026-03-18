@@ -47,5 +47,18 @@
         "reveal": "never",
         "shell": "system",
         "use_new_terminal": false
+    },
+    {
+        "label": "Lint",
+        "command": "pnpm run lint",
+        "allow_concurrent_runs": false,
+        "args": [],
+        "hide": "never",
+        "reveal": "no_focus",
+        "reveal_target": "dock",
+        "show_command": true,
+        "show_summary": true,
+        "tags": ["pnpm", "lint", "eslint", "oxlint"],
+        "use_new_terminal": false
     }
 ]

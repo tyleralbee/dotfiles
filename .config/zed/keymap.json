@@ -258,5 +258,12 @@
             "ctrl-k v": null,
             "alt-shift-v": "markdown::OpenPreviewToTheSide"
         }
+    },
+    // Run linter on alt-shift-f
+    {
+        "context": "Editor && (extension == ts || extension == tsx || extension == js || extension == jsx)",
+        "bindings": {
+            "alt-shift-f": ["task::Spawn", { "task_name": "Lint" }]
+        }
     }
 ]
