@@ -55,7 +55,6 @@
 [
     {
         "bindings": {
-            "alt-a": null, // Zed prefix key
             "ctrl-shift-c": null, // was: collaborator panel
 
             // Ensure ubiquitous keybinds aren't overridden by defaults
@@ -76,16 +75,16 @@
             "alt->": "zed::OpenDefaultKeymap",
             "alt-[": "workspace::ToggleLeftDock", // 🏁
             "alt-]": "workspace::ToggleRightDock", // 🏁
+            "alt-a": "agent::ToggleFocus",
+            "alt-g": "git_panel::ToggleFocus",
             "alt-h": "workspace::ActivatePaneLeft",
             "alt-l": "workspace::ActivatePaneRight",
             "alt-p": "file_finder::Toggle",
             "alt-shift-/": "vim::OpenDefaultKeymap",
-            "alt-shift-a": "agent::ToggleFocus",
-            "alt-shift-c": [
+            "alt-shift-a": [
                 "agent::NewExternalAgentThread",
-                { "agent": "codex" }
+                { "agent": { "custom": { "name": "codex-acp" } } }
             ],
-            "alt-shift-g": "git_panel::ToggleFocus",
             "alt-shift-h": "workspace::ToggleLeftDock",
             "alt-shift-l": "workspace::ToggleRightDock",
             "alt-shift-p": "command_palette::Toggle",
@@ -95,10 +94,9 @@
     {
         "context": "Editor",
         "bindings": {
-            "alt-a ctrl-r": "git::Restore",
-            "alt-a ctrl-y": "editor::CopyFileName",
             "alt-f": "editor::Format",
-            "alt-shift-r": "editor::RestartLanguageServer"
+            "alt-shift-r": "editor::RestartLanguageServer",
+            "ctrl-g ctrl-r": "git::Restore"
         }
     },
     // Re-assign ubiquitous keybinds
