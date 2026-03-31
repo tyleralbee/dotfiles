@@ -14,6 +14,25 @@
         "copilot": { "enable_next_edit_suggestions": false }
     },
     "file_types": {
+        // https://github.com/kartikvashistha/zed-ansible?tab=readme-ov-file#filetype-detection
+        "Ansible": [
+            "**.ansible.yml",
+            "**.ansible.yaml",
+            "**/defaults/*.yml",
+            "**/defaults/*.yaml",
+            "**/meta/*.yml",
+            "**/meta/*.yaml",
+            "**/tasks/*.yml",
+            "**/tasks/*.yaml",
+            "**/handlers/*.yml",
+            "**/handlers/*.yaml",
+            "**/group_vars/*.yml",
+            "**/group_vars/*.yaml",
+            "**/playbooks/*.yaml",
+            "**/playbooks/*.yml",
+            "**playbook*.yaml",
+            "**playbook*.yml"
+        ],
         "env": [".env*"],
         "Hyprland Config": ["**/hypr/*.conf"],
         "JSON": [".prettierrc"]
