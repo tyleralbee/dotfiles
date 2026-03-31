@@ -1,6 +1,73 @@
 # Create directory and navigate into it
 mkcd() { mkdir "$@" && cd "$@" || exit; }
 
+# command_exists - Ensure a command exists before running it
+#
+# Example:
+#   if command_exists docker; then
+#     echo "Docker already installed"
+#   else
+#     curl -sSL https://get.docker.com | sh
+#   fi
+command_exists() { command -v "$@" > /dev/null 2>&1 }
+
+# is_root - Check if the current user is root
+#
+# Usage:
+#   is_root
+#
+# Returns:
+#   0 if the current user is root, 1 otherwise
+#
+# Example:
+#   is_root && echo "Running as root" || echo "Not root"
+is_root() { [ "$(id -u)" -eq 0 ]; }
+
+# get_ip - Get IP; IPv4 if it exists, otherwise IPv6
+#
+# Usage:
+#   get_ip
+#
+# Returns:
+#   IPv4 if available, otherwise IPv6
+# 
+# Exits:
+#   1 if unable to determine IP address
+# 
+# Example:
+#   ip=$(get_ip)
+get_ip() {
+    local ip=""
+    
+    # IPv4
+    ip=$(curl -4s --connect-timeout 5 https://ifconfig.io 2>/dev/null)
+    if [ -z "$ip" ]; then
+        ip=$(curl -4s --connect-timeout 5 https://icanhazip.com 2>/dev/null)
+    fi
+    if [ -z "$ip" ]; then
+        ip=$(curl -4s --connect-timeout 5 https://ipecho.net/plain 2>/dev/null)
+    fi
+    
+    # IPv6 fallback
+    if [ -z "$ip" ]; then
+        ip=$(curl -6s --connect-timeout 5 https://ifconfig.io 2>/dev/null)
+        if [ -z "$ip" ]; then
+            ip=$(curl -6s --connect-timeout 5 https://icanhazip.com 2>/dev/null)
+        fi
+        if [ -z "$ip" ]; then
+            ip=$(curl -6s --connect-timeout 5 https://ipecho.net/plain 2>/dev/null)
+        fi
+    fi
+    
+    # Exit if unable to determine IP
+    if [ -z "$ip" ]; then
+        echo "Error: Could not determine server IP address automatically (neither IPv4 nor IPv6)." >&2
+        exit 1
+    fi
+
+    echo "$ip"
+}
+
 # colors - Display all color combinations in terminal
 # Source: https://askubuntu.com/a/279014
 colors() {
