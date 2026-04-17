@@ -29,5 +29,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # Copy file contents - usage: `copy example.txt`
 alias copy='wl-copy <'
 
-# ======== completions ========
+# Create worktree, start Codex with optional prompt
+# USAGE: wtsc fix/example -- 'Fix GH #123'
+# https://worktrunk.dev/tips-patterns/#shell-alias-for-new-worktree-agent
+alias wtsc='wt switch --create --execute=codex'
+
+# ======= completions =======
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
