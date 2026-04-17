@@ -8,7 +8,7 @@
     amend = commit --amend -C HEAD
     br = branch
     co = checkout
-    lg = log -20 --reverse
+    lg = log -20
     st = status
     uncommit = reset HEAD~1
     unstage = reset HEAD --
