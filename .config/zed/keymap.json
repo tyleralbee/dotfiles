@@ -85,6 +85,7 @@
                 "agent::NewExternalAgentThread",
                 { "agent": { "custom": { "name": "codex-acp" } } }
             ],
+            "alt-shift-g": "git::GenerateCommitMessage",
             "alt-shift-h": "workspace::ToggleLeftDock",
             "alt-shift-l": "workspace::ToggleRightDock",
             "alt-shift-p": "command_palette::Toggle",
