@@ -10,9 +10,8 @@
     "debugger": { "dock": "left", "button": false },
     "diagnostics": { "button": false },
     "edit_predictions": {
-        "provider": "copilot",
-        "enabled_in_text_threads": true,
-        "copilot": { "enable_next_edit_suggestions": false }
+        "copilot": { "enable_next_edit_suggestions": false },
+        "provider": "copilot"
     },
     "file_types": {
         // https://github.com/kartikvashistha/zed-ansible?tab=readme-ov-file#filetype-detection
@@ -108,9 +107,9 @@
     "use_smartcase_search": true,
     "vim": {
         "highlight_on_yank_duration": 100,
+        "toggle_relative_line_numbers": true,
         "use_smartcase_find": true,
-        "use_system_clipboard": "always",
-        "toggle_relative_line_numbers": true
+        "use_system_clipboard": "always"
     },
     "vim_mode": true
 }
