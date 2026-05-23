@@ -80,6 +80,7 @@
             "alt-h": "workspace::ActivatePaneLeft",
             "alt-l": "workspace::ActivatePaneRight",
             "alt-p": "file_finder::Toggle",
+            "alt-s": "project_panel::Toggle",
             "alt-shift-/": "vim::OpenDefaultKeymap",
             "alt-shift-a": [
                 "agent::NewExternalAgentThread",
