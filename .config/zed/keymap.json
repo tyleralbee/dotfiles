@@ -75,8 +75,8 @@
             "alt->": "zed::OpenDefaultKeymap",
             "alt-[": "workspace::ToggleLeftDock", // 🏁
             "alt-]": "workspace::ToggleRightDock", // 🏁
-            "alt-a": "agent::ToggleFocus",
-            "alt-g": "git_panel::ToggleFocus",
+            "alt-a": "agent::Toggle",
+            "alt-g": "git_panel::Toggle",
             "alt-h": "workspace::ActivatePaneLeft",
             "alt-l": "workspace::ActivatePaneRight",
             "alt-p": "file_finder::Toggle",
