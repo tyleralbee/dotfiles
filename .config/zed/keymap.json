@@ -218,7 +218,8 @@
         "context": "VimControl && vim_mode != operator && !menu",
         "bindings": {
             // use space as leader
-            "space": null
+            "space": null,
+            "space f": "vim::HelixJumpToWord"
         }
     },
     // normal mode only
