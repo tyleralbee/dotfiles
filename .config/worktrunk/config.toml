@@ -1,3 +1,4 @@
+skip-commit-generation-prompt = true
 # https://worktrunk.dev/config/
 
 # Copy gitignored files to another worktree
