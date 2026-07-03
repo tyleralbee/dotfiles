@@ -33,7 +33,6 @@ Terminal user interfaces (TUIs):
 
 - [nvim](https://neovim.io/doc/user/): text editor
 - [tmux](https://github.com/tmux/tmux/wiki): terminal multiplexer
-- [yazi](https://yazi-rs.github.io/docs/configuration/overview): terminal file manager
 
 ### GUI
 
