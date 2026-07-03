@@ -26,9 +26,9 @@
  ## Echos what color the git branch should be (depending on changes)
  parse_git_changes() {
    if [[ $(git status --porcelain) ]]; then
-     echo ${COL_GIT_STATUS_CLEAN}
+     echo "${COL_GIT_STATUS_CLEAN}"
    else
-     echo ${COL_GIT_STATUS_CHANGES}
+     echo "${COL_GIT_STATUS_CHANGES}"
    fi
  }
 

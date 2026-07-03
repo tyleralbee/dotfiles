@@ -26,11 +26,14 @@ export BASH_COMPLETION_USER_DIR="$XDG_DATA_HOME/bash-completion"
 if command -v wt > /dev/null 2>&1; then eval "$(command wt config shell init bash)"; fi
 
 ## Sources
+# shellcheck source=.bash_prompt
 . ~/.bash_prompt 2> /dev/null || true
+# shellcheck source=.complete_alias disable=SC1094
 . ~/.complete_alias 2> /dev/null || true
+# shellcheck source=.bash_functions
 . ~/.bash_functions 2> /dev/null || true
+# shellcheck source=.bash_aliases
 . ~/.bash_aliases 2> /dev/null || true
-. ~/.bashrc.local 2> /dev/null || true
 
 # https://direnv.net/docs/hook.html#bash
 eval "$(direnv hook bash)"
