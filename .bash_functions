@@ -9,7 +9,7 @@ mkcd() { mkdir "$@" && cd "$@" || exit; }
 #   else
 #     curl -sSL https://get.docker.com | sh
 #   fi
-command_exists() { command -v "$@" > /dev/null 2>&1 }
+command_exists() { command -v "$@" > /dev/null 2>&1; }
 
 # is_root - Check if the current user is root
 #
