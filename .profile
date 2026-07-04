@@ -78,5 +78,7 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 ## Privacy
 export DO_NOT_TRACK=1                          # Seems to be a dead standard
 
-export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1 # Azure Functions Core Tools
-export TURBO_TELEMETRY_DISABLED=1              # Turbo (Vercel)
+## Device identifiers, e.g. for KDE Connect
+export DESKTOP_NAME="tyler-arch-20251001-desktop" # Arch PC
+export LAPTOP_NAME="tyler-macos-26-laptop"        # MacOS Laptop
+export MOBILE_NAME="tyler-ios-26-mobile"          # iOS iPhone
