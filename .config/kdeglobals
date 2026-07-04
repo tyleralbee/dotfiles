@@ -1,0 +1,4 @@
+[General]
+BrowserApplication[$e]=firefox.desktop
+TerminalApplication=ghostty
+TerminalService=com.mitchellh.ghostty.desktop
