@@ -1,5 +1,7 @@
 **/*.log
 **/log{,s}/**
+.DS_Store
+.envrc
 .gitconfig.local
 .local/bin/*
 node_modules/

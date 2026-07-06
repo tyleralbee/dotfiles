@@ -32,6 +32,7 @@ _darcs
 \.prettierrc
 \.stowrc
 \.zed
+\.DS_Store
 AGENTS.md
 CONTRIBUTING.md
 LLMs.md
