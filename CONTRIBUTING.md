@@ -31,7 +31,7 @@ Commit messages adhere to the [Conventional Commits specification](https://conve
    │       │
    │       └─⫸ `MUST` be `bash|git|rg|stow|tmux|.config/*` for non-breaking changes; `MAY` omit otherwise
    │
-   └─⫸ `MUST` be `build|chore|ci|docs|feat|fix|perf|refactor|test`
+   └─⫸ `MUST` be `build|chore|ci|docs|feat|fix|refactor|test`
 ```
 
 1. `<type>` [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be a [Type](#type)
