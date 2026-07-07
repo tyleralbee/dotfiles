@@ -29,15 +29,15 @@ Commit messages adhere to the [Conventional Commits specification](https://conve
    │       │       │
    │       │       └─⫸ `MUST` include `!` for breaking changes; `MUST` omit otherwise
    │       │
-   │       └─⫸ `MUST` be `bash|git|rg|stow|tmux|.config/*` for non-breaking changes; `MAY` omit otherwise
+   │       └─⫸ `MUST` be `bash|git|rg|stow|tmux|.config/*` when present
    │
    └─⫸ `MUST` be `build|chore|ci|docs|feat|fix|refactor|test`
 ```
 
 1. `<type>` [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be a [Type](#type)
 2. `<scope>`, if set, [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be a [Scope](#scope)
-3. `<scope>` [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) exist if `!bang`
-4. `<scope>` [SHOULD](https://rfc-editor.org/rfc/rfc2119#section-3) exist if `bang`
+3. `<scope>` [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) exist if `<bang>` (`!`) doesn't exist
+4. `<scope>` [SHOULD](https://rfc-editor.org/rfc/rfc2119#section-3) exist if `<bang>` (`!`) exists
 5. `<bang>` [MUST NOT](https://rfc-editor.org/rfc/rfc2119#section-2) exist if `type!=feat|fix`
 6. `<summary>` [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be present-tense
 7. `<summary>` [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be uncapitalized
@@ -144,7 +144,7 @@ Generally, `scope` should be a package. In this repository, `scope` tends to be 
 
 ## Release
 
-A release is triggered by a commit that includes a message [header](#header) with one of the following prefixes:
+If a release is triggered, the release should include a commit message [header](#header) with one of the following prefixes:
 
 | Prefix        | Description      | Example                                   | Version  |
 | ------------- | ---------------- | ----------------------------------------- | -------- |
@@ -161,10 +161,7 @@ A release is triggered by a commit that includes a message [header](#header) wit
 | `refactor(*)` | Scoped refactor  | `refactor(api): split tests from source`  | `+0.0.1` |
 | `refactor`    | Refactor         | `refactor: use lower-kebab for filenames` | `+0.0.1` |
 
-Notable exclusions:
-
-- `refactor!`, `refactor(*)!`, `build!`, and `build(*)`: bumping dependencies and refactoring code shouldn't affect public API.
-- The rest of the [types](#type): a release can include any valid [type](#type), but a release is only triggered by `build|feat|fix|refactor`.
+The rest of the [types](#type): a release can include any valid [type](#type), but a release should only be triggered by `build|feat|fix|refactor`.
 
 1. Releases [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be triggered by `build|feat|fix|refactor` [type](#type) commits.
 2. Releases [MAY](https://rfc-editor.org/rfc/rfc2119#section-5) include one or more `chore|ci|docs|test` [type](#type) commits.
