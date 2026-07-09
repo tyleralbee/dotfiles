@@ -27,15 +27,17 @@ _darcs
 
 # ======= custom ignore list ========
 
+\.DS_Store
 \.gitconfig.local.example
+\.luarc.json
 \.prettierignore
 \.prettierrc
 \.stowrc
 \.zed
-\.DS_Store
 AGENTS.md
 CONTRIBUTING.md
 LLMs.md
+macos
 node_modules
 package.json
 pnpm-lock.yaml
