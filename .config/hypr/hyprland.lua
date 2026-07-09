@@ -32,15 +32,9 @@ hl.on("hyprland.start", function()
     -- Screensharing
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-
-    -- hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme local_var_cursor_theme")
-    -- hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-size local_var_cursor_size")
-    -- hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme prefer-dark")
-    -- hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3")
 end)
 
 -- env.conf
--- hl.env("EDITOR", "zeditor")
 
 -- Environment variables - Toolkit Backend Variables
 hl.env("GDK_BACKEND", "wayland,x11,*")   -- pacman -Qi gtk3 gtk4
@@ -56,7 +50,6 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct") -- KDE Dolphin dark mode: qt6ct > Style > kvantum-dark
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
--- hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
 
 -- Environment variables - Nvidia Specific
 hl.env("GBM_BACKEND", "nvidia-drm")
@@ -69,20 +62,6 @@ hl.env("GTK_THEME", "Adwaita:dark")
 -- hyprcursor - Hyprcursor Themes
 hl.env("HYPRCURSOR_THEME", cursor_theme)
 hl.env("HYPRCURSOR_SIZE", cursor_size)
-
--- Firefox wayland & hardware acceleration - https://www.reddit.com/r/archlinux/comments/ozubo9/using_firefox_on_wayland_make_sure_you_have_moz - https://github.com/elFarto/nvidia-vaapi-driver#configuration
--- hl.env("MOZ_ENABLE_WAYLAND", 1)
--- hl.env("MOZ_DISABLE_RDD_SANDBOX", 1)
--- hl.env("EGL_PLATFORM", "wayland")
-
--- Electron v28+ apps (e.g. Obsidian, Discord) - https://www.electronjs.org/docs/latest/api/environment-variables
--- hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
-
--- Software rendering with `gles2` - https://gitlab.freedesktop.org/wlroots/wlroots/-/blob/master/docs/env_vars.md?ref_type=heads#gles2-renderer
--- hl.env("WLR_RENDERER_ALLOW_SOFTWARE", 1)
-
--- Hardware video decoding - https://github.com/elFarto/nvidia-vaapi-driver
--- hl.env("NVD_BACKEND", "direct")
 
 -- windowrule.conf
 hl.window_rule({ name = "add-tag-auth-to-class-yubico", match = { class = yubico_class, }, tag = "+auth", })
