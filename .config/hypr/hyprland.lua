@@ -214,7 +214,7 @@ hl.bind("SUPER + V", focus_or_exec(dolphin_class, "dolphin"), { submap_universal
 
 -- Functions
 hl.bind("SUPER + Q", hl.dsp.window.close())
-hl.bind("SUPER + W", hl.dsp.exec_cmd("cliphist list| fuzzel --dmenu --with-nth 2| cliphist decode| wl-copy"))
+hl.bind("SUPER + W", hl.dsp.exec_cmd("kdeconnect-cli -n " .. os.getenv("LAPTOP_NAME") .. " --send-clipboard" ))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("fuzzel"))
 hl.bind("SUPER + R", hl.dsp.window.fullscreen())
 hl.bind("SUPER + T", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | swappy -f -]]))
