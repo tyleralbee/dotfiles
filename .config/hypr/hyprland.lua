@@ -17,7 +17,6 @@ local yubico_class = "com.yubico.yubioath"
 local zed_class = "dev.zed.Zed"
 local zoom_class = "zoom"
 
--- exec-once.conf
 hl.on("hyprland.start", function()
     -- Authentication
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
@@ -34,7 +33,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 end)
 
--- env.conf
 
 -- Environment variables - Toolkit Backend Variables
 hl.env("GDK_BACKEND", "wayland,x11,*")   -- pacman -Qi gtk3 gtk4
@@ -63,7 +61,6 @@ hl.env("GTK_THEME", "Adwaita:dark")
 hl.env("HYPRCURSOR_THEME", cursor_theme)
 hl.env("HYPRCURSOR_SIZE", cursor_size)
 
--- windowrule.conf
 hl.window_rule({ name = "add-tag-auth-to-class-yubico", match = { class = yubico_class, }, tag = "+auth", })
 hl.window_rule({ name = "add-tag-browser-to-class-firefox", match = { class = firefox_class, }, tag = "+browser", })
 hl.window_rule({ name = "add-tag-code-to-class-zed", match = { class = zed_class, }, tag = "+code", })
@@ -84,7 +81,6 @@ hl.window_rule({ name = "add-tag-quarterfloat-to-tag-auth", match = { tag = "aut
 hl.window_rule({ name = "implement-tag-quarterfloat-behavior", match = { tag = "quarterfloat", }, float = true, size = { "(monitor_w*0.25)", "(monitor_h*0.9)" }, move = { "((monitor_w*0.725))", "((monitor_h*0.05))" }, })
 
 hl.window_rule({ name = "assign-workspace-1-to-tag-code", match = { tag = "code*", }, workspace = "1", })
-hl.window_rule({ name = "assign-workspace-1-to-tag-game", match = { tag = "game*", }, workspace = "1", })
 hl.window_rule({ name = "assign-workspace-2-to-tag-browser", match = { tag = "browser*", }, workspace = "2", })
 hl.window_rule({ name = "assign-workspace-3-to-tag-notes", match = { tag = "notes*", }, workspace = "3", })
 hl.window_rule({ name = "assign-workspace-4-to-tag-terminal", match = { tag = "terminal*", }, workspace = "4", })
@@ -94,58 +90,16 @@ hl.window_rule({ name = "assign-workspace-6-to-tag-music", match = { tag = "musi
 hl.window_rule({ name = "assign-workspace-6-to-tag-social", match = { tag = "social*" }, workspace = "6" })
 
 hl.config({
-    -- animation.conf
-    animations = {
-        enabled = false,
-    },
-
-    -- bind.conf
-
-    -- cursor.conf
-    cursor = {
-        hotspot_padding = 0,
-        persistent_warps = true,
-    },
-
-    -- decoration.conf
-
-    -- ecosystem.conf
-    ecosystem = {
-        no_donation_nag = true,
-    },
-
-    -- general.conf
-    general = {
-        gaps_in = 0,
-        gaps_out = 0,
-        border_size = 0,
-    },
-
-    -- input.conf
-    input = {
-        -- Keyboard
-        repeat_delay = 250,
-        repeat_rate = 25,
-    },
-
-    -- misc.conf
-    misc = {
-        disable_hyprland_logo = true,
-        disable_splash_rendering = true,
-        middle_click_paste = false,
-        mouse_move_enables_dpms = true,
-    },
-
-    -- xwayland.conf
-    xwayland = {
-        force_zero_scaling = true,
-    },
+    animations = { enabled = false, },
+    cursor = { hotspot_padding = 0, persistent_warps = true, },
+    ecosystem = { no_donation_nag = true, },
+    general = { gaps_in = 0, gaps_out = 0, border_size = 0, },
+    input = { repeat_delay = 250, repeat_rate = 25, },
+    misc = { disable_hyprland_logo = true, disable_splash_rendering = true, middle_click_paste = false, mouse_move_enables_dpms = true, },
+    xwayland = { force_zero_scaling = true, },
 })
 
--- permission.conf - MUST ENABLE config.ecosystem.permissions
 -- hl.permission({ binary = "/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", type = "screencopy", mode = "allow" })
-
--- bind.conf
 
 local function focus_or_exec(class_name, command)
     return function()
@@ -225,11 +179,9 @@ hl.bind("SUPER + SHIFT + R", hl.dsp.window.fullscreen())
 hl.bind("SUPER + SHIFT + T", hl.dsp.exec_cmd("hyprpicker --autocopy"))
 hl.bind("SUPER + SHIFT + P", hl.dsp.exec_cmd("poweroff"))
 
--- monitors.conf
 hl.monitor({ output = "DP-2", mode = "1920x1080@240.0", position = "3840x0", scale = 1.0, })
 hl.monitor({ output = "DP-3", mode = "1920x1080@239.76", position = "5760x0", scale = 1.0 })
 
--- workspaces.conf
 hl.workspace_rule({ workspace = "1", monitor = "DP-2", default = true, })
 hl.workspace_rule({ workspace = "2", monitor = "DP-3", default = true, })
 hl.workspace_rule({ workspace = "3", monitor = "DP-2", })
