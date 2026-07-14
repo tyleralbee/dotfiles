@@ -7,7 +7,7 @@
 # Tools configured:
 # - pnpm: Add pnpm binaries to PATH
 # - firefox: Default web browser
-# - nvim: Default terminal/systemd editor
+# - nvim: Default systemd editor
 # - fzf: Use ripgrep for fuzzy find
 # - man: Use bat for syntax highlighting
 # - ghostty: Default terminal emulator
@@ -58,7 +58,7 @@ esac
 
 ## Default programs, e.g. for xdg-open
 export BROWSER=firefox
-export EDITOR=nvim
+export EDITOR=zeditor
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
 export PAGER=less
