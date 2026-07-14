@@ -159,7 +159,7 @@ hl.bind("SUPER + ALT + down", hl.dsp.window.swap({ direction = "down" }))
 -- Applications
 hl.bind("SUPER + A", focus_or_exec(zed_class, "zeditor"), { submap_universal = true })
 hl.bind("SUPER + S", focus_or_exec(firefox_class, "firefox"), { submap_universal = true })
-hl.bind("SUPER + D", focus_or_exec(obsidian_class, "xdg-open obsidian://vault/" .. os.getenv("OBSIDIAN_NOTES_DIR")), { submap_universal = true })
+hl.bind("SUPER + D", focus_or_exec(obsidian_class, "xdg-open obsidian://vault/" .. os.getenv("NOTES_DIR")), { submap_universal = true })
 hl.bind("SUPER + F", focus_or_exec(ghostty_class, "ghostty"), { submap_universal = true })
 hl.bind("SUPER + Z", focus_or_exec(yubico_class, "authenticator"), { submap_universal = true })
 hl.bind("SUPER + G", focus_or_exec(runelite_class, "bolt"), { submap_universal = true })
@@ -168,7 +168,7 @@ hl.bind("SUPER + V", focus_or_exec(dolphin_class, "dolphin"), { submap_universal
 
 -- Functions
 hl.bind("SUPER + Q", hl.dsp.window.close())
-hl.bind("SUPER + W", hl.dsp.exec_cmd("kdeconnect-cli -n " .. os.getenv("LAPTOP_NAME") .. " --send-clipboard" ))
+hl.bind("SUPER + W", hl.dsp.exec_cmd("kdeconnect-cli -n " .. os.getenv("LAPTOP_NAME") .. " --send-clipboard"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("fuzzel"))
 hl.bind("SUPER + R", hl.dsp.window.fullscreen())
 hl.bind("SUPER + T", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | swappy -f -]]))
