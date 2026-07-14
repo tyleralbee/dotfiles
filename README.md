@@ -31,7 +31,6 @@ Command-line tools:
 
 Terminal user interfaces (TUIs):
 
-- [nvim](https://neovim.io/doc/user/): text editor
 - [tmux](https://github.com/tmux/tmux/wiki): terminal multiplexer
 
 ### GUI
