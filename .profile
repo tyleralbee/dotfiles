@@ -71,7 +71,9 @@ export CHEAT_CONFIG_PATH="$XDG_CONFIG_HOME/cheat/conf.yml"
 export CHEAT_USE_FZF=true
 export GRIM_DEFAULT_DIR="$HOME/Pictures/Screenshots/"
 export NODE_REPL_HISTORY="$XDG_STATE_HOME"/node_repl_history
+export NOTES_DIR="$HOME/orgs/tyleralbee/notes"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+export STOW_DIR="$HOME/orgs/tyleralbee/dotfiles"
 
 ## Disable telemetry, e.g. in the Supabase CLI
 export DO_NOT_TRACK=1                             # Generic opt-out
