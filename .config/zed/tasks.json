@@ -12,13 +12,6 @@
         "show_command": true
     },
     {
-        "label": "oil",
-        "command": "exec nvim --cmd \"set noswapfile\" -c \"lua require('oil').open_float('$ZED_DIRNAME')\" -c \"autocmd FileType oil nnoremap <buffer><silent> q :qa!<CR>\"",
-        "use_new_terminal": true,
-        "reveal_target": "center",
-        "hide": "always"
-    },
-    {
         "label": "Open keymap",
         "command": "zeditor",
         "args": ["$STOW_DIR/.config/zed/keymap.json"],
