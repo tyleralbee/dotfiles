@@ -94,7 +94,7 @@ hl.config({
     cursor = { hotspot_padding = 0, persistent_warps = true, },
     ecosystem = { no_donation_nag = true, },
     general = { gaps_in = 0, gaps_out = 0, border_size = 0, },
-    input = { repeat_delay = 250, repeat_rate = 25, },
+    input = { repeat_delay = 250, repeat_rate = 25, accel_profile = "flat", scroll_factor = "1.5" },
     misc = { disable_hyprland_logo = true, disable_splash_rendering = true, middle_click_paste = false, mouse_move_enables_dpms = true, },
     xwayland = { force_zero_scaling = true, },
 })
