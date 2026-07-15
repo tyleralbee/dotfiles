@@ -40,7 +40,6 @@ Terminal user interfaces (TUIs):
 - [hypr](https://wiki.hypr.land/Configuring/): Wayland compositor
 - [obsidian](https://help.obsidian.md/): notes
 - [tridactyl](https://tridactyl.xyz/build/static/docs/modules/_src_excmds_.html): Firefox Vim motions
-- [waybar](https://github.com/Alexays/Waybar/wiki/Configuration): status bar
 - [zed](https://zed.dev/docs/): IDE
 
 ## Resources
