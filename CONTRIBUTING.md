@@ -2,7 +2,7 @@
 
 This document is intended to be a template of sorts. It is written in the context of this repository to provide concrete examples, but **changes to this repository may not always adhere to the guidelines below**.
 
-## Commit messages
+## Commit message
 
 Commit messages adhere to the [Conventional Commits specification](https://conventionalcommits.org/en/v1.0.0/#specification). General structure, [Type](#type) and [Scope](#scope) are adapted from [Angular's commit message guidelines](https://github.com/angular/angular/blob/c672f9211bf78a580ed220a0729d3a8cefa5a737/contributing-docs/commit-message-guidelines.md).
 
@@ -25,20 +25,20 @@ Commit messages adhere to the [Conventional Commits specification](https://conve
 ```txt
 <type>[(<scope>)][<bang>]: <summary>
    │       │       │        │
-   │       │       │        └─⫸ `MUST` be present-tense, periodless, `Uncapitalize<string>`
+   │       │       │        └─ `MUST` be present-tense, periodless, `Uncapitalize<string>`
    │       │       │
-   │       │       └─⫸ `MUST` include `!` for breaking changes; `MUST` omit otherwise
+   │       │       └─ `MUST` include `!` for breaking changes; `MUST` omit otherwise
    │       │
-   │       └─⫸ `MUST` be `bash|git|rg|stow|tmux|.config/*` when present
+   │       └─ `MUST` be a subdirectory of `apps/*` or `packages/*`, `devtools`, or a root directory (e.g. `infra`)
    │
-   └─⫸ `MUST` be `build|chore|ci|docs|feat|fix|refactor|test`
+   └─ `MUST` be `build|chore|ci|docs|feat|fix|refactor|test`
 ```
 
 1. `<type>` [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be a [Type](#type)
 2. `<scope>`, if set, [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be a [Scope](#scope)
 3. `<scope>` [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) exist if `<bang>` (`!`) doesn't exist
 4. `<scope>` [SHOULD](https://rfc-editor.org/rfc/rfc2119#section-3) exist if `<bang>` (`!`) exists
-5. `<bang>` [MUST NOT](https://rfc-editor.org/rfc/rfc2119#section-2) exist if `type!=feat|fix`
+5. `<bang>` [MUST NOT](https://rfc-editor.org/rfc/rfc2119#section-2) exist if `type==chore|ci|docs|refactor|test`
 6. `<summary>` [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be present-tense
 7. `<summary>` [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be uncapitalized
 8. `<summary>` [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) omit ending "."
@@ -79,18 +79,14 @@ A commit's **scope** indicates a commit's area of impact. Omit scope if changes 
 
 1. If supplied, `scope` [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be one of the following:
 
-| **Scope**          | **Changes**               | **Example paths**                                                      |
-| ------------------ | ------------------------- | ---------------------------------------------------------------------- |
-| `bash`             | Bash shell config         | `.bash_aliases\|.bash_prompt\|.bash_profile\|.bashrc\|.bash_functions` |
-| `git`              | Git config                | `.gitignore\|.gitconfig.local.example\|.gitconfig\|.gitignore_global`  |
-| `readline`         | GNU readline config       | `.inputrc`                                                             |
-| `rg`               | Ripgrep config            | `.rgignore\|.ripgreprc`                                                |
-| `stow`             | GNU Stow config           | `.stow-local-ignore\|.stowrc`                                          |
-| `tmux`             | Tmux config               | `.tmux.conf`                                                           |
-| `*` in `.config/*` | Directories in `.config/` | `.config/cheat`                                                        |
-| `devtools`         | Developer tooling         | `.prettierignore\|.prettierrc\|.zed/*`                                 |
+| **Scope**                                | **Example Changes**                | **Example Scope** | **Example paths**         |
+| ---------------------------------------- | ---------------------------------- | ----------------- | ------------------------- |
+| A directory in `apps/*`                  | Standalone apps in `apps/`         | `www`             | `apps/www`                |
+| A directory in `packages/*`              | Shared packages in `packages/`     | `logger`          | `packages/logger`         |
+| Root directory besides `apps`/`packages` | Infrastructure as code in `infra/` | `infra`           | `infra/environments/prod` |
+| `devtools`                               | Developer tooling                  | `devtools`        | `.zed`                    |
 
-Generally, `scope` should be a package. In this repository, `scope` tends to be the name of the binary that the changes affect OR a directory in `.config/`.
+Generally, `scope` should be a package. In this repository, `scope` tends to be the name of the app that the changes affect OR a directory in `packages/`.
 
 > [!TIP]
 > `scope` serves to inform readers _where_ a change occurred. `scope` generally helps us do two things:
@@ -105,63 +101,14 @@ Generally, `scope` should be a package. In this repository, `scope` tends to be 
 >
 > It follows that **`scope` is most important for non-breaking changes**.
 
-### Examples
+##### Bang
 
-> [!EXAMPLE]- Minimal non-breaking change
->
-> ```txt
-> <type>(<scope>): <summary>
-> ```
+If a commit introduces a breaking change, the `!` character [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be present in the `<header>`.
 
-> [!EXAMPLE]- Minimal breaking change (`!`)
->
-> ```txt
-> <fix|feat>!: <summary>
->
-> BREAKING CHANGE: <description>
-> ```
+The following [Types](#type) should never have a `!` in the `<header>`:
 
-> [!EXAMPLE]- Detailed non-breaking change
->
-> ```txt
-> <type>(<scope>): <summary>
->
-> <optional body>
->
-> <optional footer(s)>
-> ```
-
-> [!EXAMPLE]- Detailed breaking change (`!`)
->
-> ```txt
-> <fix|feat>(<optional scope>)!: <summary>
->
-> <optional body>
->
-> BREAKING CHANGE: <description>
-> <optional footer(s)>
-> ```
-
-## Release
-
-If a release is triggered, the release should include a commit message [header](#header) with one of the following prefixes:
-
-| Prefix        | Description      | Example                                   | Version  |
-| ------------- | ---------------- | ----------------------------------------- | -------- |
-| `build(*)`    | Scoped build     | `build(api): bump Express to 5.0.0`       | `+0.0.1` |
-| `build`       | Build            | `build: bump TypeScript to 6.0.0`         | `+0.0.1` |
-| `feat!`       | Breaking feature | `feat!: require MFA for all`              | `+1.0.0` |
-| `feat(*)!`    | Scoped, breaking | `feat(api)!: send welcome email`          | `+1.0.0` |
-| `feat(*)`     | Scoped feature   | `feat(web): toggle dark mode`             | `+0.1.0` |
-| `feat`        | Feature          | `feat: add background jobs`               | `+0.1.0` |
-| `fix!`        | Breaking bugfix  | `fix!: disallow weak password`            | `+1.0.0` |
-| `fix(*)!`     | Scoped, breaking | `fix(api)!: auth cookie expires`          | `+1.0.0` |
-| `fix(*)`      | Scoped bugfix    | `fix(web): redirect on login`             | `+0.0.1` |
-| `fix`         | Bugfix           | `fix: run tests included in source`       | `+0.0.1` |
-| `refactor(*)` | Scoped refactor  | `refactor(api): split tests from source`  | `+0.0.1` |
-| `refactor`    | Refactor         | `refactor: use lower-kebab for filenames` | `+0.0.1` |
-
-The rest of the [types](#type): a release can include any valid [type](#type), but a release should only be triggered by `build|feat|fix|refactor`.
-
-1. Releases [MUST](https://rfc-editor.org/rfc/rfc2119#section-1) be triggered by `build|feat|fix|refactor` [type](#type) commits.
-2. Releases [MAY](https://rfc-editor.org/rfc/rfc2119#section-5) include one or more `chore|ci|docs|test` [type](#type) commits.
+1. `chore`: Changes to developer tooling [MUST NOT](https://rfc-editor.org/rfc/rfc2119#section-2) affect the public API or end-user functionality.
+2. `ci`: Changes to CI/CD [MUST NOT](https://rfc-editor.org/rfc/rfc2119#section-2) affect the public API or end-user functionality.
+3. `docs`: Changes to documentation [MUST NOT](https://rfc-editor.org/rfc/rfc2119#section-2) affect the public API or end-user functionality.
+4. `refactor`: Changes to code structure [MUST NOT](https://rfc-editor.org/rfc/rfc2119#section-2) affect the public API or end-user functionality.
+5. `test`: Changes to tests [MUST NOT](https://rfc-editor.org/rfc/rfc2119#section-2) affect the public API or end-user functionality.
