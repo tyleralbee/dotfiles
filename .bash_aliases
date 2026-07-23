@@ -1,14 +1,11 @@
 # ======= preferences =======
 alias azurite='azurite --inMemoryPersistence --disableTelemetry' # clear storage on exit, no telemetry
 alias cp='cp -iv'                                                # confirm overwrite, verbose
-alias grep='grep --color=auto'                                   # color
 alias less='less -iRF'                                           # case-insensitive, ANSI colors, quit if one screen
 alias ls='ls -aCF --color=auto'                                  # hidden files, columns, suffixes, color
 alias mv='mv -iv'                                                # confirm overwrite, verbose
-alias wget='wget -c'                                             # resume download
 
 # ======== shorthand ========
-alias act='gh act'
 alias c='clear'
 alias l='ls'
 alias pn='pnpm'
@@ -31,10 +28,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # USAGE: copy example.txt
 alias copy='wl-copy <'
 
-# Create worktree, start Codex with optional prompt
-# USAGE: wtsc fix/example -- 'Fix GH #123'
-# https://worktrunk.dev/tips-patterns/#shell-alias-for-new-worktree-agent
-alias wtsc='wt switch --create --execute=codex'
+# KDE Connect
+# USAGE: desktop example.txt
+alias desktop='kdeconnect-cli -n $DESKTOP_NAME --share'
+alias laptop='kdeconnect-cli -n $LAPTOP_NAME --share'
 
 # ======= completions =======
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
