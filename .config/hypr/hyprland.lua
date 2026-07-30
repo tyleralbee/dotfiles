@@ -106,13 +106,10 @@ hl.config({
 local function focus_or_exec(class_name, command)
     return function()
         local window = hl.get_window("class:" .. class_name)
-
-        if window ~= nil then
-            hl.dispatch(hl.dsp.focus({ window = window }))
-            return
+        if window then
+            return hl.dispatch(hl.dsp.focus({ window = window }))
         end
-
-        hl.exec_cmd(command)
+        return hl.exec_cmd(command)
     end
 end
 
