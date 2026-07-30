@@ -1,5 +1,7 @@
-local cursor_theme = "Bibata-Modern-Ice"
 local cursor_size = 24
+local cursor_theme = "Bibata-Modern-Ice"
+local left_monitor = "DP-2"
+local right_monitor = "DP-3"
 
 local dbeaver_class = "DBeaver"
 local dejadup_class = "org.gnome.DejaDup"
@@ -179,16 +181,16 @@ hl.bind("SUPER + SHIFT + R", hl.dsp.window.fullscreen())
 hl.bind("SUPER + SHIFT + T", hl.dsp.exec_cmd("hyprpicker --autocopy"))
 hl.bind("SUPER + SHIFT + P", hl.dsp.exec_cmd("poweroff"))
 
-hl.monitor({ output = "DP-2", mode = "1920x1080@240.0", position = "3840x0", scale = 1.0, })
-hl.monitor({ output = "DP-3", mode = "1920x1080@239.76", position = "5760x0", scale = 1.0 })
+hl.monitor({ output = left_monitor, mode = "1920x1080@240.0", position = "0x0", scale = 1.0, })
+hl.monitor({ output = right_monitor, mode = "1920x1080@240.0", position = "1920x0", scale = 1.0 })
 
-hl.workspace_rule({ workspace = "1", monitor = "DP-2", default = true, })
-hl.workspace_rule({ workspace = "2", monitor = "DP-3", default = true, })
-hl.workspace_rule({ workspace = "3", monitor = "DP-2", })
-hl.workspace_rule({ workspace = "4", monitor = "DP-3", })
-hl.workspace_rule({ workspace = "5", monitor = "DP-2", })
-hl.workspace_rule({ workspace = "6", monitor = "DP-3", })
-hl.workspace_rule({ workspace = "7", monitor = "DP-2", })
-hl.workspace_rule({ workspace = "8", monitor = "DP-3", })
-hl.workspace_rule({ workspace = "9", monitor = "DP-2", })
-hl.workspace_rule({ workspace = "10", monitor = "DP-3", })
+hl.workspace_rule({ workspace = "1", monitor = left_monitor, default = true, })
+hl.workspace_rule({ workspace = "2", monitor = right_monitor, default = true, })
+hl.workspace_rule({ workspace = "3", monitor = left_monitor, })
+hl.workspace_rule({ workspace = "4", monitor = right_monitor, })
+hl.workspace_rule({ workspace = "5", monitor = left_monitor, })
+hl.workspace_rule({ workspace = "6", monitor = right_monitor, })
+hl.workspace_rule({ workspace = "7", monitor = left_monitor, })
+hl.workspace_rule({ workspace = "8", monitor = right_monitor, })
+hl.workspace_rule({ workspace = "9", monitor = left_monitor, })
+hl.workspace_rule({ workspace = "10", monitor = right_monitor, })
