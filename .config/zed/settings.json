@@ -1,16 +1,19 @@
 {
     "active_pane_modifiers": { "inactive_opacity": 0.75 },
     "agent": {
-        "sidebar_side": "right",
+        "commit_message_model": { "provider": "openai", "model": "gpt-5.5" },
         "dock": "right",
+        "enable_feedback": false,
+        "show_turn_stats": true,
+        "sidebar_side": "right",
+        "thinking_display": "preview",
         "use_modifier_to_send": true,
-        "commit_message_model": { "provider": "openai", "model": "gpt-5.5" }
     },
     "agent_servers": {
         "codex-acp": {
             "default_config_options": {
                 "reasoning_effort": "xhigh",
-                "mode": "auto",
+                "mode": "agent",
                 "model": "gpt-5.6-sol"
             },
             "type": "registry"
@@ -23,9 +26,11 @@
     "cli_default_open_behavior": "existing_window",
     "collaboration_panel": { "button": false },
     "current_line_highlight": "gutter",
-    "debugger": { "dock": "left", "button": false },
+    "debugger": { "button": false, "dock": "left" },
     "diagnostics": { "button": false },
+    "diff_view_style": "unified",
     "edit_predictions": {
+        "allow_data_collection": "no",
         "copilot": { "enable_next_edit_suggestions": false },
         "provider": "copilot"
     },
@@ -54,7 +59,7 @@
         "JSON": [".prettierrc"]
     },
     "git": { "inline_blame": { "show_commit_summary": true } },
-    "git_panel": { "dock": "left", "tree_view": true },
+    "git_panel": { "commit_title_max_length": 50, "dock": "left", "tree_view": true },
     "languages": {
         "env": { "show_edit_predictions": false },
         "LOG": { "show_edit_predictions": false },
@@ -73,6 +78,7 @@
             "enable_lsp_tasks": true
         }
     },
+    "middle_click_paste": false,
     "outline_panel": { "button": false, "dock": "left" },
     "preview_tabs": { "enable_keep_preview_on_code_navigation": true },
     "project_panel": {
@@ -93,29 +99,13 @@
     },
     "soft_wrap": "none",
     "status_bar": { "cursor_position_button": false },
-    "tab_bar": {
-        "show_nav_history_buttons": false,
-        "show_tab_bar_buttons": false
-    },
+    "tab_bar": { "show_pinned_tabs_in_separate_row": true },
     "tab_size": 4,
     "tabs": { "git_status": true, "show_diagnostics": "all" },
     "telemetry": { "diagnostics": true, "metrics": false },
-    "terminal": {
-        "button": false,
-        "font_family": "JetBrainsMono Nerd Font",
-        "font_size": 12,
-        "shell": {
-            "with_arguments": {
-                "program": "/bin/bash",
-                "args": [
-                    "-c",
-                    "tmux new-session -A -s \"basename \"$(dirname \"$PWD\")\"\""
-                ]
-            }
-        }
-    },
+    "terminal": { "button": false, "copy_on_select": true, "font_family": "JetBrainsMono Nerd Font", "font_size": 12 },
     "theme": { "mode": "system", "light": "Ayu Light", "dark": "Ayu Dark" },
-    "title_bar": { "show_project_items": false, "show_user_picture": false },
+    "title_bar": { "show_user_picture": false },
     "toolbar": { "breadcrumbs": false, "quick_actions": false },
     "ui_font_family": "JetBrainsMono Nerd Font",
     "ui_font_size": 12,
