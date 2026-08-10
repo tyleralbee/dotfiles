@@ -13,7 +13,6 @@ alias tm='tmux'
 alias zed='zeditor'
 
 # ======== oneliners ========
-alias dot='tmux new -A -s dotfiles -c $STOW_DIR'
 alias randstr="tr -dc 'A-Za-z0-9!?%=' < /dev/urandom | head -c 10 | wl-copy"
 alias src='source $HOME/.bashrc'
 alias ts='sudo timeshift --create --comments "manual snapshot taken $(date +%F\ at\ %H:%M)"'
