@@ -30,35 +30,35 @@ is_root() { [ "$(id -u)" -eq 0 ]; }
 #
 # Returns:
 #   IPv4 if available, otherwise IPv6
-# 
+#
 # Exits:
 #   1 if unable to determine IP address
-# 
+#
 # Example:
 #   ip=$(get_ip)
 get_ip() {
     local ip=""
-    
+
     # IPv4
-    ip=$(curl -4s --connect-timeout 5 https://ifconfig.io 2>/dev/null)
+    ip=$(curl -4s --connect-timeout 5 https://ifconfig.io 2> /dev/null)
     if [ -z "$ip" ]; then
-        ip=$(curl -4s --connect-timeout 5 https://icanhazip.com 2>/dev/null)
+        ip=$(curl -4s --connect-timeout 5 https://icanhazip.com 2> /dev/null)
     fi
     if [ -z "$ip" ]; then
-        ip=$(curl -4s --connect-timeout 5 https://ipecho.net/plain 2>/dev/null)
+        ip=$(curl -4s --connect-timeout 5 https://ipecho.net/plain 2> /dev/null)
     fi
-    
+
     # IPv6 fallback
     if [ -z "$ip" ]; then
-        ip=$(curl -6s --connect-timeout 5 https://ifconfig.io 2>/dev/null)
+        ip=$(curl -6s --connect-timeout 5 https://ifconfig.io 2> /dev/null)
         if [ -z "$ip" ]; then
-            ip=$(curl -6s --connect-timeout 5 https://icanhazip.com 2>/dev/null)
+            ip=$(curl -6s --connect-timeout 5 https://icanhazip.com 2> /dev/null)
         fi
         if [ -z "$ip" ]; then
-            ip=$(curl -6s --connect-timeout 5 https://ipecho.net/plain 2>/dev/null)
+            ip=$(curl -6s --connect-timeout 5 https://ipecho.net/plain 2> /dev/null)
         fi
     fi
-    
+
     # Exit if unable to determine IP
     if [ -z "$ip" ]; then
         echo "Error: Could not determine server IP address automatically (neither IPv4 nor IPv6)." >&2
