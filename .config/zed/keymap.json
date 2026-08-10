@@ -189,10 +189,14 @@
             "alt-space": "editor::ShowCompletions"
         }
     },
-    // normal & visual mode
+    // when editing a file, code completions aren't open, and vim is in normal/visual mode
     {
-        "context": "VimControl && !menu",
+        "context": "Editor && !menu && (vim_mode == normal || vim_mode == visual)",
         "bindings": {
+            // use space as leader
+            "space": null,
+            "space f": "vim::HelixJumpToWord",
+
             // vim-sneak
             "s": "vim::PushSneak",
             "shift-s": "vim::PushSneakBackward",
@@ -213,31 +217,31 @@
             "t": ["vim::PushFindForward", { "before": true, "multiline": true }]
         }
     },
-    // normal & visual mode when not waiting for another binding to trigger
+    // when editing a file, code completions aren't open, and vim is in normal mode
     {
-        "context": "VimControl && vim_mode != operator && !menu",
-        "bindings": {
-            // use space as leader
-            "space": null,
-            "space f": "vim::HelixJumpToWord"
-        }
-    },
-    // normal mode only
-    {
-        "context": "vim_mode == normal && !menu",
+        "context": "Editor && !menu && (vim_mode == normal)",
         "bindings": {
             // Use neovim's yank behavior: yank to end of line.
             "shift-y": ["workspace::SendKeystrokes", "y $"]
         }
     },
-    // visual mode only
+    // when editing a file, code completions aren't open, and vim is in visual mode
     {
-        "context": "vim_mode == visual && !menu",
+        "context": "Editor && !menu && (vim_mode == visual)",
         "bindings": {
             // vim-surround
             "space s": "vim::PushAddSurrounds"
         }
     },
+    {
+        "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+        "bindings": {
+            // mini.ai
+            "q": "vim::MiniQuotes",
+            "b": "vim::MiniBrackets"
+        }
+    },
+
     // Run `tofu fmt` to format Terraform files
     {
         "context": "Editor && (extension == tf || extension == tfvars)",
@@ -265,6 +269,13 @@
         "context": "Editor && (extension == ts || extension == tsx || extension == js || extension == jsx)",
         "bindings": {
             "alt-shift-f": ["task::Spawn", { "task_name": "Lint" }]
+        }
+    },
+    {
+        "context": "ProjectPanel",
+        "bindings": {
+            // Ensure there is no delay from using space as leader key in Editor
+            "space": "project_panel::Open"
         }
     }
 ]
