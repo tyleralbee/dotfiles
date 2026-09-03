@@ -1,7 +1,0 @@
-skip-commit-generation-prompt = true
-# https://worktrunk.dev/config/
-
-# Copy gitignored files to another worktree
-# Ensures environment variables are available
-[post-start]
-copy = "wt step copy-ignored"
