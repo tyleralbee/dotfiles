@@ -67,7 +67,23 @@
     "languages": {
         "env": { "show_edit_predictions": false },
         "LOG": { "show_edit_predictions": false },
-        "Markdown": { "soft_wrap": "editor_width" }
+        "Markdown": { "soft_wrap": "editor_width" },
+        "TypeScript": {
+            "language_servers": [
+                "typescript-ls",
+                "vtsls",
+                "!typescript-language-server",
+                "..."
+            ]
+        },
+        "TSX": {
+            "language_servers": [
+                "typescript-ls",
+                "vtsls",
+                "!typescript-language-server",
+                "..."
+            ]
+        }
     },
     "lsp": {
         "vtsls": {
