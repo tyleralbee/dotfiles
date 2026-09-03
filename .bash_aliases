@@ -12,6 +12,9 @@ alias pn='pnpm'
 alias tm='tmux'
 alias zed='zeditor'
 
+# ========== typos ==========
+alias gti='git'
+
 # ======== oneliners ========
 alias randstr="tr -dc 'A-Za-z0-9!?%=' < /dev/urandom | head -c 10 | wl-copy"
 alias src='source $HOME/.bashrc'
