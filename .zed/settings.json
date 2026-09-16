@@ -3,7 +3,7 @@
         "Git Ignore": [".stow-local-ignore"], // requires `Git Firefly` extension
         "JSONC": ["**/zed/*.json"],
         "Shell Script": [".bash_functions", ".bash_prompt", ".inputrc"],
-        "TOML": ["**/.azure/config"], // requires `TOML` extension
+        "TOML": ["**/.azure/config", "**/dolphinrc", "**/kdeglobals"], // requires `TOML` extension
         "XML": ["**/fontconfig/*.conf"]
     }
 }

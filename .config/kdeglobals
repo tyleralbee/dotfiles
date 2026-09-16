@@ -2,3 +2,7 @@
 BrowserApplication[$e]=firefox.desktop
 TerminalApplication=ghostty
 TerminalService=com.mitchellh.ghostty.desktop
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
