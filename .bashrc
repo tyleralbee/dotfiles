@@ -22,9 +22,6 @@ shopt -s histappend
 # Application configuration
 export BASH_COMPLETION_USER_DIR="$XDG_DATA_HOME/bash-completion"
 
-## Generate shell integration code for worktrunk
-if command -v wt > /dev/null 2>&1; then eval "$(command wt config shell init bash)"; fi
-
 ## Sources
 # shellcheck source=.bash_prompt
 . ~/.bash_prompt 2> /dev/null || true
