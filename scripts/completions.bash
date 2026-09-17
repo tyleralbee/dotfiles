@@ -27,6 +27,7 @@ completions=(
     # "deno completions bash"   # https://docs.deno.com/runtime/reference/cli/completions/
     "node --completion-bash"    # https://nodejs.org/api/cli.html#completion-bash
     "pnpm completion bash"      # https://pnpm.io/completion
+    "rclone completion bash"    # https://rclone.org/commands/rclone_completion_bash
 )
 completions_dir="$BASH_COMPLETION_USER_DIR/completions"
 
