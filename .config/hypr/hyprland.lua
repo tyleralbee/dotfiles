@@ -3,6 +3,7 @@ local cursor_theme = "Bibata-Modern-Ice"
 local left_monitor = "DP-2"
 local right_monitor = "DP-3"
 
+local chatgpt_class = "Chatgpt"
 local dbeaver_class = "DBeaver"
 local dejadup_class = "org.gnome.DejaDup"
 local discord_class = "discord"
@@ -66,6 +67,7 @@ hl.env("HYPRCURSOR_SIZE", cursor_size)
 hl.window_rule({ name = "add-tag-auth-to-class-yubico", match = { class = yubico_class, }, tag = "+auth", })
 hl.window_rule({ name = "add-tag-browser-to-class-firefox", match = { class = firefox_class, }, tag = "+browser", })
 hl.window_rule({ name = "add-tag-code-to-class-zed", match = { class = zed_class, }, tag = "+code", })
+hl.window_rule({ name = "add-tag-devtools-to-class-chatgpt", match = { class = chatgpt_class, }, tag = "+devtools", })
 hl.window_rule({ name = "add-tag-devtools-to-class-dbeaver", match = { class = dbeaver_class, }, tag = "+devtools", })
 hl.window_rule({ name = "add-tag-game-to-class-runelite", match = { class = runelite_class, }, tag = "+game", })
 hl.window_rule({ name = "add-tag-graphics-to-class-gimp", match = { class = gimp_class, }, tag = "+graphics", })
@@ -160,9 +162,10 @@ hl.bind("SUPER + A", focus_or_exec(zed_class, "zeditor"), { submap_universal = t
 hl.bind("SUPER + S", focus_or_exec(firefox_class, "firefox"), { submap_universal = true })
 hl.bind("SUPER + D", focus_or_exec(obsidian_class, "xdg-open obsidian://vault/" .. os.getenv("NOTES_DIR")), { submap_universal = true })
 hl.bind("SUPER + F", focus_or_exec(ghostty_class, "ghostty"), { submap_universal = true })
-hl.bind("SUPER + Z", focus_or_exec(yubico_class, "authenticator"), { submap_universal = true })
 hl.bind("SUPER + G", focus_or_exec(runelite_class, "bolt"), { submap_universal = true })
+hl.bind("SUPER + Z", focus_or_exec(yubico_class, "authenticator"), { submap_universal = true })
 hl.bind("SUPER + X", focus_or_exec(spotify_class, "spotify-launcher"), { submap_universal = true })
+hl.bind("SUPER + C", focus_or_exec(chatgpt_class, "chatgpt"), { submap_universal = true })
 hl.bind("SUPER + V", focus_or_exec(dolphin_class, "dolphin"), { submap_universal = true })
 
 -- Functions
