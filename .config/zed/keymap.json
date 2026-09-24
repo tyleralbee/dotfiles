@@ -71,6 +71,7 @@
             "ctrl-v": null, // paste
             "ctrl-x": null, // cut
             "ctrl-z": null, // undo
+            "ctrl-shift-z": null, // redo
             // "ctrl-w": null, // 🚧 need to rebind this in Vim and Terminal first
 
             // GUI navigation & view toggles
@@ -118,7 +119,9 @@
             "ctrl-v": "editor::Paste", // was:  visual block
             // "ctrl-w": "pane::CloseActiveItem", // was:  delete previous
             "ctrl-x": "editor::Cut", // was:  decrement
-            "ctrl-z": "editor::Undo" // was:
+            "ctrl-z": "editor::Undo",
+            "ctrl-shift-z": "editor::Redo",
+
         }
     },
     {
