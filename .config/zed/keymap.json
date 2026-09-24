@@ -115,7 +115,7 @@
             "ctrl-c": "editor::Copy", // was:  interrupt
             "ctrl-f": "buffer_search::Deploy", // was:  scroll forward
             "ctrl-q": "zed::Quit", // was:  visual block
-            "ctrl-t": null, // was:  indent
+            "ctrl-t": "workspace::NewFile", // was:  indent
             "ctrl-v": "editor::Paste", // was:  visual block
             // "ctrl-w": "pane::CloseActiveItem", // was:  delete previous
             "ctrl-x": "editor::Cut", // was:  decrement
