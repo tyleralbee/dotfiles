@@ -3,6 +3,9 @@ BrowserApplication[$e]=firefox.desktop
 TerminalApplication=ghostty
 TerminalService=com.mitchellh.ghostty.desktop
 
+[KShortcutsDialog Settings]
+Dialog Size=960,1080
+
 [PreviewSettings]
 EnableRemoteFolderThumbnail=false
 MaximumRemoteSize=0
