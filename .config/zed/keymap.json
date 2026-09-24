@@ -51,6 +51,12 @@
 //
 // In `bash`, GNU `readline` handles the command prompt changes. This is why
 // Suggested binds use `ctrl-*` - a subprocess handles them, not the terminal.
+  
+//               <| "Pane" ----------------------------------------|> "ProjectSearch{Bar|View}" ----------------------- |>
+//              <-| "{FileFinder|CommandPalette|LanguageSelector}" |> "Picker" ---------------------------------------- |->
+// "Workspace"<|--> "Dock" ----------------------------------------|> "{Project|Git|Agent}Panel" ---------------------- <--|> "Editor"
+//              <-| "Dock" ----------------------------------------|> "Pane" --------------------|> "Terminal" | "menu" |->
+//               <| "ThreadsSidebar" ---------------------------------------------------------------------------------- |>
 
 [
     {
