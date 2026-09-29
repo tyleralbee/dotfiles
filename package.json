@@ -12,17 +12,17 @@
     },
     "devDependencies": {
         "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
-        "@prettier/plugin-oxc": "^0.1.3",
+        "@prettier/plugin-oxc": "^0.2.3",
         "@prettier/plugin-xml": "^3.4.2",
-        "prettier": "^3.8.1",
-        "prettier-plugin-ember-template-tag": "^2.1.3",
-        "prettier-plugin-jsdoc": "^1.8.0",
-        "prettier-plugin-packagejson": "^3.0.0",
-        "prettier-plugin-sh": "^0.18.0",
-        "prettier-plugin-sql-cst": "^0.18.0",
-        "prettier-plugin-tailwindcss": "^0.7.2",
-        "prettier-plugin-toml": "^2.0.6",
+        "prettier": "^3.9.9",
+        "prettier-plugin-ember-template-tag": "^2.1.8",
+        "prettier-plugin-jsdoc": "^1.8.1",
+        "prettier-plugin-packagejson": "^3.0.2",
+        "prettier-plugin-sh": "^0.20.2",
+        "prettier-plugin-sql-cst": "^0.22.1",
+        "prettier-plugin-tailwindcss": "^0.8.1",
+        "prettier-plugin-toml": "^3.0.2",
         "typescript": "^5.9.3"
     },
-    "packageManager": "pnpm@11.15.0"
+    "packageManager": "pnpm@12.6.0"
 }
