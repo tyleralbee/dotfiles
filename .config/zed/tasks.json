@@ -14,8 +14,8 @@
     {
         "label": "Open keymap",
         "command": "zeditor",
-        "args": ["$STOW_DIR/.config/zed/keymap.json"],
-        "allow_concurrent_runs": true,
+        "args": ["$TYLERALBEE_DOTFILES_DIR/.config/zed/keymap.json"],
+        "allow_concurrent_runs": false,
         "hide": "on_success",
         "reveal": "never",
         "shell": "system",
@@ -24,8 +24,8 @@
     {
         "label": "Open settings",
         "command": "zeditor",
-        "args": ["$STOW_DIR/.config/zed/settings.json"],
-        "allow_concurrent_runs": true,
+        "args": ["$TYLERALBEE_DOTFILES_DIR/.config/zed/settings.json"],
+        "allow_concurrent_runs": false,
         "hide": "on_success",
         "reveal": "never",
         "shell": "system",
@@ -34,8 +34,8 @@
     {
         "label": "Open tasks",
         "command": "zeditor",
-        "args": ["$STOW_DIR/.config/zed/tasks.json"],
-        "allow_concurrent_runs": true,
+        "args": ["$TYLERALBEE_DOTFILES_DIR/.config/zed/tasks.json"],
+        "allow_concurrent_runs": false,
         "hide": "on_success",
         "reveal": "never",
         "shell": "system",

@@ -56,7 +56,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 
-## Default programs, e.g. for xdg-open
+## Default programs
 export BROWSER=firefox
 export EDITOR=zeditor
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
@@ -66,20 +66,17 @@ export SYSTEMD_EDITOR=nvim
 export TERMINAL=ghostty
 export VISUAL=zeditor
 
-## Application configuration, e.g. for ripgrep
+## General configuration
+export DO_NOT_TRACK=1
+
+## Application configuration
 export CHEAT_CONFIG_PATH="$XDG_CONFIG_HOME/cheat/conf.yml"
 export CHEAT_USE_FZF=true
+export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
 export GRIM_DEFAULT_DIR="$HOME/Pictures/Screenshots/"
 export NODE_REPL_HISTORY="$XDG_STATE_HOME"/node_repl_history
-export NOTES_DIR="$HOME/orgs/tyleralbee/notes"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+export TURBO_TELEMETRY_DISABLED=1
 
-## Disable telemetry, e.g. in the Supabase CLI
-export DO_NOT_TRACK=1                             # Generic opt-out
-export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1    # Azure Functions Core Tools
-export TURBO_TELEMETRY_DISABLED=1                 # Turborepo (Vercel)
-
-## Device identifiers, e.g. for KDE Connect
-export DESKTOP_NAME="tyler-arch-20251001-desktop" # Arch PC
-export LAPTOP_NAME="tyler-macos-26-laptop"        # MacOS Laptop
-export MOBILE_NAME="tyler-ios-26-mobile"          # iOS iPhone
+## Personal configuration
+export TYLERALBEE_DOTFILES_DIR="$HOME/orgs/tyleralbee/dotfiles"

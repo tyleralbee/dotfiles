@@ -30,10 +30,5 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # USAGE: copy example.txt
 alias copy='wl-copy <'
 
-# KDE Connect
-# USAGE: desktop example.txt
-alias desktop='kdeconnect-cli -n $DESKTOP_NAME --share'
-alias laptop='kdeconnect-cli -n $LAPTOP_NAME --share'
-
 # ======= completions =======
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
